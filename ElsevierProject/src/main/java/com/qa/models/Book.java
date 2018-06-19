@@ -25,6 +25,7 @@ public class Book {
     private String publishedDate;
 
     private int pageCount;
+
     @Autowired
     @ElementCollection
     private List<Author> authors;
