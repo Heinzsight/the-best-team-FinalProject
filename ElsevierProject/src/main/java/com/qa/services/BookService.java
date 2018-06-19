@@ -7,14 +7,13 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class BookService {
-	
-	@Autowired
-	private BookRepository bookRepository;
-	
-	public Iterable<Book> findAllBooks()
-	{
-		return bookRepository.findAll();
-		
-	}
+
+    @Autowired
+    private BookRepository bookRepository;
+
+    public Iterable<Book> findAllBooks() {
+        return bookRepository.findAll();
+
+    }
 
 }

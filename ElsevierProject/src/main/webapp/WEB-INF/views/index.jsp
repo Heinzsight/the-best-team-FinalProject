@@ -1,5 +1,5 @@
 <!doctype html>
-<%@page import="com.qa.models.Book"%>
+<%@page import="com.qa.models.Book" %>
 <html class="no-js" lang="en">
 <head>
     <meta charset="utf-8"/>
@@ -43,44 +43,45 @@
 
 
         <%
-         Iterable<Book> books = (Iterable<Book>) session.getAttribute("books");
-          
-      %>
-      
-      
-      </h2>
-      <hr>
-    </div>
+            Iterable<Book> books = (Iterable<Book>) session.getAttribute("books");
 
-    <div class="row small-up-2 large-up-4">
-    
+        %>
+
+
+    </h2>
+    <hr>
+</div>
+
+<div class="row small-up-2 large-up-4">
+
     <%
-    
-    for(Book book: books)
-    {
-      
-   
+
+        for (Book book : books) {
+
+
     %>
-      <div class="column">
-      
+    <div class="column">
+
         <a href="/bookDetails?bookId=<%=book.getBookId()%>"><img class="thumbnail" src="<%=book.getBookImage()%>"></a>
-        <h5><%= book.getTitle()%></h5>
-        <p>$<%= book.getPrice()%></p>
+        <h5><%= book.getTitle()%>
+        </h5>
+        <p>$<%= book.getPrice()%>
+        </p>
         <a href="/bookDetails?bookId=<%=book.getBookId()%>" class="button expanded">View book details</a>
         <!--  a href="/addToCart?bookId=" class="button expanded">Add to Cart</a>-->
-      </div>
-    
-    <%
-    }
-    %>  
     </div>
 
-    <hr>
+    <%
+        }
+    %>
+</div>
 
-    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-    <script src="js/elsevier.js"></script>
-    <script>
-      $(document).foundation();
-    </script> 
-  </body>
+<hr>
+
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="js/elsevier.js"></script>
+<script>
+    $(document).foundation();
+</script>
+</body>
 </html>

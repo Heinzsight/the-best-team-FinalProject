@@ -10,145 +10,134 @@ import java.util.List;
 
 @Entity
 public class Book {
-	
-	@Id
-	private int bookId;
-	
-	private String title;
-	
-	private String description;
-	
-	private String publisher;
-	
-	private String format;
-	
-	private String publishedDate;
-	
-	private int pageCount;
-	
-	public List<Author> getAuthors() {
-		return authors;
-	}
 
-	@Autowired
-	@ElementCollection
-	private List<Author> authors;
-	
-	public void setAuthors(List<Author> authors) {
-		this.authors = authors;
-	}
+    @Id
+    private int bookId;
 
-	private double price;
-	
-	private String paperISBN;
-	
-	private String eBookISBN;
-	
-	private String tableOfContents;
-	
-	
-	private String bookImage;
-	
+    private String title;
 
+    private String description;
 
-	public int getBookId() {
-		return bookId;
-	}
+    private String publisher;
 
-	public void setBookId(int bookId) {
-		this.bookId = bookId;
-	}
+    private String format;
 
-	public String getTitle() {
-		return title;
-	}
+    private String publishedDate;
 
-	public void setTitle(String title) {
-		this.title = title;
-	}
+    private int pageCount;
+    @Autowired
+    @ElementCollection
+    private List<Author> authors;
+    private double price;
+    private String paperISBN;
+    private String eBookISBN;
+    private String tableOfContents;
+    private String bookImage;
 
-	public String getDescription() {
-		return description;
-	}
+    public List<Author> getAuthors() {
+        return authors;
+    }
 
-	public void setDescription(String description) {
-		this.description = description;
-	}
+    public void setAuthors(List<Author> authors) {
+        this.authors = authors;
+    }
 
-	public String getPublisher() {
-		return publisher;
-	}
+    public int getBookId() {
+        return bookId;
+    }
 
-	public void setPublisher(String publisher) {
-		this.publisher = publisher;
-	}
+    public void setBookId(int bookId) {
+        this.bookId = bookId;
+    }
 
-	public String getFormat() {
-		return format;
-	}
+    public String getTitle() {
+        return title;
+    }
 
-	public void setFormat(String format) {
-		this.format = format;
-	}
+    public void setTitle(String title) {
+        this.title = title;
+    }
 
-	public String getPublishedDate() {
-		return publishedDate;
-	}
+    public String getDescription() {
+        return description;
+    }
 
-	public void setPublishedDate(String publishedDate) {
-		this.publishedDate = publishedDate;
-	}
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
-	public int getPageCount() {
-		return pageCount;
-	}
+    public String getPublisher() {
+        return publisher;
+    }
 
-	public void setPageCount(int pageCount) {
-		this.pageCount = pageCount;
-	}
+    public void setPublisher(String publisher) {
+        this.publisher = publisher;
+    }
+
+    public String getFormat() {
+        return format;
+    }
+
+    public void setFormat(String format) {
+        this.format = format;
+    }
+
+    public String getPublishedDate() {
+        return publishedDate;
+    }
+
+    public void setPublishedDate(String publishedDate) {
+        this.publishedDate = publishedDate;
+    }
+
+    public int getPageCount() {
+        return pageCount;
+    }
+
+    public void setPageCount(int pageCount) {
+        this.pageCount = pageCount;
+    }
 
 
+    public double getPrice() {
+        return price;
+    }
 
-	public double getPrice() {
-		return price;
-	}
+    public void setPrice(double price) {
+        this.price = price;
+    }
 
-	public void setPrice(double price) {
-		this.price = price;
-	}
+    public String getPaperISBN() {
+        return paperISBN;
+    }
 
-	public String getPaperISBN() {
-		return paperISBN;
-	}
+    public void setPaperISBN(String paperISBN) {
+        this.paperISBN = paperISBN;
+    }
 
-	public void setPaperISBN(String paperISBN) {
-		this.paperISBN = paperISBN;
-	}
+    public String geteBookISBN() {
+        return eBookISBN;
+    }
 
-	public String geteBookISBN() {
-		return eBookISBN;
-	}
+    public void seteBookISBN(String eBookISBN) {
+        this.eBookISBN = eBookISBN;
+    }
 
-	public void seteBookISBN(String eBookISBN) {
-		this.eBookISBN = eBookISBN;
-	}
+    public String getTableOfContents() {
+        return tableOfContents;
+    }
 
-	public String getTableOfContents() {
-		return tableOfContents;
-	}
+    public void setTableOfContents(String tableOfContents) {
+        this.tableOfContents = tableOfContents;
+    }
 
-	public void setTableOfContents(String tableOfContents) {
-		this.tableOfContents = tableOfContents;
-	}
+    public String getBookImage() {
+        return bookImage;
+    }
 
-	public String getBookImage() {
-		return bookImage;
-	}
+    public void setBookImage(String bookImage) {
+        this.bookImage = bookImage;
+    }
 
-	public void setBookImage(String bookImage) {
-		this.bookImage = bookImage;
-	}
-	
-	
-	
+
 }

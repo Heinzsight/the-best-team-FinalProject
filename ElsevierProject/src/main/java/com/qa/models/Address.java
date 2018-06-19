@@ -6,110 +6,107 @@ import javax.persistence.Id;
 @Entity
 public class Address {
 
-	
-	@Id
-	private int addressId;
-	
-	
-	private String addressLine1;
-	
-	private String addressLine2;
-	
-	private String city;
 
-	private String postcode;
-	
-	private String state;
-	
-	private String country;
-	
-	private String phoneNumber;
-	
-	private String addressType;
+    @Id
+    private int addressId;
 
-	public String getAddressType() {
-		return addressType;
-	}
 
-	public void setAddressType(String addressType) {
-		this.addressType = addressType;
-	}
+    private String addressLine1;
 
-	private int customerId;
-	
+    private String addressLine2;
 
-	public int getCustomerId() {
-		return customerId;
-	}
+    private String city;
 
-	public void setCustomerId(int customerId) {
-		this.customerId = customerId;
-	}
+    private String postcode;
 
-	public int getAddressId() {
-		return addressId;
-	}
+    private String state;
 
-	public void setAddressId(int addressId) {
-		this.addressId = addressId;
-	}
+    private String country;
 
-	public String getAddressLine1() {
-		return addressLine1;
-	}
+    private String phoneNumber;
 
-	public void setAddressLine1(String addressLine1) {
-		this.addressLine1 = addressLine1;
-	}
+    private String addressType;
+    private int customerId;
 
-	public String getAddressLine2() {
-		return addressLine2;
-	}
+    public String getAddressType() {
+        return addressType;
+    }
 
-	public void setAddressLine2(String addressLine2) {
-		this.addressLine2 = addressLine2;
-	}
+    public void setAddressType(String addressType) {
+        this.addressType = addressType;
+    }
 
-	public String getCity() {
-		return city;
-	}
+    public int getCustomerId() {
+        return customerId;
+    }
 
-	public void setCity(String city) {
-		this.city = city;
-	}
+    public void setCustomerId(int customerId) {
+        this.customerId = customerId;
+    }
 
-	public String getPostcode() {
-		return postcode;
-	}
+    public int getAddressId() {
+        return addressId;
+    }
 
-	public void setPostcode(String postcode) {
-		this.postcode = postcode;
-	}
+    public void setAddressId(int addressId) {
+        this.addressId = addressId;
+    }
 
-	public String getState() {
-		return state;
-	}
+    public String getAddressLine1() {
+        return addressLine1;
+    }
 
-	public void setState(String state) {
-		this.state = state;
-	}
+    public void setAddressLine1(String addressLine1) {
+        this.addressLine1 = addressLine1;
+    }
 
-	public String getCountry() {
-		return country;
-	}
+    public String getAddressLine2() {
+        return addressLine2;
+    }
 
-	public void setCountry(String country) {
-		this.country = country;
-	}
+    public void setAddressLine2(String addressLine2) {
+        this.addressLine2 = addressLine2;
+    }
 
-	public String getPhoneNumber() {
-		return phoneNumber;
-	}
+    public String getCity() {
+        return city;
+    }
 
-	public void setPhoneNumber(String phoneNumber) {
-		this.phoneNumber = phoneNumber;
-	}
-	
-	
-	
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getPostcode() {
+        return postcode;
+    }
+
+    public void setPostcode(String postcode) {
+        this.postcode = postcode;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+
 }

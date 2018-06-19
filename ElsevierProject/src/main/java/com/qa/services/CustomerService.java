@@ -7,40 +7,36 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class CustomerService {
-	
-	@Autowired
-	private CustomerRepository customerRepository;
-	
-	
-	public Customer saveCustomer(Customer customer)
-	{
-		
-		return customerRepository.save(customer);
-	}
-	
-	public Customer loginProcess(String email,String password){
-	
-		return customerRepository.loginProcess(email, password);
-	}
-	
-	
-	public int updateCustomer(String firstName,
-			String lastName,
-			String email,
-			int customerId){
-		
-		
-		return customerRepository.updateCustomer(firstName, lastName, email, customerId);
-	}
-	
-	
-	public Customer findCustomerById(int customerId)
-	{
-		
-		return customerRepository.findOne(customerId);
-	}
-	
-	
+
+    @Autowired
+    private CustomerRepository customerRepository;
+
+
+    public Customer saveCustomer(Customer customer) {
+
+        return customerRepository.save(customer);
+    }
+
+    public Customer loginProcess(String email, String password) {
+
+        return customerRepository.loginProcess(email, password);
+    }
+
+
+    public int updateCustomer(String firstName,
+                              String lastName,
+                              String email,
+                              int customerId) {
+
+
+        return customerRepository.updateCustomer(firstName, lastName, email, customerId);
+    }
+
+
+    public Customer findCustomerById(int customerId) {
+
+        return customerRepository.findOne(customerId);
+    }
 
 
 }
