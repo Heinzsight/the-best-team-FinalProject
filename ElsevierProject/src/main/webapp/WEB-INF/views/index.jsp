@@ -1,52 +1,48 @@
 <!doctype html>
-<%@page import="java.util.Iterator"%>
-<%@page import="java.util.ArrayList"%>
-<%@page import="java.util.List"%>
 <%@page import="com.qa.models.Book"%>
 <html class="no-js" lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Online Shopping</title>
     <link rel="stylesheet" href="css/style.css"/>
-  </head>
-  <body>
+</head>
+<body>
 
-    <!-- Start Top Bar -->
-    <div class="top-bar">
-      <div class="top-bar-left">
+<!-- Start Top Bar -->
+<div class="top-bar">
+    <div class="top-bar-left">
         <ul class="menu">
-          <li class="menu-text" style="color:red">Online Shopping</li>
-          <li><a href="#">Home</a></li>
-          
+            <li class="menu-text" style="color:red">Online Shopping</li>
+            <li><a href="#">Home</a></li>
+
         </ul>
-      </div>
-      <div class="top-bar-right">
-        
-             <ul class="dropdown menu" data-dropdown-menu>
-            
+    </div>
+    <div class="top-bar-right">
+
+        <ul class="dropdown menu" data-dropdown-menu>
+
             <li class="has-submenu">
-              <a href="/viewCart"><img src="images/cart.jpg" width="50" height="50"/></a>
-              <ul class="submenu menu vertical" data-submenu>
-                <li><a href="/viewCart"><img src="images/cart.jpg" width="50" height="50"/></a></li>
-                <li><a href="/login">Register | Login</a></li>
-              </ul>
+                <a href="/viewCart"><img src="images/cart.jpg" width="50" height="50"/></a>
+                <ul class="submenu menu vertical" data-submenu>
+                    <li><a href="/viewCart"><img src="images/cart.jpg" width="50" height="50"/></a></li>
+                    <li><a href="/login">Register | Login</a></li>
+                </ul>
             </li>
             <li><a href="#">About Us</a></li>
             <li><a href="#">Contact</a></li>
-          </ul>
-          
-      </div>
+        </ul>
+
     </div>
-    <!-- End Top Bar -->
+</div>
+<!-- End Top Bar -->
 
 
-    
-    <div class="row column text-center">
-      <h2>Our Newest Books
-      
-      
-      <%
+<div class="row column text-center">
+    <h2>Our Newest Books
+
+
+        <%
          Iterable<Book> books = (Iterable<Book>) session.getAttribute("books");
           
       %>

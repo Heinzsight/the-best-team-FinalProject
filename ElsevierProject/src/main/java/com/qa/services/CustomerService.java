@@ -1,11 +1,9 @@
 package com.qa.services;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.repository.query.Param;
-import org.springframework.stereotype.Service;
-
 import com.qa.models.Customer;
 import com.qa.repositories.CustomerRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 @Service
 public class CustomerService {

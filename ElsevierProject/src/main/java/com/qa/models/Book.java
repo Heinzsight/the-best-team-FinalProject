@@ -1,14 +1,12 @@
 package com.qa.models;
 
 
-
-import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-
-import org.springframework.beans.factory.annotation.Autowired;
+import java.util.List;
 
 @Entity
 public class Book {

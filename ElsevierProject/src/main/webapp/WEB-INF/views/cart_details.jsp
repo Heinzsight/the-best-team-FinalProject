@@ -1,21 +1,19 @@
 <!doctype html>
-<%@page import="java.util.Map"%>
-<%@page import="java.util.Set"%>
-<%@page import="java.util.HashMap"%>
-<%@page import="java.util.ArrayList"%>
 <%@page import="com.qa.models.Book"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="java.util.Map"%>
 <html class="no-js" lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Shopping Cart | Week 3</title>
     <link rel="stylesheet" href="css/style.css">
-    
-    
-  </head>
-  <body>
-    
-    <%!
+
+
+</head>
+<body>
+
+<%!
     
       ArrayList<Book> books;
     

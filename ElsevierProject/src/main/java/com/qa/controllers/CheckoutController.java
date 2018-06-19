@@ -1,9 +1,6 @@
 package com.qa.controllers;
 
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.model;
-
-import java.util.Map;
-
+import com.qa.models.Shipping;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.qa.models.Shipping;
+import java.util.Map;
 
 @SessionAttributes(names={"book_counts"})
 @Controller
