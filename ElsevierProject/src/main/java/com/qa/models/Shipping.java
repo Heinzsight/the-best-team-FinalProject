@@ -1,121 +1,116 @@
 package com.qa.models;
 
 public class Shipping {
-	
-	private int shippingId;
-	
-	private String firstName;
-	
-	private String lastName;
-	
-	private String addressLine1;
-	
-	private String addressLine2;
-	
-	private String city;
-	
-	private String postcode;
-	
-	private String state;
-	
-	private String country;
-	
-	private String phone;
-	
-	private String email;
 
-	public int getShippingId() {
-		return shippingId;
-	}
+    private int shippingId;
 
-	public void setShippingId(int shippingId) {
-		this.shippingId = shippingId;
-	}
+    private String firstName;
 
-	public String getFirstName() {
-		return firstName;
-	}
+    private String lastName;
 
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
-	}
+    private String addressLine1;
 
-	public String getLastName() {
-		return lastName;
-	}
+    private String addressLine2;
 
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
-	}
+    private String city;
 
-	public String getAddressLine1() {
-		return addressLine1;
-	}
+    private String postcode;
 
-	public void setAddressLine1(String addressLine1) {
-		this.addressLine1 = addressLine1;
-	}
+    private String state;
 
-	public String getAddressLine2() {
-		return addressLine2;
-	}
+    private String country;
 
-	public void setAddressLine2(String addressLine2) {
-		this.addressLine2 = addressLine2;
-	}
+    private String phone;
 
-	public String getCity() {
-		return city;
-	}
+    private String email;
 
-	public void setCity(String city) {
-		this.city = city;
-	}
+    public int getShippingId() {
+        return shippingId;
+    }
 
-	public String getPostcode() {
-		return postcode;
-	}
+    public void setShippingId(int shippingId) {
+        this.shippingId = shippingId;
+    }
 
-	public void setPostcode(String postcode) {
-		this.postcode = postcode;
-	}
+    public String getFirstName() {
+        return firstName;
+    }
 
-	public String getState() {
-		return state;
-	}
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
 
-	public void setState(String state) {
-		this.state = state;
-	}
+    public String getLastName() {
+        return lastName;
+    }
 
-	public String getCountry() {
-		return country;
-	}
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
 
-	public void setCountry(String country) {
-		this.country = country;
-	}
+    public String getAddressLine1() {
+        return addressLine1;
+    }
 
-	public String getPhone() {
-		return phone;
-	}
+    public void setAddressLine1(String addressLine1) {
+        this.addressLine1 = addressLine1;
+    }
 
-	public void setPhone(String phone) {
-		this.phone = phone;
-	}
+    public String getAddressLine2() {
+        return addressLine2;
+    }
 
-	public String getEmail() {
-		return email;
-	}
+    public void setAddressLine2(String addressLine2) {
+        this.addressLine2 = addressLine2;
+    }
 
-	public void setEmail(String email) {
-		this.email = email;
-	}
-	
-	
-	
-	
-	
-	
-	
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getPostcode() {
+        return postcode;
+    }
+
+    public void setPostcode(String postcode) {
+        this.postcode = postcode;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+
 }
