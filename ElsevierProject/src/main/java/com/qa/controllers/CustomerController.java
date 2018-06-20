@@ -58,6 +58,13 @@ public class CustomerController {
         return modelAndView;
     }
 
+    @RequestMapping("/logout")
+    public ModelAndView logout() {
+        ModelAndView modelAndView = new ModelAndView("index");
+
+        return modelAndView;
+    }
+
     @RequestMapping("/register")
     public ModelAndView register() {
         ModelAndView modelAndView = new ModelAndView("register");
