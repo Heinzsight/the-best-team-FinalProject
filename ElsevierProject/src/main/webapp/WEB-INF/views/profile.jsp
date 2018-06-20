@@ -69,14 +69,14 @@
                 <h3> Account details </h3>
 
 
-                <label>Firstname * </label>
-                <input type="text" placeholder="Enter firstname" name="firstName" id="firstName"
-                       value="<%=c.getFirstName() %>"/>
-                <label>Lastname * </label>
-                <input type="text" placeholder="Enter lastname" name="lastName" id="lastName"
-                       value="<%=c.getLastName()%>"/>
-                <label>Email ID * </label>
-                <input type="text" placeholder="Enter email" name="email" id="email" value="<%=c.getEmail()%>"/>
+                <label>First Name</label>
+                <input type="text" placeholder="Enter First Name" name="firstName" id="firstName"
+                       value="<%=c.getFirstName() %>" required/>
+                <label>Last Name</label>
+                <input type="text" placeholder="Enter Last Name" name="lastName" id="lastName"
+                       value="<%=c.getLastName()%>" required/>
+                <label>Email</label>
+                <input type="email" placeholder="Enter Email" name="email" id="email" value="<%=c.getEmail()%>" required/>
 
             </div>
 
