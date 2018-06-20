@@ -120,7 +120,31 @@ public class CustomerController {
 
         return modelAndView;
     }
+    @RequestMapping("/updatePassword")
+    public ModelAndView updatePassword(@ModelAttribute("logged_in_customer") Customer loggedInCustomer, @ModelAttribute("Customer") Customer customer) {
+        ModelAndView modelAndView = null;
 
+        System.out.println("Before update ");
+
+        System.out.println("Password" + loggedInCustomer.getPassword());
+        int recordsUpdated = customerService.updatePassword(loggedInCustomer.getPassword(),
+                loggedInCustomer.getCustomerId());
+
+        if (recordsUpdated > 0) {
+            Customer c = customerService.findCustomerById(loggedInCustomer.getCustomerId());
+
+
+            System.out.println("After update ");
+
+            System.out.println("Password" + c.getPassword());
+
+            modelAndView = new ModelAndView("profile", "logged_in_customer", c);
+        } else {
+            modelAndView = new ModelAndView("profile", "logged_in_customer", loggedInCustomer);
+        }
+
+        return modelAndView;
+    }
 
     @RequestMapping("/updateProfile")
     public ModelAndView updateProfile(@ModelAttribute("logged_in_customer") Customer loggedInCustomer, @ModelAttribute("Customer") Customer customer) {

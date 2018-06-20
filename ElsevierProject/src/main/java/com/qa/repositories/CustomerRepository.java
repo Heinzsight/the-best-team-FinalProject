@@ -22,6 +22,10 @@ public interface CustomerRepository extends CrudRepository<Customer, Integer> {
                               @Param("email") String email,
                               @Param("customerId") int customerId);
 
+    @Query("UPDATE Customer c set c.password = :password WHERE c.customerId = :customerId")
+    public int updatePassword(@Param("password") String password,
+                              @Param("customerId") int customerId);
+
 
 }
 
