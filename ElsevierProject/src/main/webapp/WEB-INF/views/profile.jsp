@@ -88,6 +88,27 @@
 
     </div>
 
+    <div class="row column">
+
+            <form action="/updatePassword" method="post">
+                <div class="medium-6">
+                    <h3> Change Password </h3>
+
+
+                    <label>First Name</label>
+                    <input type="text" placeholder="Enter Password" name="password" id="password"
+                           value="<%=c.getPassword() %>" />
+
+                </div>
+
+
+                <input type="submit" class="button create account" value="Update Password">
+
+            </form>
+
+
+        </div>
+
 
 </div>
 
