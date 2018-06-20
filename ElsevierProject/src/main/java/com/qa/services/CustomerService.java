@@ -26,14 +26,10 @@ public class CustomerService {
     public int updateCustomer(String firstName,
                               String lastName,
                               String email,
+                              String password,
                               int customerId) {
 
-        return customerRepository.updateCustomer(firstName, lastName, email, customerId);
-    }
-
-    public int updatePassword(String password, int customerId) {
-
-        return customerRepository.updatePassword(password, customerId);
+        return customerRepository.updateCustomer(firstName, lastName, email, password, customerId);
     }
 
 

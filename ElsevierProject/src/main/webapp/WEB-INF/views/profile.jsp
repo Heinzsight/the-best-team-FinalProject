@@ -37,7 +37,6 @@
 
             <li><a href="/profile">Personal Details</a></li>
             <li><a href="/addressBook">Address Book</a></li>
-            <li><a href="/update_password">Change Password </a></li>
             <li><a href="#">Order History </a></li>
             <li><a href="/logout">Logout</a></li>
             <li class="has-submenu">
@@ -76,8 +75,11 @@
                 <input type="text" placeholder="Enter Last Name" name="lastName" id="lastName"
                        value="<%=c.getLastName()%>" required/>
                 <label>Email</label>
-                <input type="email" placeholder="Enter Email" name="email" id="email" value="<%=c.getEmail()%>" required/>
-
+                <input type="email" placeholder="Enter Email" name="email" id="email"
+                       value="<%=c.getEmail()%>" required/>
+                <label>Password</label>
+                <input type="text" placeholder="Enter Password" name="password" id="password"
+                       value="<%=c.getPassword() %>" />
             </div>
 
 
@@ -87,27 +89,6 @@
 
 
     </div>
-
-    <div class="row column">
-
-            <form action="/updatePassword" method="post">
-                <div class="medium-6">
-                    <h3> Change Password </h3>
-
-
-                    <label>First Name</label>
-                    <input type="text" placeholder="Enter Password" name="password" id="password"
-                           value="<%=c.getPassword() %>" />
-
-                </div>
-
-
-                <input type="submit" class="button create account" value="Update Password">
-
-            </form>
-
-
-        </div>
 
 
 </div>
