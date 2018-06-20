@@ -103,6 +103,14 @@
             </select>
         </label>
 
+        <label>Would you like to rent or buy the book?
+            <select>
+                <option value="">-- Select --</option>
+                <option value="rent">Rent</option>
+                <option value="buy">Buy</option>
+            </select>
+        </label>
+
 
         <a href="/addToCart?bookId=<%=book.getBookId()%>" class="button large expanded">Add to Cart</a>
 
