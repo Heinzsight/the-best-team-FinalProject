@@ -33,7 +33,7 @@
     <div class="top-bar-left">
         <ul class="menu">
             <li class="menu-text" style="color:red">Online Shopping</li>
-            <li><a href="#">Home</a></li>
+            <li><a href="/">Home</a></li>
 
         </ul>
     </div>
@@ -206,7 +206,6 @@
     <ul class="menu">
         <li>Online Shopping</li>
         <li><a href="/">Home</a></li>
-        <li><a href="#">About</a></li>
         <li><a href="#">Contact</a></li>
         <li class="float-right">Copyright 2017</li>
     </ul>
