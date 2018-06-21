@@ -37,31 +37,25 @@
 </div>
 <!-- End Top Bar -->
 
-<div class="callout large">
-    <div class="row column">
-
-
-        <div class="medium-6">
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
             <h3> Please login using your stored credentials </h3>
-
             <form action="loginProcess" method="post">
+                <div class="form-group-lg">
+                    <label>Email</label>
+                    <input class='form-control' type="email" placeholder="Enter email" name="email" id="email" required/>
+                </div>
+                <div class="form-group-lg">
+                    <label>Password</label>
+                    <input class='form-control' type="password" placeholder="Enter Password" name="password" id="password" required/>
+                </div>
 
-                <label>Email * </label>
-                <input type="email" placeholder="Enter email" name="email" id="email" required/>
-                <label>Password * </label>
-                <input type="password" placeholder="Enter Password" name="password" id="password" required/>
-                <input type="submit" class="button expanded" value="Login">
-
+                <input type="submit" class="btn btn-primary btn-lg btn-block" value="Login">
+                <br>
+                <p> New to Better Books? </p> <a href="/register" class="btn btn-primary btn-lg btn-block">Register</a>
             </form>
         </div>
-
-        <div class="medium-6">
-
-            <p> New Customer? </p> <a href="/register" class="button large expanded">Register</a>
-
-        </div>
-
-
     </div>
 </div>
 
