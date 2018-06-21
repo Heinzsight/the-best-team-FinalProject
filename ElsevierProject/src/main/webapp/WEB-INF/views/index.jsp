@@ -58,28 +58,6 @@
         <!-- End Header -->
 
         <!-- Main Content -->
-        <section id="featured">
-        	<!-- start slider -->
-        	<div class="container">
-        		<div class="row">
-        			<div class="col-lg-12">
-        				<!-- Slider -->
-        				<div id="main-slider" class="flexslider">
-        					<ul class="slides">
-        						<li>
-        							<div class="flex-caption">
-        								<h3>Slider</h3>
-        								<p>Duis fermentum auctor ligula ac malesuada. Mauris et metus odio, in pulvinar urna</p>
-        									<a href="#" class="btn btn-theme">Learn More</a>
-        							</div>
-        						</li>
-        					</ul>
-        				</div>
-        				<!-- end slider -->
-        			</div>
-        		</div>
-        	</div>
-        </section>
         <div class="container">
             <div class="row">
                 <%
@@ -145,9 +123,9 @@
         					<div class="col-lg-3">
         					    <div class="widget">
                                     <ul class="social-network">
-                                        <li><a href="#" data-placement="top" title="Facebook"><i class="fa fa-facebook"></i></a></li>
-                                    	<li><a href="#" data-placement="top" title="Twitter"><i class="fa fa-twitter"></i></a></li>
-                                    	<li><a href="#" data-placement="top" title="Google plus"><i class="fa fa-google-plus"></i></a></li>
+                                        <li><a href="#" data-placement="top" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+                                    	<li><a href="#" data-placement="top" title="Twitter"><i class="fab fa-twitter"></i>></a></li>
+                                    	<li><a href="#" data-placement="top" title="Instagram"><i class="fab fa-instagram"></i></a></li>
                                     </ul>
                                 </div>
                             </div>
