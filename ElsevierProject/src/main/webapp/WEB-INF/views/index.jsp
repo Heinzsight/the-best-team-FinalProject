@@ -42,8 +42,8 @@
                     			    <li><a href="#">Genres</a></li>
                     		    </ul>
                     	    </li>
-                            <li><a href="#">About</a></li>
-                            <li><a href="#">Contact</a></li>
+                            <li><a href="/about">About</a></li>
+                            <li><a href="/about">Contact</a></li>
                             <li><a href="/login"> Register | Login </a></li>
                             <li>
                                 <a href="/viewCart"><i class="fas fa-shopping-cart"></i></a>
@@ -87,7 +87,7 @@
                 </div>
                 <div class="col-sm-4">
                     <% for (Book book : books) { %>
-                        <a href="/bookDetails?bookId=<%=book.getBookId()%>"><img class="img-responsive" style="max-height:100px, max-width:100px" src="<%=book.getBookImage()%>"></a>
+                        <a href="/bookDetails?bookId=<%=book.getBookId()%>"><img class="img-responsive" style="max-height:100px;max-width:100px" src="<%=book.getBookImage()%>"></a>
                         <h5><%= book.getTitle()%></h5>
                         <p>$<%= book.getPrice()%></p>
                         <a href="/bookDetails?bookId=<%=book.getBookId()%>" class="button expanded">View book details</a>
