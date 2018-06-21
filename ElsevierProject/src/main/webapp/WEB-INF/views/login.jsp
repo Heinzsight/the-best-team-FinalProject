@@ -29,8 +29,8 @@
                     <li><a href="/login">Register | Login</a></li>
                 </ul>
             </li>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="/about">About Us</a></li>
+            <li><a href="/about">Contact</a></li>
         </ul>
 
     </div>
