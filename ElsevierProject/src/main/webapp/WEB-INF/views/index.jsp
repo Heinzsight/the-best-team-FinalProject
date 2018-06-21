@@ -3,79 +3,154 @@
 <html class="no-js" lang="en">
 <head>
     <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Online Shopping</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Better Books</title>
+
+<!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css"/>
+<!-- Custom fonts for this template -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/flexslider.css"/>
+    <link rel="stylesheet" href="css/wrapper.css"/>
+<!-- Custom styles for this template -->
+    <link rel="stylesheet" href="css/index-style.css"/>
 </head>
+
 <body>
-<!-- Start Top Bar -->
-<div class="top-bar">
-    <div class="top-bar-left">
-        <ul class="menu">
-            <li class="menu-text" style="color:red">Online Shopping</li>
-            <li><a href="#">Home</a></li>
-
-        </ul>
-    </div>
-    <div class="top-bar-right">
-
-        <ul class="dropdown menu" data-dropdown-menu>
-
-            <li class="has-submenu">
-                <a href="/viewCart"><img src="images/cart.jpg" width="50" height="50"/></a>
-                <ul class="submenu menu vertical" data-submenu>
-                    <li><a href="/viewCart"><img src="images/cart.jpg" width="50" height="50"/></a></li>
-                    <li><a href="/login">Register | Login</a></li>
-                </ul>
-            </li>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-
-    </div>
-</div>
-<!-- End Top Bar -->
-
-<div class="row column text-center">
-    <h2>Our Newest Books
-
-
-        <%
-            Iterable<Book> books = (Iterable<Book>) session.getAttribute("books");
-
-        %>
-
-
-    </h2>
+    <div id="wrapper">
+        <!-- Navigation -->
+        <header>
+            <div class="navbar navbar-default navbar-static-top">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            Menu<i class="fa fa-bars"></i>
+                        </button>
+                        <a class="navbar-brand" href="">Better Books</a>
+                    </div>
+                    <div class="collapse navbar-collapse">
+                        <ul class="nav navbar-nav">
+                            <li class="active"><a href="index.html">Home</a></li>
+                            <li class="dropdown">
+                    	        <a href="#" class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false">Features <b class=" icon-angle-down"></b></a>
+                    		    <ul class="dropdown-menu">
+                    			    <li><a href="#">Just In</a></li>
+                    			    <li><a href="#">All-Time Faves</a></li>
+                    			    <li><a href="#">Bestselling</a></li>
+                    			    <li><a href="#">Genres</a></li>
+                    		    </ul>
+                    	    </li>
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Contact</a></li>
+                            <li><a href="/login"> Register | Login </a></li>
+                            <li>
+                                <a href="/viewCart"><i class="fas fa-shopping-cart"></i></a>
+                                <a href="/viewCart"><i class="fas fa-shopping-basket"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
     <hr>
-</div>
+        <!-- End Header -->
 
-<div class="row small-up-2 large-up-4">
+        <!-- Main Content -->
+        <section id="featured">
+        	<!-- start slider -->
+        	<div class="container">
+        		<div class="row">
+        			<div class="col-lg-12">
+        				<!-- Slider -->
+        				<div id="main-slider" class="flexslider">
+        					<ul class="slides">
+        						<li>
+        							<div class="flex-caption">
+        								<h3>Slider</h3>
+        								<p>Duis fermentum auctor ligula ac malesuada. Mauris et metus odio, in pulvinar urna</p>
+        									<a href="#" class="btn btn-theme">Learn More</a>
+        							</div>
+        						</li>
+        					</ul>
+        				</div>
+        				<!-- end slider -->
+        			</div>
+        		</div>
+        	</div>
+        </section>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4">
+                      <p><% Iterable<Book> books = (Iterable<Book>) session.getAttribute("books"); %> </p>
+                </div>
+                <div class="col-sm-4">
+                    <% for (Book book : books) { %>
+                        <a href="/bookDetails?bookId=<%=book.getBookId()%>"><img class="img-responsive" style="max-height:100px, max-width:100px" src="<%=book.getBookImage()%>"></a>
+                        <h5><%= book.getTitle()%></h5>
+                        <p>$<%= book.getPrice()%></p>
+                        <a href="/bookDetails?bookId=<%=book.getBookId()%>" class="button expanded">View book details</a>
+                        <!--  a href="/addToCart?bookId=" class="button expanded">Add to Cart</a>-->
+                    <% } %>
+                </div>
+            </div>
+        </div>
+    <hr>
 
-    <%
+    <hr>
+        <div class="container">
+            <div class="row">
+                <div class="column">
+                    <p>Cool stuff here, too!</p>
 
-        for (Book book : books) {
+                </div>
+            </div>
+        </div>
 
-
-    %>
-    <div class="column">
-
-        <a href="/bookDetails?bookId=<%=book.getBookId()%>"><img class="thumbnail" src="<%=book.getBookImage()%>"></a>
-        <h5><%= book.getTitle()%>
-        </h5>
-        <p>$<%= book.getPrice()%>
-        </p>
-        <a href="/bookDetails?bookId=<%=book.getBookId()%>" class="button expanded">View book details</a>
-        <!--  a href="/addToCart?bookId=" class="button expanded">Add to Cart</a>-->
+    <hr>
     </div>
+    <!-- End Main Content -->
 
-    <%
-        }
-    %>
-</div>
+        <footer>
+        			<div class="container">
+        				<div class="row">
+        					<div class="col-lg-3">
+        						<div class="widget">
+        							<h5 class="widgetheading">Get in touch with us</h5>
+        							<ul class="link-list">
+                                        <li><a href="#">Just In</a></li>
+                                        <li><a href="#">All-Time Faves</a></li>
+                                        <li><a href="#">Bestselling</a></li>
+                                        <li><a href="#">Genres</a></li>
+                                    </ul>
+        						</div>
+        					</div>
+        					<div class="col-lg-3">
+        						<div class="widget">
+        							<h5 class="widgetheading">Pages</h5>
+        							<ul class="link-list">
+        								<li><a href="#">About</a></li>
+        								<li><a href="#">Contact</a></li>
+        								<li><a href="#">FAQs</a></li>
+        								<li><a href="#">Order</a></li>
+        							</ul>
+        						</div>
+        					</div>
+        					<div class="col-lg-3">
+        					    <div class="widget">
+                                    <ul class="social-network">
+                                        <li><a href="#" data-placement="top" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                                    	<li><a href="#" data-placement="top" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                                    	<li><a href="#" data-placement="top" title="Google plus"><i class="fa fa-google-plus"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+        				</div>
+        			</div>
+        		</footer>
 
-<hr>
+
 
 <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 <script src="js/elsevier.js"></script>
