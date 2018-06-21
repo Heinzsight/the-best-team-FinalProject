@@ -10,8 +10,20 @@
     <link href='https://fonts.googleapis.com/css?family=Abril Fatface' rel='stylesheet'>
     <style>
         h1 {
-            font-family: 'Abril Fatface';font-size: 36px;
+            font-family: 'Abril Fatface';
+            font-size: 36px;
         }
+
+        h6 {
+            font-family: 'Abril Fatface';
+            font-size: 24px;
+        }
+
+        .center_div {
+            margin: 0 auto;
+            width: 80% /* value of your choice which suits your alignment */
+        }
+
     </style>
 
 
@@ -114,10 +126,86 @@
     rutrum sit amet sed
     leo.
 
-
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
 </h4>
 
+<div >
+    <h6 align="center">Contact Us</h6>
+    <div style="margin-left:400px">
+        <!-- Special version of Bootstrap that only affects content wrapped in .bootstrap-iso -->
+        <link rel="stylesheet" href="https://formden.com/static/cdn/bootstrap-iso18.css"/>
 
+        <!-- Inline CSS based on choices in "Settings" tab -->
+        <style>.bootstrap-iso .formden_header h2, .bootstrap-iso .formden_header p, .bootstrap-iso form {
+            font-family: Arial, Helvetica, sans-serif;
+            color: black
+        }
+
+        .bootstrap-iso form button, .bootstrap-iso form button:hover {
+            color: white !important;
+        }
+
+        .asteriskField {
+            color: red;
+        }</style>
+
+        <!-- HTML Form (wrapped in a .bootstrap-iso div) -->
+        <div class="bootstrap-iso">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-6-offset-4">
+                        <form method="post">
+                            <div class="form-group ">
+                                <label class="control-label " for="name">
+                                    Name
+                                </label>
+                                <input class="form-control" id="name" name="name" type="text"/>
+                            </div>
+                            <div class="form-group ">
+                                <label class="control-label requiredField" for="email">
+                                    Email
+                                    <span class="asteriskField">
+        *
+       </span>
+                                </label>
+                                <input class="form-control" id="email" name="email" type="text"/>
+                            </div>
+                            <div class="form-group ">
+                                <label class="control-label " for="subject1">
+                                    Subject
+                                </label>
+                                <input class="form-control" id="subject1" name="subject1" type="text"/>
+                            </div>
+                            <div class="form-group ">
+                                <label class="control-label requiredField" for="message">
+                                    Message
+                                    <span class="asteriskField">
+        *
+       </span>
+                                </label>
+                                <textarea class="form-control" cols="40" id="message" name="message"
+                                          rows="10"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <div>
+                                    <button type="button" class="btn btn-outline-dark">Submit</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
 
 <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 <script src="js/elsevier2.js"></script>
