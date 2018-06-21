@@ -108,7 +108,7 @@
             </div>
         </div>
     <hr>
-    </div>
+
     <!-- End Main Content -->
 
         <footer>
@@ -148,7 +148,7 @@
         				</div>
         			</div>
         		</footer>
-
+    </div>
 
 
 <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
