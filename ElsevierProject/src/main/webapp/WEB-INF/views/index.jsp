@@ -58,42 +58,27 @@
         <!-- End Header -->
 
         <!-- Main Content -->
-        <section id="featured">
-        	<!-- start slider -->
-        	<div class="container">
-        		<div class="row">
-        			<div class="col-lg-12">
-        				<!-- Slider -->
-        				<div id="main-slider" class="flexslider">
-        					<ul class="slides">
-        						<li>
-        							<div class="flex-caption">
-        								<h3>Slider</h3>
-        								<p>Duis fermentum auctor ligula ac malesuada. Mauris et metus odio, in pulvinar urna</p>
-        									<a href="#" class="btn btn-theme">Learn More</a>
-        							</div>
-        						</li>
-        					</ul>
-        				</div>
-        				<!-- end slider -->
-        			</div>
-        		</div>
-        	</div>
-        </section>
         <div class="container">
             <div class="row">
-                <div class="col-sm-4">
-                      <p><% Iterable<Book> books = (Iterable<Book>) session.getAttribute("books"); %> </p>
-                </div>
-                <div class="col-sm-4">
-                    <% for (Book book : books) { %>
-                        <a href="/bookDetails?bookId=<%=book.getBookId()%>"><img class="img-responsive" style="max-height:100px;max-width:100px" src="<%=book.getBookImage()%>"></a>
+
+                <%
+                Iterable<Book> books = (Iterable<Book>) session.getAttribute("books");
+                int i = 0;
+                for (Book book : books) {
+                    if (i >= 4) {
+                        break;
+                    } else {
+                        i++;
+                    }
+                %>
+                    <div class="col-sm-3">
+                        <a href="/bookDetails?bookId=<%=book.getBookId()%>"><img class="img-responsive" style="max-height:100px, max-width:100px" src="<%=book.getBookImage()%>"></a>
                         <h5><%= book.getTitle()%></h5>
                         <p>$<%= book.getPrice()%></p>
                         <a href="/bookDetails?bookId=<%=book.getBookId()%>" class="button expanded">View book details</a>
                         <!--  a href="/addToCart?bookId=" class="button expanded">Add to Cart</a>-->
-                    <% } %>
-                </div>
+                    </div>
+                <% } %>
             </div>
         </div>
     <hr>
@@ -139,9 +124,9 @@
         					<div class="col-lg-3">
         					    <div class="widget">
                                     <ul class="social-network">
-                                        <li><a href="#" data-placement="top" title="Facebook"><i class="fa fa-facebook"></i></a></li>
-                                    	<li><a href="#" data-placement="top" title="Twitter"><i class="fa fa-twitter"></i></a></li>
-                                    	<li><a href="#" data-placement="top" title="Google plus"><i class="fa fa-google-plus"></i></a></li>
+                                        <li><a href="#" data-placement="top" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+                                    	<li><a href="#" data-placement="top" title="Twitter"><i class="fab fa-twitter"></i></a></li>
+                                    	<li><a href="#" data-placement="top" title="Instagram"><i class="fab fa-instagram"></i></a></li>
                                     </ul>
                                 </div>
                             </div>
