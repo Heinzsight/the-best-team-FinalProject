@@ -82,18 +82,24 @@
         </section>
         <div class="container">
             <div class="row">
-                <div class="col-sm-4">
-                      <p><% Iterable<Book> books = (Iterable<Book>) session.getAttribute("books"); %> </p>
-                </div>
-                <div class="col-sm-4">
-                    <% for (Book book : books) { %>
+                <%
+                Iterable<Book> books = (Iterable<Book>) session.getAttribute("books");
+                int i = 0;
+                for (Book book : books) {
+                    if (i >= 4) {
+                        break;
+                    } else {
+                        i++;
+                    }
+                %>
+                    <div class="col-sm-3">
                         <a href="/bookDetails?bookId=<%=book.getBookId()%>"><img class="img-responsive" style="max-height:100px, max-width:100px" src="<%=book.getBookImage()%>"></a>
                         <h5><%= book.getTitle()%></h5>
                         <p>$<%= book.getPrice()%></p>
                         <a href="/bookDetails?bookId=<%=book.getBookId()%>" class="button expanded">View book details</a>
                         <!--  a href="/addToCart?bookId=" class="button expanded">Add to Cart</a>-->
-                    <% } %>
-                </div>
+                    </div>
+                <% } %>
             </div>
         </div>
     <hr>

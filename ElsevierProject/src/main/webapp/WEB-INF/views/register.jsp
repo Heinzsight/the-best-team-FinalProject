@@ -37,7 +37,7 @@
 </div>
 <!-- End Top Bar -->
 
-<div class="callout large">
+<div class="container-fluid">
     <div class="row column">
 
         <form action="/registerProcess" method="post">
