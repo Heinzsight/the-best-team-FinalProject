@@ -160,6 +160,7 @@ public class CustomerController {
 
             modelAndView = new ModelAndView("profile", "logged_in_customer", c);
         } else {
+            System.out.println("failed to update");
             modelAndView = new ModelAndView("profile", "logged_in_customer", loggedInCustomer);
         }
 
