@@ -124,7 +124,7 @@
         					    <div class="widget">
                                     <ul class="social-network">
                                         <li><a href="#" data-placement="top" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
-                                    	<li><a href="#" data-placement="top" title="Twitter"><i class="fab fa-twitter"></i>></a></li>
+                                    	<li><a href="#" data-placement="top" title="Twitter"><i class="fab fa-twitter"></i></a></li>
                                     	<li><a href="#" data-placement="top" title="Instagram"><i class="fab fa-instagram"></i></a></li>
                                     </ul>
                                 </div>
