@@ -72,15 +72,17 @@ public class CustomerControllerTests {
     }
 
     @Test
-    public void updateUserTest() throws Exception{
+    public void registerUserFailTest() throws Exception{
         Customer chad = new Customer();
         chad.setCustomerId(4);
         chad.setEmail("chad@gmail.com");
         chad.setFirstName("Chad");
         chad.setLastName("Whitman");
         chad.setPassword("IamTheBest");
-        MvcResult result = this.mockMvc.perform(post("/updateProfile").sessionAttr("logged_in_customer", chad)).andDo(print()).andExpect(status()
+        MvcResult result = this.mockMvc.perform(post("/registerProcess").flashAttr("Customer", chad)).andDo(print()).andExpect(status()
                 .isOk()).andReturn();
+        String content = result.getModelAndView().getViewName();
+        assertEquals(content, "registration_failed");
     }
 
 }
