@@ -30,7 +30,7 @@
                 </ul>
             </li>
             <li><a href="/about">About Us</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="/about">Contact</a></li>
         </ul>
 
     </div>

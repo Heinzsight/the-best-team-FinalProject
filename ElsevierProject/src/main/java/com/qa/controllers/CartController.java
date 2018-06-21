@@ -1,7 +1,10 @@
 package com.qa.controllers;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.Map;
@@ -32,14 +35,16 @@ public class CartController {
     }
 
 
-    @RequestMapping(value="/about", method = RequestMethod.GET)
-    public String redirect() {
-        return"redirect:/about";
+    @RequestMapping(value="/about")
+    public String aboutUs() {
+
+        //System.out.println("Getting here!!!");
+        return "about";
     }
 
-//    @RequestMapping(value = "/staticPage", method = RequestMethod.GET)
+//    @RequestMapping(value = "/about", method = RequestMethod.GET)
 //    public String about() {
-//        return "redirect:/pages/final.htm";
+//        return "redirect:/about.jsp";
 //    }
 
 }
