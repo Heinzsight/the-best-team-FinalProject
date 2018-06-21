@@ -134,7 +134,7 @@ public class CustomerController {
 
         System.out.println("Before update ");
 
-        System.out.println("ID " + loggedInCustomer.getCustomerId());
+        System.out.println("ID" + loggedInCustomer.getCustomerId());
         System.out.println("Name" + loggedInCustomer.getFirstName());
         System.out.println("Email" + loggedInCustomer.getEmail());
         System.out.println("Password" + loggedInCustomer.getPassword());
