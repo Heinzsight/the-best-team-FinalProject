@@ -19,12 +19,8 @@ import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMock
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.RequestBuilder;
 import org.springframework.transaction.annotation.Transactional;
-<<<<<<< HEAD
-import org.springframework.web.bind.annotation.ModelAttribute;
-import com.qa.models.Customer;
-=======
+
 import org.springframework.web.servlet.View;
->>>>>>> 153a7741dbdf2eb28c40ba690c8c6ac62b52650b
 
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.mock;
@@ -74,7 +70,7 @@ public class CustomerControllerTests {
         String content = result.getModelAndView().getViewName();
         assertEquals(content, "index");
     }
-    
+
     @Test
     public void updateUserTest() throws Exception{
         Customer chad = new Customer();
