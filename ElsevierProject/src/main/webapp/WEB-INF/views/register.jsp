@@ -45,20 +45,20 @@
                 <h3> Create an account </h3>
 
 
-                <label>Firstname * </label>
-                <input type="text" placeholder="Enter firstname" name="firstName" id="firstName"/>
-                <label>Lastname * </label>
-                <input type="text" placeholder="Enter lastname" name="lastName" id="lastName"/>
-                <label>Email ID * </label>
-                <input type="text" placeholder="Enter email" name="email" id="email"/>
-                <label>Password * </label>
-                <input type="password" placeholder="Enter Password" name="password" id="password"/>
+                <label>First Name *</label>
+                <input type="text" placeholder="Enter First Name" name="firstName" id="firstName" required/>
+                <label>Last Name *</label>
+                <input type="text" placeholder="Enter Last Name" name="lastName" id="lastName" required/>
+                <label>Email *</label>
+                <input type="email" placeholder="Enter Email" name="email" id="email" required/>
+                <label>Password *</label>
+                <input type="password" placeholder="Enter Password" name="password" id="password" required/>
 
             </div>
 
             <div class="medium-6">
 
-                <input type="checkbox" name="aggreement"/> I have read and understood the
+                <input type="checkbox" name="agreement"/> I have read and understood the
                 <a href="/registered_user_agreement">Registered User Agreement </a> and agree to be bound by all of its
                 terms.
 

@@ -17,7 +17,7 @@
 <!-- Custom styles for this template -->
     <link rel="stylesheet" href="css/index-style.css"/>
 </head>
-
+  
 <body>
     <div id="wrapper">
         <!-- Navigation -->
@@ -107,7 +107,6 @@
                 </div>
             </div>
         </div>
-
     <hr>
     </div>
     <!-- End Main Content -->

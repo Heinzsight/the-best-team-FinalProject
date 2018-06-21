@@ -35,4 +35,16 @@ public class CartController {
     }
 
 
+    @RequestMapping(value="/about")
+    public String aboutUs() {
+
+        //System.out.println("Getting here!!!");
+        return "about";
+    }
+
+//    @RequestMapping(value = "/about", method = RequestMethod.GET)
+//    public String about() {
+//        return "redirect:/about.jsp";
+//    }
+
 }

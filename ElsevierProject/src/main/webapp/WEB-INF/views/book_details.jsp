@@ -33,7 +33,7 @@
     <div class="top-bar-left">
         <ul class="menu">
             <li class="menu-text" style="color:red">Online Shopping</li>
-            <li><a href="#">Home</a></li>
+            <li><a href="/">Home</a></li>
 
         </ul>
     </div>
@@ -100,6 +100,14 @@
                 <option value="print">Paperback</option>
                 <option value="eBook">eBook</option>
                 <option value="printAndeBook">PrintBook & eBook</option>
+            </select>
+        </label>
+
+        <label>Would you like to rent or buy the book?
+            <select>
+                <option value="">-- Select --</option>
+                <option value="rent">Rent</option>
+                <option value="buy">Buy</option>
             </select>
         </label>
 
@@ -198,7 +206,6 @@
     <ul class="menu">
         <li>Online Shopping</li>
         <li><a href="/">Home</a></li>
-        <li><a href="#">About</a></li>
         <li><a href="#">Contact</a></li>
         <li class="float-right">Copyright 2017</li>
     </ul>
