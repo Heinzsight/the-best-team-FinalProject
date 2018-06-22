@@ -53,8 +53,8 @@
                     			    <li><a href="#">Genres</a></li>
                     		    </ul>
                     	    </li>
-                            <li><a href="#">About</a></li>
-                            <li><a href="#">Contact</a></li>
+                            <li><a href="/about">About</a></li>
+                            <li><a href="/about">Contact</a></li>
                             <li><a href="/login"> Register | Login </a></li>
                             <li><a href="/viewCart"><i class="fas fa-shopping-cart"></i></a></li>
                         </ul>
@@ -75,6 +75,7 @@
 
         </div>
             <div class="row">
+
                 <%
                 Iterable<Book> books = (Iterable<Book>) session.getAttribute("books");
                 int i = 0;
