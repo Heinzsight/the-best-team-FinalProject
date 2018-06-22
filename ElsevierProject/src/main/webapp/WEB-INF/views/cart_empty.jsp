@@ -22,41 +22,49 @@
 <body>
 
    <!-- Navigation -->
-        <header>
-            <div class="navbar navbar-default navbar-static-top">
-                <div class="container">
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                            Menu<i class="fa fa-bars"></i>
-                        </button>
-                        <a class="navbar-brand" href="">Better Books</a>
-                    </div>
-                    <div class="collapse navbar-collapse">
-                        <ul class="nav navbar-nav">
-                            <li class="active"><a href="/">Home</a></li>
-                            <li class="dropdown">
-                    	        <a href="#" class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false">Features <b class=" icon-angle-down"></b></a>
-                    		    <ul class="dropdown-menu">
-                    			    <li><a href="#">Just In</a></li>
-                    			    <li><a href="#">All-Time Faves</a></li>
-                    			    <li><a href="#">Bestselling</a></li>
-                    			    <li><a href="#">Genres</a></li>
-                    		    </ul>
-                    	    </li>
-                            <li><a href="#">About</a></li>
-                            <li><a href="#">Contact</a></li>
-                            <li><a href="/login"> Register | Login </a></li>
-                            <li>
-                                <a href="/viewCart"><i class="fas fa-shopping-cart"></i></a>
-                                <a href="/viewCart"><i class="fas fa-shopping-basket"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </header>
-    <hr>
-        <!-- End Header -->
+           <header>
+               <div class="navbar navbar-default navbar-static-top">
+                   <div class="container">
+                       <div class="navbar-header">
+                           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                               <i class="fas fa-bars"></i>
+                           </button>
+                           <img src="images/cart.jpg" alt="Butter Books logo" class="img-thumbnail pull-left" width="50" height="50"/>
+                           <a class="navbar-brand" href="">Butter Books</a>
+                       </div>
+                       <form style="max-width:500px;">
+                         <div class="input-group">
+                           <input type="text" class="form-control input-sm" placeholder="Search">
+                           <div class="input-group-btn">
+                             <button class="btn btn-default" type="submit">
+                               <i class="glyphicon glyphicon-search"></i>
+                             </button>
+                           </div>
+                         </div>
+                       </form>
+                       <div class="collapse navbar-collapse">
+                           <ul class="nav navbar-nav">
+                               <li class="active"><a href="index.html">Home</a></li>
+                               <li class="dropdown">
+                       	        <a href="#" class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false">Features <b class=" icon-angle-down"></b></a>
+                       		    <ul class="dropdown-menu">
+                       			    <li><a href="#">Just In</a></li>
+                       			    <li><a href="#">All-Time Faves</a></li>
+                       			    <li><a href="#">Bestselling</a></li>
+                       			    <li><a href="#">Genres</a></li>
+                       		    </ul>
+                       	    </li>
+                               <li><a href="#">About</a></li>
+                               <li><a href="#">Contact</a></li>
+                               <li><a href="/login"> Register | Login </a></li>
+                               <li><a href="/viewCart"><i class="fas fa-shopping-cart"></i></a></li>
+                           </ul>
+                       </div>
+                   </div>
+               </div>
+           </header>
+       <hr>
+           <!-- End Header -->
 
 <!-- Main Content -->
 

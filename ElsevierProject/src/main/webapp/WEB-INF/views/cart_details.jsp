@@ -17,6 +17,7 @@
         <link rel="stylesheet" href="css/wrapper.css"/>
     <!-- Custom styles for this template -->
         <link rel="stylesheet" href="css/index-style.css"/>
+        <link href="css/cart_details-style.css" rel="stylesheet">
 
 
         </style>
@@ -55,13 +56,24 @@
                 <div class="container">
                     <div class="navbar-header">
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                            Menu<i class="fa fa-bars"></i>
+                            <i class="fas fa-bars"></i>
                         </button>
-                        <a class="navbar-brand" href="">Better Books</a>
+                        <img src="images/cart.jpg" alt="Butter Books logo" class="img-thumbnail pull-left" width="50" height="50"/>
+                        <a class="navbar-brand" href="">Butter Books</a>
                     </div>
+                    <form style="max-width:500px;">
+                      <div class="input-group">
+                        <input type="text" class="form-control input-sm" placeholder="Search">
+                        <div class="input-group-btn">
+                          <button class="btn btn-default" type="submit">
+                            <i class="glyphicon glyphicon-search"></i>
+                          </button>
+                        </div>
+                      </div>
+                    </form>
                     <div class="collapse navbar-collapse">
                         <ul class="nav navbar-nav">
-                            <li class="active"><a href="index.html">Home</a></li>
+                            <li class="active"><a href="/">Home</a></li>
                             <li class="dropdown">
                     	        <a href="#" class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false">Features <b class=" icon-angle-down"></b></a>
                     		    <ul class="dropdown-menu">
@@ -74,10 +86,7 @@
                             <li><a href="#">About</a></li>
                             <li><a href="#">Contact</a></li>
                             <li><a href="/login"> Register | Login </a></li>
-                            <li>
-                                <a href="/viewCsart"><i class="fas fa-shopping-cart"></i></a>
-                                <a href="/viewCart"><i class="fas fa-shopping-basket"></i></a>
-                            </li>
+                            <li><a href="/viewCart"><i class="fas fa-shopping-cart"></i></a></li>
                         </ul>
                     </div>
                 </div>
@@ -88,125 +97,127 @@
 
 <!-- Main Content -->
 
-<span class="show-for-sr">Shopping Cart</span>
-
-<div class="row">
-    <div class="medium-6 columns">
-        <%
 
 
-            /* for(Book book : books)
-            {
-
-                int quantity = bookCounts.get(book.getBookId());
-                double price = book.getPrice();
-                totalPrice = book.getPrice() * quantity;
-                cartTotal = cartTotal + book.getPrice()*quantity;
-                System.out.println("Cart Total "+cartTotal);
-
-            } */
+<div class="container">
+    <div class="row">
+        <div class="medium-6 columns">
+            <%
 
 
-            int i = 0;
-            for (Book book : books) {
+                /* for(Book book : books)
+                {
 
-                int quantity = bookCounts.get(book.getBookId());
-                double price = book.getPrice();
-                totalPrice = book.getPrice() * quantity;
-                cartTotal = cartTotal + book.getPrice() * quantity;
-                System.out.println("Cart Total " + cartTotal);
+                    int quantity = bookCounts.get(book.getBookId());
+                    double price = book.getPrice();
+                    totalPrice = book.getPrice() * quantity;
+                    cartTotal = cartTotal + book.getPrice()*quantity;
+                    System.out.println("Cart Total "+cartTotal);
 
-        %>
+                } */
 
-        <img class="thumbnail" src="<%=book.getBookImage()%>"/>
-        <div class="row small-up-4">
 
-            <div class="column">
-                eBook ISBN : <%=book.geteBookISBN()%>
+                int i = 0;
+                for (Book book : books) {
+
+                    int quantity = bookCounts.get(book.getBookId());
+                    double price = book.getPrice();
+                    totalPrice = book.getPrice() * quantity;
+                    cartTotal = cartTotal + book.getPrice() * quantity;
+                    System.out.println("Cart Total " + cartTotal);
+
+            %>
+            <span class="col-md-offset-2">Shopping Cart</span> <!-- show-for-sr -->
+            <img class="thumbnail" src="<%=book.getBookImage()%>"/>
+            <div class="row small-up-4">
+
+                <div class="column">
+                    eBook ISBN : <%=book.geteBookISBN()%>
+                </div>
+                <div class="column">
+                    Print book ISBN <%=book.getPaperISBN()%>
+                </div>
+
+                <div class="column">
+
+                </div>
+                <div class="column">
+                    Published On <%=book.getPublishedDate()%>
+                </div>
+                <div class="column">
+                    <form name="f1">
+                        <input type="hidden" name="price" value="<%=price%>"/>
+                        <input type="hidden" name="cart_total" value="<%=cartTotal%>"/>
+                        Price <label id="price_label<%=i%>">$<%=totalPrice%>
+                    </label>
+                        <input type="hidden" name="cart_total" value="<%=price%>"/>
+                        Quantity <input type="number" min="1" name="quantity" value="<%=quantity%>"
+                                        oninput="calculateTotalPrice(price.value,this.value,price_label<%=i%>)"/>
+                    </form>
+                </div>
+
+
             </div>
-            <div class="column">
-                Print book ISBN <%=book.getPaperISBN()%>
+
+            <div class="row small-up-4">
+
+                <div class="column">
+                    <a href="/removeFromCart?bookId=<%=book.getBookId() %>"> Remove </a>
+                </div>
+
             </div>
 
-            <div class="column">
+            <hr>
+            <%
+                    i++;
+                }
+            %>
+
+        </div> <!-- End of first column -->
+        <div class="medium-6 large-5 columns">
+            <h3>Order Summary </h3>
+            <p></p>
+
+            <div class="row">
+                <div class="small-3 columns">
+                    <label for="middle-label" class="middle">Cart Total</label>
+                </div>
+                <div class="small-3 columns">
+                    <input type="hidden" name="order_total" id="cart_total" value="<%=cartTotal %>"/>
+                    <label for="middle-label" class="middle" id="cart_total_label">$<%=cartTotal %>
+                    </label>
+                </div>
 
             </div>
-            <div class="column">
-                Published On <%=book.getPublishedDate()%>
-            </div>
-            <div class="column">
-                <form name="f1">
-                    <input type="hidden" name="price" value="<%=price%>"/>
-                    <input type="hidden" name="cart_total" value="<%=cartTotal%>"/>
-                    Price <label id="price_label<%=i%>">$<%=totalPrice%>
-                </label>
-                    <input type="hidden" name="cart_total" value="<%=price%>"/>
-                    Quantity <input type="number" min="1" name="quantity" value="<%=quantity%>"
-                                    oninput="calculateTotalPrice(price.value,this.value,price_label<%=i%>)"/>
-                </form>
-            </div>
 
 
+            <div class="row">
+                <div class="small-3 columns">
+                    <label for="middle-label" class="middle">VAT </label>
+                </div>
+                <div class="small-3 columns">
+                    <label for="middle-label" class="middle">Applicable Tax </label>
+                </div>
+
+            </div>
+
+            <div class="row">
+                <div class="small-3 columns">
+                    <label for="middle-label" class="middle">Order Total </label>
+                </div>
+                <div class="small-3 columns">
+                    <input type="hidden" name="order_total" id="order_total" value="<%=cartTotal %>"/>
+                    <label for="middle-label" class="middle" id="order_total_label">$<%=cartTotal%>
+                    </label>
+                </div>
+
+            </div>
+
+            <form action="/checkout" method="post" id="checkout_form">
+                <input type="hidden" name="order_total" value="<%=cartTotal %>"/>
+                <input type="submit" class="button large expanded" value="Proceed to Checkout"/>
+            </form>
         </div>
-
-        <div class="row small-up-4">
-
-            <div class="column">
-                <a href="/removeFromCart?bookId=<%=book.getBookId() %>"> Remove </a>
-            </div>
-
-        </div>
-
-        <hr>
-        <%
-                i++;
-            }
-        %>
-
-    </div>
-    <div class="medium-6 large-5 columns">
-        <h3>Order Summary </h3>
-        <p></p>
-
-        <div class="row">
-            <div class="small-3 columns">
-                <label for="middle-label" class="middle">Cart Total</label>
-            </div>
-            <div class="small-3 columns">
-                <input type="hidden" name="order_total" id="cart_total" value="<%=cartTotal %>"/>
-                <label for="middle-label" class="middle" id="cart_total_label">$<%=cartTotal %>
-                </label>
-            </div>
-
-        </div>
-
-
-        <div class="row">
-            <div class="small-3 columns">
-                <label for="middle-label" class="middle">VAT </label>
-            </div>
-            <div class="small-3 columns">
-                <label for="middle-label" class="middle">Applicable Tax </label>
-            </div>
-
-        </div>
-
-        <div class="row">
-            <div class="small-3 columns">
-                <label for="middle-label" class="middle">Order Total </label>
-            </div>
-            <div class="small-3 columns">
-                <input type="hidden" name="order_total" id="order_total" value="<%=cartTotal %>"/>
-                <label for="middle-label" class="middle" id="order_total_label">$<%=cartTotal%>
-                </label>
-            </div>
-
-        </div>
-
-        <form action="/checkout" method="post" id="checkout_form">
-            <input type="hidden" name="order_total" value="<%=cartTotal %>"/>
-            <input type="submit" class="button large expanded" value="Proceed to Checkout"/>
-        </form>
     </div>
 </div>
 
