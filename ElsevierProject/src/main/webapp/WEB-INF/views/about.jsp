@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Shopping Cart | Week 3</title>
+    <title>About Us | Better Books</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/index-style.css">
     <link rel="stylesheet" href="css/wrapper.css">
@@ -60,7 +60,7 @@
     <!-- End Header -->
     <!--Add Banner -->
     <div>
-        <img src="https://www.changinghands.com/sites/changinghands.com/files/idealbookshelfBIGGEST.jpg" alt="book shelf" style="margin-left:75px; margin-right:75px" height="250px" width="1100px">
+        <img src="https://www.changinghands.com/sites/changinghands.com/files/idealbookshelfBIGGEST.jpg" alt="book shelf" height="250px" width="100%">
     </div>
     <!-- End Banner -->
 
@@ -68,7 +68,7 @@
 
     <h1 align="center"><b>The Better Book Mission</b></h1>
     <h2 align="center"><b>Let's read for a better tomorrow</b></h2>
-    <h4 align="left" style="margin-left:250px; margin-right:250px">
+    <h4 align="left" style="margin-left:30%; margin-right:30%">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi condimentum mi est, non facilisis nisi rutrum
         efficitur.
         Nulla facilisi. Duis consectetur, urna bibendum rhoncus molestie, diam arcu laoreet magna, non egestas risus sem sit
@@ -122,7 +122,7 @@
 
     <div >
         <h6 align="center">Contact Us</h6>
-        <div>
+        <div style="margin-left: 30%; margin-right: 30%">
             <!-- Special version of Bootstrap that only affects content wrapped in .bootstrap-iso -->
             <link rel="stylesheet" href="https://formden.com/static/cdn/bootstrap-iso18.css"/>
 
@@ -177,9 +177,9 @@
                                 <textarea class="form-control" cols="40" id="message" name="message"
                                           rows="10"></textarea>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group" align="center">
                                 <div>
-                                    <button type="button" class="btn btn-outline-dark">Submit</button>
+                                    <button type="button" class="btn btn-outline-dark" >Submit</button>
                                 </div>
                             </div>
                         </form>
