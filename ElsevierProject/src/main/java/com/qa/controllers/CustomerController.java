@@ -175,5 +175,12 @@ public class CustomerController {
         return modelAndView;
     }
 
+//    @RequestMapping("accountDetails")
+//    public ModelAndView accountDetails (@ModelAttribute("logged_in_customer") Customer loggedInCustomer) {
+//        ModelAndView modelAndView = new ModelAndView("address_book", "logged_in_customer", loggedInCustomer);
+//
+//        return modelAndView;
+//    }
+
 
 }
