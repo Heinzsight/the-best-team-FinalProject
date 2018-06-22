@@ -3,14 +3,17 @@
 <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>About Us | Better Books</title>
+    <title>About Us | Butter Books</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/index-style.css">
     <link rel="stylesheet" href="css/wrapper.css">
 
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
-    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+          integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet'
+          type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
+          rel='stylesheet' type='text/css'>
 
     <link rel="stylesheet" href="css/fonts.css">
 
@@ -36,7 +39,8 @@
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="/">Home</a></li>
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false">Features <b class=" icon-angle-down"></b></a>
+                            <a href="#" class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown"
+                               data-delay="0" data-close-others="false">Features <b class=" icon-angle-down"></b></a>
                             <ul class="dropdown-menu">
                                 <li><a href="#">Just In</a></li>
                                 <li><a href="#">All-Time Faves</a></li>
@@ -71,30 +75,38 @@
     <h4 align="left" style="margin-left:30%; margin-right:30%">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi condimentum mi est, non facilisis nisi rutrum
         efficitur.
-        Nulla facilisi. Duis consectetur, urna bibendum rhoncus molestie, diam arcu laoreet magna, non egestas risus sem sit
+        Nulla facilisi. Duis consectetur, urna bibendum rhoncus molestie, diam arcu laoreet magna, non egestas risus sem
+        sit
         amet risus.
         Praesent eu blandit urna. Vestibulum a orci quis dolor feugiat auctor. Mauris pretium velit vitae orci aliquam
         vehicula.
-        Pellentesque sed turpis ac arcu vestibulum fermentum. Duis sit amet posuere purus, ut tempus mauris. Nulla blandit,
-        mauris non vehicula varius, augue nunc pulvinar nibh, in tristique arcu augue id turpis. Proin rutrum lobortis leo,
+        Pellentesque sed turpis ac arcu vestibulum fermentum. Duis sit amet posuere purus, ut tempus mauris. Nulla
+        blandit,
+        mauris non vehicula varius, augue nunc pulvinar nibh, in tristique arcu augue id turpis. Proin rutrum lobortis
+        leo,
         ut blandit
         lorem pellentesque at. Pellentesque vitae arcu ante. Donec egestas facilisis urna, in dictum nunc viverra vitae.
         <br><br>Donec vel
-        condimentum dui, suscipit sollicitudin libero. Ut placerat varius lorem, et auctor odio vulputate quis. Sed ut nisl
+        condimentum dui, suscipit sollicitudin libero. Ut placerat varius lorem, et auctor odio vulputate quis. Sed ut
+        nisl
         ex. Curabitur
         nisi elit, tincidunt eget ornare eget, molestie non mi. Aliquam sodales, ante sed maximus bibendum, leo nunc
         facilisis dolor, vel
         tristique libero nulla posuere turpis. Nulla eget porta eros. Donec in iaculis mauris, condimentum sollicitudin
         arcu. Sed sed
-        lectus risus. Pellentesque sagittis rhoncus velit sit amet molestie. Donec ut purus sed nunc sollicitudin cursus.
+        lectus risus. Pellentesque sagittis rhoncus velit sit amet molestie. Donec ut purus sed nunc sollicitudin
+        cursus.
         <br><br>Nullam sem massa,
-        luctus molestie erat id, elementum porttitor libero. Donec viverra lacus non justo luctus molestie. Cras non nisl
+        luctus molestie erat id, elementum porttitor libero. Donec viverra lacus non justo luctus molestie. Cras non
+        nisl
         laoreet,
         placerat leo ac, bibendum dui. Vivamus tincidunt enim sed erat fringilla semper eu eu mi. Vestibulum ante ipsum
         primis in
-        faucibus orci luctus et ultrices posuere cubilia Curae; Morbi scelerisque suscipit porta. Nam id orci pretium enim
+        faucibus orci luctus et ultrices posuere cubilia Curae; Morbi scelerisque suscipit porta. Nam id orci pretium
+        enim
         auctor suscipit.
-        Sed ullamcorper nibh dolor, ac ornare metus auctor sed. Curabitur id vehicula quam, et tincidunt quam. Aenean vitae
+        Sed ullamcorper nibh dolor, ac ornare metus auctor sed. Curabitur id vehicula quam, et tincidunt quam. Aenean
+        vitae
         dapibus nunc.
         Nullam sollicitudin bibendum enim a ultrices. Praesent sollicitudin urna ante. Nulla facilisi. <br><br>Fusce ac
         lacus ut nisl suscipit
@@ -112,15 +124,19 @@
         leo.Lorem ipsum
         dolor sit amet, consectetur adipiscing elit. Praesent eu sodales arcu. Quisque eleifend, purus in imperdiet
         molestie,
-        lacus leo sodales quam, et aliquam ex justo a tortor. Fusce cursus vel nunc non sodales. Lorem ipsum dolor sit amet,
+        lacus leo sodales quam, et aliquam ex justo a tortor. Fusce cursus vel nunc non sodales. Lorem ipsum dolor sit
+        amet,
         consectetur
         adipiscing elit. Nunc eget massa a nisi facilisis vestibulum quis ac diam. Fusce at odio eget sapien ultricies
         rutrum sit amet sed
         leo.
 
     </h4>
-
-    <div >
+    <br>
+    <br>
+    <br>
+    <br>
+    <div>
         <h6 align="center">Contact Us</h6>
         <div style="margin-left: 30%; margin-right: 30%">
             <!-- Special version of Bootstrap that only affects content wrapped in .bootstrap-iso -->
@@ -179,14 +195,13 @@
                             </div>
                             <div class="form-group" align="center">
                                 <div>
-                                    <button type="button" class="btn btn-outline-dark" >Submit</button>
+                                    <button type="button" class="btn btn-outline-dark">Submit</button>
                                 </div>
                             </div>
                         </form>
                     </div>
                 </div>
             </div>
-
 
 
         </div>
@@ -222,9 +237,11 @@
                 <div class="col-lg-3">
                     <div class="widget">
                         <ul class="social-network">
-                            <li><a href="#" data-placement="top" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#" data-placement="top" title="Facebook"><i class="fa fa-facebook"></i></a>
+                            </li>
                             <li><a href="#" data-placement="top" title="Twitter"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#" data-placement="top" title="Google plus"><i class="fa fa-google-plus"></i></a></li>
+                            <li><a href="#" data-placement="top" title="Google plus"><i
+                                    class="fa fa-google-plus"></i></a></li>
                         </ul>
                     </div>
                 </div>
