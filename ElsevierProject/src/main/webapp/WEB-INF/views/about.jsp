@@ -34,7 +34,7 @@
                 </div>
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="index.html">Home</a></li>
+                        <li class="active"><a href="/">Home</a></li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false">Features <b class=" icon-angle-down"></b></a>
                             <ul class="dropdown-menu">
@@ -60,7 +60,7 @@
     <!-- End Header -->
     <!--Add Banner -->
     <div>
-        <img src="https://www.changinghands.com/sites/changinghands.com/files/idealbookshelfBIGGEST.jpg" alt="book shelf" height="250px" width="100%">
+        <img src="images/aboutBanner.jpg" alt="Butter Books logo" class="" width="100%" height="100%"/>
     </div>
     <!-- End Banner -->
 
