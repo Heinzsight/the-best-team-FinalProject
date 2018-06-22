@@ -19,10 +19,8 @@
         <link rel="stylesheet" href="css/index-style.css"/>
         <link href="css/cart_details-style.css" rel="stylesheet">
 
-        .col-md-5
-        {
-            background-color: blue;
-        {
+        <style>
+
 
         </style>
 
@@ -179,50 +177,52 @@
                 }
             %>
         <div class="col-md-3"> <!-- Beginning of 3rd column in row 2 -->
-                <h3>Order Summary </h3>
+                <h3>Summary </h3>
                 <p></p>
 
                 <div class="row">
-                    <div class="column">
-                    <form name="f2">
-                        <label for="middle-label" class="middle">Cart Total</label>
-                        <span><input type="hidden" name="order_total" id="cart_total" value="<%=cartTotal %>"/></span>
-                    </form>
-                    </div>
-                    <div class="small-3 columns">
-
+                    <div class="col-md-6">
+                        <label for="middle-label" class="middle">Subtotal</label>
+                     </div>
+                     <div class="col-md-6">
+                        <input type="hidden" name="order_total" id="cart_total" value="<%=cartTotal %>"/>
                         <label for="middle-label" class="middle" id="cart_total_label">$<%=cartTotal %>
-                        </label>
                     </div>
-
-                </div>
+                 </div>
 
 
                 <div class="row">
-                    <div class="small-3 columns">
-                        <label for="middle-label" class="middle">VAT </label>
+                    <div class="col-md-6">
+                        <label for="middle-label" class="middle">Shipping</label>
                     </div>
-                    <div class="small-3 columns">
-                        <label for="middle-label" class="middle">Applicable Tax </label>
+                    <div class="col-md-6">
+                        <!-- Need the Shipping amount here -->
+                        <label for="middle-label" class="middle"> Free </label>
                     </div>
 
+                    <div class="col-md-6">
+                        <label for="middle-label" class="middle">Tax </label>
+                    </div>
+                    <div class="col-md-6">
+                        <!-- Need the tax formula and output here -->
+                    </div>
                 </div>
 
-                <div class="row">
-                    <div class="small-3 columns">
-                        <label for="middle-label" class="middle">Order Total </label>
-                    </div>
-                    <div class="small-3 columns">
-                        <input type="hidden" name="order_total" id="order_total" value="<%=cartTotal %>"/>
-                        <label for="middle-label" class="middle" id="order_total_label">$<%=cartTotal%>
-                        </label>
-                    </div>
-
+                <div class="col-md-12">
+                    <hr>
                 </div>
+
+                <div class="col-md-6">
+                    <label for="middle-label" class="middle">Total </label>
+                </div>
+                <div class="col-md-6">
+                     <input type="hidden" name="order_total" id="order_total" value="<%=cartTotal %>"/>
+                     <label for="middle-label" class="middle" id="order_total_label">$<%=cartTotal%></label>
+                 </div>
 
                 <form action="/checkout" method="post" id="checkout_form">
                     <input type="hidden" name="order_total" value="<%=cartTotal %>"/>
-                    <input type="submit" class="button large expanded" value="Proceed to Checkout"/>
+                    <input type="submit" class="btn-lg buttonDetails" value="Checkout"/>
                 </form>
         </div> <!-- End of 3rd column in row 2 -->
     </div>
