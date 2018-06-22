@@ -19,17 +19,28 @@
 </head>
   
 <body>
-    <div id="wrapper">
+    <div>
         <!-- Navigation -->
         <header>
             <div class="navbar navbar-default navbar-static-top">
                 <div class="container">
                     <div class="navbar-header">
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                            Menu<i class="fa fa-bars"></i>
+                            <i class="fas fa-bars"></i>
                         </button>
-                        <a class="navbar-brand" href="">Better Books</a>
+                        <img src="images/cart.jpg" alt="Butter Books logo" class="img-thumbnail pull-left" width="50" height="50"/>
+                        <a class="navbar-brand" href="">Butter Books</a>
                     </div>
+                    <form style="max-width:500px;">
+                      <div class="input-group">
+                        <input type="text" class="form-control input-sm" placeholder="Search">
+                        <div class="input-group-btn">
+                          <button class="btn btn-default" type="submit">
+                            <i class="glyphicon glyphicon-search"></i>
+                          </button>
+                        </div>
+                      </div>
+                    </form>
                     <div class="collapse navbar-collapse">
                         <ul class="nav navbar-nav">
                             <li class="active"><a href="index.html">Home</a></li>
@@ -45,10 +56,7 @@
                             <li><a href="/about">About</a></li>
                             <li><a href="/about">Contact</a></li>
                             <li><a href="/login"> Register | Login </a></li>
-                            <li>
-                                <a href="/viewCart"><i class="fas fa-shopping-cart"></i></a>
-                                <a href="/viewCart"><i class="fas fa-shopping-basket"></i></a>
-                            </li>
+                            <li><a href="/viewCart"><i class="fas fa-shopping-cart"></i></a></li>
                         </ul>
                     </div>
                 </div>
@@ -59,6 +67,13 @@
 
         <!-- Main Content -->
         <div class="container">
+          <div class="jumbotron">
+            <img src="images/cart.jpg" alt="Butter Books logo" class="img-thumbnail pull-left" width="150" height="150" style="margin-right:150px;"/>
+            <h1>3 Books of Your Choice</h1>
+            <p>for only $5/mo</p>
+          </div>
+
+        </div>
             <div class="row">
 
                 <%
@@ -97,42 +112,42 @@
     <!-- End Main Content -->
 
         <footer>
-        			<div class="container">
-        				<div class="row">
-        					<div class="col-lg-3">
-        						<div class="widget">
-        							<h5 class="widgetheading">Get in touch with us</h5>
-        							<ul class="link-list">
-                                        <li><a href="#">Just In</a></li>
-                                        <li><a href="#">All-Time Faves</a></li>
-                                        <li><a href="#">Bestselling</a></li>
-                                        <li><a href="#">Genres</a></li>
-                                    </ul>
-        						</div>
-        					</div>
-        					<div class="col-lg-3">
-        						<div class="widget">
-        							<h5 class="widgetheading">Pages</h5>
-        							<ul class="link-list">
-        								<li><a href="#">About</a></li>
-        								<li><a href="#">Contact</a></li>
-        								<li><a href="#">FAQs</a></li>
-        								<li><a href="#">Order</a></li>
-        							</ul>
-        						</div>
-        					</div>
-        					<div class="col-lg-3">
-        					    <div class="widget">
-                                    <ul class="social-network">
-                                        <li><a href="#" data-placement="top" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
-                                    	<li><a href="#" data-placement="top" title="Twitter"><i class="fab fa-twitter"></i></a></li>
-                                    	<li><a href="#" data-placement="top" title="Instagram"><i class="fab fa-instagram"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
+        	<div class="container">
+        		<div class="row">
+        			<div class="col-lg-3">
+        				<div class="widget">
+        					<h5 class="widgetheading">Get in touch with us</h5>
+        						<ul class="link-list">
+                                    <li><a href="#">Just In</a></li>
+                                    <li><a href="#">All-Time Faves</a></li>
+                                    <li><a href="#">Bestselling</a></li>
+                                    <li><a href="#">Genres</a></li>
+                                </ul>
         				</div>
         			</div>
-        		</footer>
+        			<div class="col-lg-3">
+        				<div class="widget">
+        					<h5 class="widgetheading">Pages</h5>
+        					<ul class="link-list">
+        						<li><a href="#">About</a></li>
+        						<li><a href="#">Contact</a></li>
+        						<li><a href="#">FAQs</a></li>
+        						<li><a href="#">Order</a></li>
+        					</ul>
+        				</div>
+        			</div>
+        			<div class="col-lg-3">
+        		        <div class="widget">
+                            <ul class="social-network">
+                                <li><a href="#" data-placement="top" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="#" data-placement="top" title="Twitter"><i class="fab fa-twitter"></i></a></li>
+                                <li><a href="#" data-placement="top" title="Instagram"><i class="fab fa-instagram"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+        		</div>
+        	</div>
+        </footer>
     </div>
 
 

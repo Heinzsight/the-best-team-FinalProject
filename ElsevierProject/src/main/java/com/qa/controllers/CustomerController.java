@@ -134,7 +134,7 @@ public class CustomerController {
 
         System.out.println("Before update ");
 
-        System.out.println("ID " + loggedInCustomer.getCustomerId());
+        System.out.println("ID" + loggedInCustomer.getCustomerId());
         System.out.println("Name" + loggedInCustomer.getFirstName());
         System.out.println("Email" + loggedInCustomer.getEmail());
         System.out.println("Password" + loggedInCustomer.getPassword());
@@ -160,6 +160,7 @@ public class CustomerController {
 
             modelAndView = new ModelAndView("profile", "logged_in_customer", c);
         } else {
+            System.out.println("failed to update");
             modelAndView = new ModelAndView("profile", "logged_in_customer", loggedInCustomer);
         }
 

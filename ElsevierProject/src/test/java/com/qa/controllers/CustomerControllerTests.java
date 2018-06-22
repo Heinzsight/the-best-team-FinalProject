@@ -10,13 +10,16 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.http.MediaType;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.test.web.servlet.MvcResult;
+import org.springframework.test.web.servlet.RequestBuilder;
 import org.springframework.transaction.annotation.Transactional;
+
 import org.springframework.web.servlet.View;
 
 import static org.junit.Assert.assertEquals;
@@ -69,15 +72,17 @@ public class CustomerControllerTests {
     }
 
     @Test
-    public void updateUserTest() throws Exception{
+    public void registerUserFailTest() throws Exception{
         Customer chad = new Customer();
         chad.setCustomerId(4);
         chad.setEmail("chad@gmail.com");
         chad.setFirstName("Chad");
         chad.setLastName("Whitman");
         chad.setPassword("IamTheBest");
-        MvcResult result = this.mockMvc.perform(post("/updateProfile").sessionAttr("logged_in_customer", chad)).andDo(print()).andExpect(status()
+        MvcResult result = this.mockMvc.perform(post("/registerProcess").flashAttr("Customer", chad)).andDo(print()).andExpect(status()
                 .isOk()).andReturn();
+        String content = result.getModelAndView().getViewName();
+        assertEquals(content, "registration_failed");
     }
 
 }
