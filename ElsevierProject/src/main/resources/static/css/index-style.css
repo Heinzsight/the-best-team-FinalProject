@@ -255,7 +255,7 @@ header ul.nav li ul li ul {
   border-right: none;
   border-bottom: none;
   border-left: none;
-  border-bottom-color: none;
+  /*border-bottom-color: none;*/
   content:none;
 }
 
@@ -640,7 +640,7 @@ ul.recent li h6 a{
 
 footer{
 	padding:50px 0 0 0;
-	color:#f8f8f8;
+	color:#af3d58;
 }
 
 footer a {
