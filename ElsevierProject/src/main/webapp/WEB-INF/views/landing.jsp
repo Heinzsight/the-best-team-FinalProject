@@ -19,17 +19,29 @@
     <link rel="stylesheet" href="css/wrapper.css"/>
     <!-- Custom styles for this template -->
     <link rel="stylesheet" href="css/index-style.css"/>
+    <link rel="stylesheet" href="css/landing_page.css"/>
 
-    <% //Need to write code to fetch order history
-        Iterable<Book> books = (Iterable<Book>) session.getAttribute("books");
-        int i = 0;
-        for (Book book : books) {
-            if (i >= 4) {
-                break;
-            } else {
-                i++;
-            }
-    %>
+
+    <style>
+    .btn {
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0px;
+    font-family: Arial;
+    color: #ffffff;
+    font-size: 20px;
+    background: #AECBC5;
+    padding: 10px 20px 10px 20px;
+    border: solid #507298 2px;
+    text-decoration: none;
+    }
+
+    .btn:hover {
+        background: #507298;
+        text-decoration: none;
+    }
+
+    </style>
 
 </head>
 
@@ -83,156 +95,107 @@
     <!-- End Nav Bar / Header -->
 
     <!-- Main Content -->
-    <div class="container" style="background-color: #d4d4d4">
+    <div class="container" style="background-color: #aecbc5; opacity: 0.09%">
         <div class="pageTitle">
-            <h1 style="align-content:center;color: #af3d58; font-family: 'Abril Fatface'"><b>Your Subscription This Month</b></h1>
-        </div> <!-- Page Title -->
+            <h1 style="color: #a23452; font-family: 'Abril Fatface'" align="center">Your Subscription This Month</h1>
 
-        <div class="firstBook" >
-            <a href="/bookDetails?bookId=<%=book.getBookId()%>"><img class="img-responsive"
-
-                                                                     src="<%=book.getBookImage()%>"></a>
-        </div>
-        <div class="secondBook" >
-            <a href="/bookDetails?bookId=<%=book.getBookId()%>"><img class="img-responsive"
-
-                                                                     src="<%=book.getBookImage()%>"></a>
-        </div>
-        <div class="thirdBook" >
-            <a href="/bookDetails?bookId=<%=book.getBookId()%>"><img class="img-responsive"
-
-                                                                     src="<%=book.getBookImage()%>"></a>
-        </div>
-        <div class="textPane">
-            <div class="name">
-                <p><b>Good morning, **Place holder for customer name**<%%></b></p>
-            </div>
-            <div class="reminder">
-                <p><b>Reminder:</b> Your books are due <%book.getPublishedDate();%></p>
-            </div>
-            <div class="subPick">
-                <p>Select your subscription service for July: </p>
-            </div>
-            <div class="buttons">
-
-            </div>
-        </div>
-
-    </div>
-    <!-- Container -->
-
-    <div class="bookHistoryBox" style="margin-left: 10%; margin-top: 25px; margin-right: 10%">
+            <% Iterable<Book> books = (Iterable<Book>) session.getAttribute("books");
+                int i = 0;
+                for (Book book : books) {
+                    if (i >= 1) {
+                        break;
+                    } else {
+                        i++;
+                    }
+            %>
 
 
-
-        <div class="row">
-            <br>
-            <!-- Book Thumbnail -->
-            <div class="col-md-2">
-
-
-
-
-
-            </div>
-            <!-- End Book Thumbnail -->
-
-            <!-- Book Title/ Author -->
-            <div class="col-md-2">
-                <h5><%= book.getTitle()%>
-                </h5>
-                <%--<p>by <%= book.getAuthors()%>--%>
-                </p>
-                <%--<%--%>
-
-                <%--//Need to enter code to retrieve author of book--%>
-
-                <%--%>--%>
-            </div>
-
-            <!-- End Book Title/ Author -->
-            <!-- Book Format and price -->
-            <div class="col-md-3">
-
-
-                <h5><%=book.getFormat()%> - $<%=book.getPrice()%>
-                </h5>
-            </div>
-            <!-- End Book Format and price -->
-            <!-- Shipping date -->
-            <div class="col-md 3">
-                <h5>Shipped on <b>!!!!!INSERT DATE INTO TABLE!!!!!</b></h5>
-                <%
-
-                    //Write code to pull shipping date from DB
-
-                %>
-
-            </div>
-            <!-- End Shipping date -->
-
-        </div>
-        <!-- End Row-->
-
-
-        <% } %>
-
-    </div>
-    <!-- End History Box-->
-    <hr>
-
-    <%--<hr>--%>
-    <%--<div class="container">--%>
-    <%--<div class="row">--%>
-    <%--<div class="column">--%>
-    <%--<p>Cool stuff here, too!</p>--%>
-
-    <%--</div>--%>
-    <%--</div>--%>
-    <%--</div>--%>
-    <%--<hr>--%>
-
-    <!-- End Main Content -->
-
-    <footer style="background-color: #af3d58">
-        <div class="container">
             <div class="row">
-                <div class="col-lg-3">
-                    <div class="widget">
-                        <h5 class="widgetheading">Get in touch with us</h5>
-                        <ul class="link-list">
-                            <li><a href="#">Just In</a></li>
-                            <li><a href="#">All-Time Faves</a></li>
-                            <li><a href="#">Bestselling</a></li>
-                            <li><a href="#">Genres</a></li>
-                        </ul>
-                    </div>
+
+
+               <div class="column" style="padding-right: 25px; padding-left: 25px">
+                <p><a href="/bookDetails?bookId=<%=book.getBookId()%>"><img class="img-responsive"src="<%=book.getBookImage()%>"></a></p>
+
+            </div>
+
+            <div class="column" style="padding-right: 25px; padding-left: 25px">
+                <p><a href="/bookDetails?bookId=<%=book.getBookId()%>"><img class="img-responsive"src="<%=book.getBookImage()%>"></a></p>
+
+            </div>
+            <div class="column" style="padding-right: 25px; padding-left: 25px">
+                <p><a href="/bookDetails?bookId=<%=book.getBookId()%>"><img class="img-responsive"src="<%=book.getBookImage()%>"></a></p>
+
+            </div>
+            <div class="column">
+                <p><b>Good morning, **NEED TO GET CUSTOMER NAME</b></p>
+                <br>
+                <p><b>Reminder:</b> Your books are due **NEED DATE HOLDER**</p>
+                <br>
+                <p>Select your subscription service for **MONTH:</p>
+
+                <div class="pick_manually">
+                    <button id="pickMan" type="button" class="btn btn-outline-dark"
+                            style="margin-top: 10px; margin-bottom: 10px; width: 200px;">PICK-MY-3
+                    </button>
+
                 </div>
-                <div class="col-lg-3">
-                    <div class="widget">
-                        <h5 class="widgetheading">Pages</h5>
-                        <ul class="link-list">
-                            <li><a href="/about">About</a></li>
-                            <li><a href="/about">Contact</a></li>
-                            <li><a href="#">FAQs</a></li>
-                            <li><a href="/order_details">Order</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-3">
-                    <div class="widget">
-                        <ul class="social-network">
-                            <li><a href="#" data-placement="top" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-                            </li>
-                            <li><a href="#" data-placement="top" title="Twitter"><i class="fab fa-twitter"></i></a></li>
-                            <li><a href="#" data-placement="top" title="Instagram"><i class="fab fa-instagram"></i></a>
-                            </li>
-                        </ul>
-                    </div>
+                <div class="pick_auto">
+                    <button id="pickAuto" type="button" class="btn btn-outline-dark"
+                            style="margin-top: 10px; margin-bottom: 10px; width: 200px">PICK-FOR-ME
+                    </button>
+
                 </div>
             </div>
         </div>
-    </footer>
+
+    </div>
+        <%--End of Subscription Box--%>
+
+        
+</div>
+
+<% } %>
+<!-- End Main Content -->
+
+<footer style="background-color: #af3d58">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="widget">
+                    <h5 class="widgetheading">Get in touch with us</h5>
+                    <ul class="link-list">
+                        <li><a href="#">Just In</a></li>
+                        <li><a href="#">All-Time Faves</a></li>
+                        <li><a href="#">Bestselling</a></li>
+                        <li><a href="#">Genres</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="widget">
+                    <h5 class="widgetheading">Pages</h5>
+                    <ul class="link-list">
+                        <li><a href="/about">About</a></li>
+                        <li><a href="/about">Contact</a></li>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="/order_details">Order</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="widget">
+                    <ul class="social-network">
+                        <li><a href="#" data-placement="top" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        </li>
+                        <li><a href="#" data-placement="top" title="Twitter"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="#" data-placement="top" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
 </div>
 
 

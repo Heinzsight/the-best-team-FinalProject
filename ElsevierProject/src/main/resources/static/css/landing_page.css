@@ -1,13 +1,6 @@
 /* ==== Google fonts ==== */
 @import url('https://fonts.googleapis.com/css?family=Abril+Fatface|Open+Sans');
 
-
-img {
-    display: block;
-    height:250px;
-    width: 100%;
-}
-
 h1 {
     font-family: 'Abril Fatface';
     font-size: 36px;
@@ -26,4 +19,16 @@ h4 {
 h6 {
     font-family: 'Abril Fatface';
     font-size: 24px;
+}
+
+.column {
+    float: left;
+    width: 25%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
 }

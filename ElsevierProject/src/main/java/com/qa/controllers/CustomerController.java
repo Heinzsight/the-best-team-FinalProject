@@ -197,7 +197,7 @@ public class CustomerController {
 
     @RequestMapping(value="/landing")
     public String landing() {
-        //System.out.println("Getting here!!!");
+        System.out.println("Getting here!!!");
         return "landing";
     }
 
