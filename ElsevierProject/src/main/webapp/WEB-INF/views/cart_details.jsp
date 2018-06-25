@@ -87,6 +87,22 @@
             </div>
         </nav>
         <!-- End Header -->
+
+<!-- Breadcrumbs -->
+
+<div class="row col">
+    <nav aria-label="You are here:" role="navigation">
+        <ul class="breadcrumbs">
+
+            <li><a href="/">Home</a></li>
+            <li>
+                <span class="show-for-sr">Current: </span> Book Details
+            </li>
+        </ul>
+    </nav>
+</div>
+
+<!-- End of Breadcrumbs -->
 <!-- Main Content -->
 
 
