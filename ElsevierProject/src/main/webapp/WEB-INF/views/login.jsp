@@ -10,6 +10,9 @@
 </head>
 <body>
 
+<div class="main">
+
+
 <!-- Start Top Bar -->
 <header>
     <div class="navbar navbar-default navbar-static-top">
@@ -68,7 +71,7 @@
     </div>
 </div>
 
-<footer>
+<footer class="footer">
     <div class="container">
         <div class="row">
             <div class="col-lg-3">
@@ -105,6 +108,7 @@
         </div>
     </div>
 </footer>
+</div>
 
 
 <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>

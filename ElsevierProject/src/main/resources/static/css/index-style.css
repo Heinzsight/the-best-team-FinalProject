@@ -39,6 +39,23 @@ footer {
 	background: #68A4C4;
 }
 
+.container-fluid {
+	min-height: 220px;
+}
+.footer {
+	position: relative;
+	margin-top: -200px; /* negative value of footer height */
+	height: 200px;
+	clear:both;
+	padding-top:20px;
+}
+
+#main {
+	min-height:80%;
+	overflow:auto;
+	padding-bottom:200px
+}
+
 
 /* ===================================
 2. Responsive media
