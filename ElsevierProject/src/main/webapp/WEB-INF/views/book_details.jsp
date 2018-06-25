@@ -7,7 +7,12 @@
     <title>Foundation | Welcome</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-
+    <link href="css/index-style.css" rel = "stylesheet">
+    <link href="css/button.css" rel = "stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/index-style.css"/>
 
 </head>
 <body>
@@ -27,37 +32,47 @@
 
 %>
 
-
-<!-- Start Top Bar -->
-<div class="top-bar">
-    <div class="top-bar-left">
-        <ul class="menu">
-            <li class="menu-text" style="color:red">Online Shopping</li>
-            <li><a href="/">Home</a></li>
-
-        </ul>
-    </div>
-    <div class="top-bar-right">
-
-        <ul class="dropdown menu" data-dropdown-menu>
-            <li id="cart_items"></li>
-            <li class="has-submenu">
-                <a href="/viewCart"> <img src="images/cart.jpg" width="50" height="50"/></a>
-                <ul class="submenu menu vertical" data-submenu>
-                    <li><a href="/viewCart"><img src="images/cart.jpg" width="50" height="50"/> View Cart </a></li>
-                    <li><a href="/login">Register | Login</a></li>
-                </ul>
-            </li>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-
-    </div>
+    <!-- Navigation -->
+    <header>
+        <div class="navbar navbar-default navbar-static-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        Menu<i class="fa fa-bars"></i>
+                    </button>
+                    <a class="navbar-brand" href="/">Better Books</a>
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="/">Home</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false">Features <b class=" icon-angle-down"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Just In</a></li>
+                                <li><a href="#">All-Time Faves</a></li>
+                                <li><a href="#">Bestselling</a></li>
+                                <li><a href="#">Genres</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="/login"> Register | Login </a></li>
+                        <li>
+                            <a href="/viewCart"><i class="fas fa-shopping-cart"></i></a>
+                            <a href="/viewCart"><i class="fas fa-shopping-basket"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <hr>
 </div>
-<!-- End Top Bar -->
+    <!-- End Header -->
+
 <br>
 <!-- You can now combine a row and column if you just need a 12 column row -->
-<div class="row columns">
+<div class="row col">
     <nav aria-label="You are here:" role="navigation">
         <ul class="breadcrumbs">
 
@@ -70,146 +85,73 @@
 </div>
 
 <div class="row">
-    <div class="medium-6 columns">
-        <img class="thumbnail" src="<%=book.getBookImage()%>"/>
-        <div class="row small-up-4">
-            <div class="column">
-                eBook ISBN : <%=book.geteBookISBN()%>
-            </div>
-            <div class="column">
-                Print book ISBN <%=book.getPaperISBN()%>
-            </div>
-            <div class="column">
-                Price : $<%=book.getPrice()%>
-            </div>
-            <div class="column">
-                Published On <%=book.getPublishedDate()%>
-            </div>
-
-        </div>
+    <div class="col-md-6">
+        <img class="image" src="<%=book.getBookImage()%>"/>
     </div>
-    <div class="medium-6 large-5 columns">
-        <h3><%=book.getTitle() %>
-        </h3>
+    <div class="col-md-6">
+        <h1><%=book.getTitle() %>
+        </h1>
+
+        <label><h4>Select format:</h4>
+            <select name="format">
+                <option value="print">Paperback - <%=book.getPrice()%></option>
+                <option value="eBook">eBook - <%=book.getPrice()%></option>
+            </select>
+        </label>
+        <br>
+        <a href="/addToCart?bookId=<%=book.getBookId()%>" class="btn-lg buttonOption">BUY BOOK</a>
+        <a href="/addToCart?bookId=<%=book.getBookId()%>" class="btn-lg buttonOption">ADD TO SUBSCRIPTION</a>
+        <br>
+        <br>
+        <p><strong>ISBN: </strong><%=book.getPaperISBN()%></p>
+        <label>
+            <h4>Overview:</h4>
+        </label>
         <p><%=book.getDescription() %>
         </p>
-
-        <label>Select the format
-            <select>
-                <option value="">-- Select --</option>
-                <option value="print">Paperback</option>
-                <option value="eBook">eBook</option>
-                <option value="printAndeBook">PrintBook & eBook</option>
-            </select>
-        </label>
-
-        <label>Would you like to rent or buy the book?
-            <select>
-                <option value="">-- Select --</option>
-                <option value="rent">Rent</option>
-                <option value="buy">Buy</option>
-            </select>
-        </label>
-
-
-        <a href="/addToCart?bookId=<%=book.getBookId()%>" class="button large expanded">Add to Cart</a>
-
-        <!-- <div class="small secondary expanded button-group">
-            <a class="button">Facebook</a>
-            <a class="button">Twitter</a>
-            <a class="button">Yo</a>
-          </div> -->
     </div>
 </div>
-<!--  
-    <div class="column row">
-      <hr>
-      <ul class="tabs" data-tabs id="example-tabs">
-        <li class="tabs-title is-active"><a href="#panel1" aria-selected="true">Reviews</a></li>
-        <li class="tabs-title"><a href="#panel2">Similar Products</a></li>
-      </ul>
-      <div class="tabs-content" data-tabs-content="example-tabs">
-        <div class="tabs-panel is-active" id="panel1">
-          <h4>Reviews</h4>
-          <div class="media-object stack-for-small">
-            <div class="media-object-section">
-              <img class="thumbnail" src="http://placehold.it/200x200">
+<br>
+<br>
+<!-- End Main Content -->
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="widget">
+                    <h5 class="widgetheading">Get in touch with us</h5>
+                    <ul class="link-list">
+                        <li><a href="#">Just In</a></li>
+                        <li><a href="#">All-Time Faves</a></li>
+                        <li><a href="#">Bestselling</a></li>
+                        <li><a href="#">Genres</a></li>
+                    </ul>
+                </div>
             </div>
-            <div class="media-object-section">
-              <h5>Mike Stevenson</h5>
-              <p>I'm going to improvise. Listen, there's something you should know about me... about inception. An idea is like a virus, resilient, highly contagious. The smallest seed of an idea can grow. It can grow to define or destroy you.</p>
+            <div class="col-lg-3">
+                <div class="widget">
+                    <h5 class="widgetheading">Pages</h5>
+                    <ul class="link-list">
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Order</a></li>
+                    </ul>
+                </div>
             </div>
-          </div>
-          <div class="media-object stack-for-small">
-            <div class="media-object-section">
-              <img class="thumbnail" src="http://placehold.it/200x200">
+            <div class="col-lg-3">
+                <div class="widget">
+                    <ul class="social-network">
+                        <li><a href="#" data-placement="top" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="#" data-placement="top" title="Twitter"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="#" data-placement="top" title="Instagram"><i class="fab fa-instagram"></i></a></li>
+                    </ul>
+                </div>
             </div>
-            <div class="media-object-section">
-              <h5>Mike Stevenson</h5>
-              <p>I'm going to improvise. Listen, there's something you should know about me... about inception. An idea is like a virus, resilient, highly contagious. The smallest seed of an idea can grow. It can grow to define or destroy you</p>
-            </div>
-          </div>
-          <div class="media-object stack-for-small">
-            <div class="media-object-section">
-              <img class="thumbnail" src="http://placehold.it/200x200">
-            </div>
-            <div class="media-object-section">
-              <h5>Mike Stevenson</h5>
-              <p>I'm going to improvise. Listen, there's something you should know about me... about inception. An idea is like a virus, resilient, highly contagious. The smallest seed of an idea can grow. It can grow to define or destroy you</p>
-            </div>
-          </div>
-          <label>
-            My Review
-            <textarea placeholder="None"></textarea>
-          </label>
-          <button class="button">Submit Review</button>
         </div>
-        <div class="tabs-panel" id="panel2">
-          <div class="row medium-up-3 large-up-5">
-            <div class="column">
-              <img class="thumbnail" src="http://placehold.it/350x200">
-              <h5>Other Product <small>$22</small></h5>
-              <p>In condimentum facilisis porta. Sed nec diam eu diam mattis viverra. Nulla fringilla, orci ac euismod semper, magna diam.</p>
-              <a href="#" class="button hollow tiny expanded">Buy Now</a>
-            </div>
-            <div class="column">
-              <img class="thumbnail" src="http://placehold.it/350x200">
-              <h5>Other Product <small>$22</small></h5>
-              <p>In condimentum facilisis porta. Sed nec diam eu diam mattis viverra. Nulla fringilla, orci ac euismod semper, magna diam.</p>
-              <a href="#" class="button hollow tiny expanded">Buy Now</a>
-            </div>
-            <div class="column">
-              <img class="thumbnail" src="http://placehold.it/350x200">
-              <h5>Other Product <small>$22</small></h5>
-              <p>In condimentum facilisis porta. Sed nec diam eu diam mattis viverra. Nulla fringilla, orci ac euismod semper, magna diam.</p>
-              <a href="#" class="button hollow tiny expanded">Buy Now</a>
-            </div>
-            <div class="column">
-              <img class="thumbnail" src="http://placehold.it/350x200">
-              <h5>Other Product <small>$22</small></h5>
-              <p>In condimentum facilisis porta. Sed nec diam eu diam mattis viverra. Nulla fringilla, orci ac euismod semper, magna diam.</p>
-              <a href="#" class="button hollow tiny expanded">Buy Now</a>
-            </div>
-            <div class="column">
-              <img class="thumbnail" src="http://placehold.it/350x200">
-              <h5>Other Product <small>$22</small></h5>
-              <p>In condimentum facilisis porta. Sed nec diam eu diam mattis viverra. Nulla fringilla, orci ac euismod semper, magna diam.</p>
-              <a href="#" class="button hollow tiny expanded">Buy Now</a>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
--->
-<div class="row column">
-    <hr>
-    <ul class="menu">
-        <li>Online Shopping</li>
-        <li><a href="/">Home</a></li>
-        <li><a href="#">Contact</a></li>
-        <li class="float-right">Copyright 2017</li>
-    </ul>
-</div>
+</footer>
 
 
 <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>

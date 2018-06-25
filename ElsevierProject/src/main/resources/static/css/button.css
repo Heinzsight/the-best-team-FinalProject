@@ -1,0 +1,14 @@
+.buttonOption {
+    background-color: white;
+    color: #507298;
+    border: 1px solid #507298;
+    border-radius: 0;
+    overflow:hidden;
+}
+.buttonSubmit {
+    background-color: #507298;
+    color: white;
+    border: 1px solid #507298;
+    border-radius: 0;
+    overflow: hidden;
+}
