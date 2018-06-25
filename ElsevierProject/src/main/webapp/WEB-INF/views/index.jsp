@@ -36,7 +36,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" href="/">
-                    <img alt="Brand" src="images/butter_books_logo.png">
+                    <img alt="Brand" src="images/header/butter_books_logo.png">
                 </a>
             </div>
 
