@@ -183,4 +183,16 @@ public class CustomerController {
 //    }
 
 
+    @RequestMapping(value="/order_history")
+    public String orderHistory() {
+        return "order_history";
+    }
+
+
+    @RequestMapping(value="/update_info")
+    public String updateInfo() {
+        //System.out.println("Getting here!!!");
+        return "update_info";
+    }
+
 }
