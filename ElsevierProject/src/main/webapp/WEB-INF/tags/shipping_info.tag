@@ -1,12 +1,12 @@
 <h5> Shipping Information </h5>
 		<div class="row">
-			<div class="col-md-3" id="ship_info">
-				<div class="col-lg-3" id="address">
-					<div>First name Last name</div>
-					<div>Address Address2</div>
-					<div>City</div>
-					<div>Area Code</div>
-					<div>Tel: Telephone</div>
+			<div class="col-lg-4" id="ship_info">
+				<div class="col-lg-8" id="address">
+					<div id="fullName">Name</div>
+					<div id="fullAddress">Address</div>
+					<div id="city">City</div>
+					<div id="zip">Area Code</div>
+					<div id="tel">Tel: Telephone</div>
 					<br>
 					<a id = "link_address" href="#">Edit Address</a>
 					<span class="dot"></span>

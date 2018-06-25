@@ -11,12 +11,30 @@
 
 </head>
 <body>
+<%@page import="com.qa.models.Customer" %>
+    <%
+                Customer c = null;
+                try{
+                c = (Customer) session.getAttribute("logged_in_customer");
+                request.setAttribute("logged_in_customer", c);
+                System.out.println(c);
+
+                } catch (Exception e) {
+                System.out.println(e);
+                }
+                if(c != null)
+                {
+                System.out.println(c.getFirstName());
+                }
+    %>
 <form id="regForm" action="/checkoutProcess" method="post">
 
     <%
 
         double orderTotal = (Double) request.getAttribute("order_total");
-
+        double shipping = (Double) 0.00;
+        double tax = (Double) orderTotal*.08;
+        double grandTotal = (Double) orderTotal+shipping+tax;
 
     %>
 
@@ -51,7 +69,63 @@
                 <div class="tab" ><tags:customer_info/></div>
                 <div class="tab" ><tags:shipping_info/></div>
                 <div class="tab" ><tags:payment_selection/></div>
-                <div><tags:sum_up/></div>
+                <div class="column" id="sumUp">
+                            <div class="col-lg-4">
+                						<h4>Order Summary</h4>
+                						<hr>
+                                            <div class="row">
+
+                                                <div class="col">
+
+                                                    Test
+                                                </div>
+
+                                            </div>
+                							<hr>
+                							<div class="row">
+                                                <div class="small-3 columns">
+                                                    <label for="middle-label" class="middle">Subtotal</label>
+                                                </div>
+                                                <div class="small-3 columns">
+                                                    <label for="middle-label" class="middle"><%=orderTotal %></label>
+                                                </div>
+
+                                            </div>
+
+                							<div class="row">
+                                                <div class="small-3 columns">
+                                                    <label for="middle-label" class="middle">Shipping</label>
+                                                </div>
+                                                <div class="small-3 columns">
+                                                    <label for="middle-label" class="middle"><%= shipping %></label>
+                                                </div>
+
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="small-3 columns">
+                                                    <label for="middle-label" class="middle">Tax</label>
+                                                </div>
+                                                <div class="small-3 columns">
+                                                    <label for="middle-label" class="middle"><%=tax %></label>
+                                                </div>
+
+                                            </div>
+                							<hr>
+                                            <div class="row">
+                                                <div class="small-3 columns">
+                                                    <label for="middle-label" class="middle">Total </label>
+                                                </div>
+                                                <div class="small-3 columns">
+
+                                                    <label for="middle-label" class="middle" id="order_total_label"><%=grandTotal%></label>
+                                                </div>
+
+                                            </div>
+
+                            </div>
+
+                        </div>
 
             </div>
             <div class="col-md-4">
@@ -108,8 +182,16 @@
           var address2 = document.getElementById('addressLine2').value;
           var firstName = document.getElementById('firstName').value;
           var lastName = document.getElementById('lastName').value;
+          var city = document.getElementById('city').value;
+          var zip = document.getElementById('postcode').value;
+          var phone = document.getElementById('phone').value;
           var shipping1 = document.getElementById('inlineRadioShipping1').value;
           var shipping2 = document.getElementById('inlineRadioShipping2').value;
+          document.getElementById('fullName').innerHTML = firstName + " " + lastName;
+          document.getElementById('fullAddress').innerHTML = address1 + " " + address2;
+          document.getElementById('city').innerHTML = city;
+          document.getElementById('zip').innerHTML = zip;
+          document.getElementById('tel').innerHTML = phone;
           console.log(shipping1);
           console.log(shipping2);
           // Exit the function if any field in the current tab is invalid:
@@ -136,7 +218,7 @@
           // A loop that checks every input field in the current tab:
           for (i = 0; i < y.length; i++) {
             // If a field is empty...
-            if (y[i].value == "") {
+            if ((y[i].value == "")&&(y[i].id !== "cardNum")&&(y[i].id !== "cardName")&&(y[i].id !== "expDate")&&(y[i].id !== "cvvCode")) {
               // add an "invalid" class to the field:
               y[i].className += " invalid";
               // and set the current valid status to false:

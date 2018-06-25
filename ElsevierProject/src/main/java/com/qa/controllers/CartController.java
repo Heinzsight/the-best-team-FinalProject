@@ -9,7 +9,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import java.util.Map;
 
-@SessionAttributes(names = {"book_counts"})
+@SessionAttributes(names = {"book_counts", "books", "cart_items", "Address"})
 @Controller
 public class CartController {
 

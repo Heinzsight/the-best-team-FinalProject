@@ -1,4 +1,5 @@
 <!doctype html>
+<%@page import="com.qa.models.Customer" %>
 <html class="no-js" lang="en">
 <head>
     <meta charset="utf-8"/>
@@ -24,6 +25,15 @@
 </head>
 
 <body>
+<%
+    try{
+    Customer c = (Customer) session.getAttribute("logged_in_customer");
+    request.setAttribute("logged_in_customer", c);
+    System.out.println(c);
+    } catch (Exception e) {
+    System.out.println(e);
+    }
+%>
 <div id="wrapper">
     <!-- Navigation -->
     <header>

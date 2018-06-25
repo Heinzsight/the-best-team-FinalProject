@@ -28,6 +28,16 @@
 
 </head>
 <body>
+<%@page import="com.qa.models.Customer" %>
+<%
+            try{
+            Customer c = (Customer) session.getAttribute("logged_in_customer");
+            request.setAttribute("logged_in_customer", c);
+            System.out.println(c);
+            } catch (Exception e) {
+            System.out.println(e);
+            }
+%>
 
 <%!
 
@@ -45,6 +55,8 @@
     books = (ArrayList<Book>) session.getAttribute("filtered_books");
 
     bookCounts = (Map<Integer, Integer>) session.getAttribute("book_counts");
+
+    Customer c = (Customer) session.getAttribute("logged_in_customer");
 
     double cartTotal = 0.0;
 
@@ -233,6 +245,7 @@
 
                 <form action="/checkout" method="post" id="checkout_form">
                     <input type="hidden" name="order_total" value="<%=cartTotal %>"/>
+                    <input type="hidden" name="logged_in_customer" value="<%=cartTotal %>"/>
 <<<<<<< HEAD
                     <input type="submit" class="buttonDetails" value="Checkout"/>
 =======

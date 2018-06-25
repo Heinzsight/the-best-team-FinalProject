@@ -1,5 +1,6 @@
 <!doctype html>
 <%@page import="com.qa.models.Book" %>
+<%@page import="com.qa.models.Customer" %>
 <html class="no-js" lang="en">
 <head>
     <meta charset="utf-8"/>
@@ -66,6 +67,15 @@
         <h1>3 Books of Your Choice</h1>
         <p>for only $5/mo</p>
     </div>
+        <%
+            try{
+            Customer c = (Customer) session.getAttribute("logged_in_customer");
+            request.setAttribute("logged_in_customer", c);
+            System.out.println(c);
+            } catch (Exception e) {
+            System.out.println(e);
+            }
+        %>
         <%
         Iterable<Book> books = (Iterable<Book>) session.getAttribute("books");
         int i = 0;

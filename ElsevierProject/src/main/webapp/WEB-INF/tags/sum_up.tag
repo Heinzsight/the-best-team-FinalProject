@@ -16,7 +16,7 @@
                                     <label for="middle-label" class="middle">Subtotal</label>
                                 </div>
                                 <div class="small-3 columns">
-                                    <label for="middle-label" class="middle">$$$$</label>
+                                    <label for="middle-label" class="middle"><%=orderTotal %></label>
                                 </div>
 
                             </div>
@@ -26,7 +26,7 @@
                                     <label for="middle-label" class="middle">Shipping</label>
                                 </div>
                                 <div class="small-3 columns">
-                                    <label for="middle-label" class="middle">ship</label>
+                                    <label for="middle-label" class="middle"><%= shipping %></label>
                                 </div>
 
                             </div>
@@ -47,8 +47,7 @@
                                 </div>
                                 <div class="small-3 columns">
 
-                                    <label for="middle-label" class="middle" id="order_total_label">
-                                    </label>
+                                    <label for="middle-label" class="middle" id="order_total_label"><%=orderTotal%></label>
                                 </div>
 
                             </div>

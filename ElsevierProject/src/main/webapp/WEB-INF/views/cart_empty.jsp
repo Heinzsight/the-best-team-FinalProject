@@ -21,7 +21,16 @@
 
 </head>
 <body>
-
+<%@page import="com.qa.models.Customer" %>
+<%
+            try{
+            Customer c = (Customer) session.getAttribute("logged_in_customer");
+            request.setAttribute("logged_in_customer", c);
+            System.out.println(c);
+            } catch (Exception e) {
+            System.out.println(e);
+            }
+%>
     <!-- Navigation -->
            <nav class="navbar navbar-static-top" style="background: #A9A9A9;">
                <div class="container">
