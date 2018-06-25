@@ -1,0 +1,29 @@
+/* ==== Google fonts ==== */
+@import url('https://fonts.googleapis.com/css?family=Abril+Fatface|Open+Sans');
+
+
+img {
+    display: block;
+    height:250px;
+    width: 100%;
+}
+
+h1 {
+    font-family: 'Abril Fatface';
+    font-size: 36px;
+}
+h2 {
+    font-family:'Open Sans';
+    font-size: 24px;
+}
+
+h4 {
+    font-family:'Open Sans';
+    font-weight: 500;
+    font-size: 20px;
+}
+
+h6 {
+    font-family: 'Abril Fatface';
+    font-size: 24px;
+}

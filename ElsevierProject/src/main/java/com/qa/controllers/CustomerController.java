@@ -195,4 +195,10 @@ public class CustomerController {
         return "update_info";
     }
 
+    @RequestMapping(value="/landing")
+    public String landing() {
+        //System.out.println("Getting here!!!");
+        return "landing";
+    }
+
 }
