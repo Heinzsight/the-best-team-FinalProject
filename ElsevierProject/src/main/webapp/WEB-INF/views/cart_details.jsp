@@ -212,7 +212,7 @@
 
                 <form action="/checkout" method="post" id="checkout_form">
                     <input type="hidden" name="order_total" value="<%=cartTotal %>"/>
-                    <input type="submit" class="btn-lg buttonDetails" value="Checkout"/>
+                    <input type="submit" class="btn-lg buttonOption" value="Checkout"/>
                 </form>
         </div> <!-- End of 3rd column in row 2 -->
     </div>

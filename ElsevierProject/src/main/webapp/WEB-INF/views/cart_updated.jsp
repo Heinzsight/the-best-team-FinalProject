@@ -11,7 +11,7 @@
     <link href="css/index-style.css" rel = "stylesheet">
     <link href="css/button.css" rel = "stylesheet">
     <link rel="stylesheet" href="css/index-style.css">
-    <link rel="stylesheet" href="css/cart_empty-style.css">
+    <link rel="stylesheet" href="css/header_footer.css">
 </head>
 <body>
 
@@ -90,8 +90,8 @@
             <br>
             <h1><%=books.get(books.size()-1).getTitle()%> added to cart </h1>
             <br>
-            <a href="/viewCart" class="btn-lg buttonDetails">VIEW CART</a>
-            <a href="/" class="btn-lg buttonDetails">CONTINUE SHOPPING</a>
+            <a href="/viewCart" class="btn-lg buttonOption">VIEW CART</a>
+            <a href="/" class="btn-lg buttonOption">CONTINUE SHOPPING</a>
         </div>
     </div>
 </div>

@@ -99,8 +99,8 @@
             </select>
         </label>
         <br>
-        <a href="/addToCart?bookId=<%=book.getBookId()%>" class="btn-lg buttonDetails">BUY BOOK</a>
-        <a href="/addToCart?bookId=<%=book.getBookId()%>" class="btn-lg buttonDetails">ADD TO SUBSCRIPTION</a>
+        <a href="/addToCart?bookId=<%=book.getBookId()%>" class="btn-lg buttonOption">BUY BOOK</a>
+        <a href="/addToCart?bookId=<%=book.getBookId()%>" class="btn-lg buttonOption">ADD TO SUBSCRIPTION</a>
         <br>
         <br>
         <p><strong>ISBN: </strong><%=book.getPaperISBN()%></p>
