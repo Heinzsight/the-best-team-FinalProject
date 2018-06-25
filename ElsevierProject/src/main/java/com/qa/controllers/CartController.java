@@ -41,6 +41,7 @@ public class CartController {
         return "about";
     }
 
+
 //    @RequestMapping(value = "/about", method = RequestMethod.GET)
 //    public String about() {
 //        return "redirect:/about.jsp";

@@ -6,9 +6,14 @@
     <title>Online Shopping </title>
     <%--<link rel="stylesheet" href="css/style.css">--%>
     <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/index-style.css"/>
+    <%--<link rel="stylesheet" href="css/index-style.css"/>--%>
+    <link rel="stylesheet" href="css/header_footer.css">
+    <link rel = "stylesheet" href="css/button.css">
 </head>
 <body>
+
+<div class="main">
+
 
 <!-- Start Top Bar -->
 <header>
@@ -22,7 +27,7 @@
             </div>
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="index.html">Home</a></li>
+                    <li class="active"><a href="/">Home</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false">Features <b class=" icon-angle-down"></b></a>
                         <ul class="dropdown-menu">
@@ -46,29 +51,32 @@
 </header>
 <!-- End Top Bar -->
 
-<div class="container-fluid">
+<div class="container-fluid" id="main">
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <h3> Please login using your stored credentials </h3>
-            <form action="loginProcess" method="post">
-                <div class="form-group-lg">
-                    <label>Email</label>
-                    <input class='form-control' type="email" placeholder="Enter email" name="email" id="email" required/>
+        <div class="col-md-4 col-md-offset-4">
+            <h1 align="center">Sign In</h1>
+            <p align="center">or <a href="/register">Create Account</a></p>
+            <form action="loginProcess" method="post" class="form-horizontal">
+                <div class="form-group">
+                        <label for="email">Email</label>
+                        <input class='form-control' type="email" placeholder="Enter email" name="email" id="email" required/>
                 </div>
-                <div class="form-group-lg">
-                    <label>Password</label>
-                    <input class='form-control' type="password" placeholder="Enter Password" name="password" id="password" required/>
+                <div class="form-group">
+                        <label for="password">Password</label>
+                        <input class='form-control' type="password" placeholder="Enter Password" name="password" id="password" required/>
                 </div>
-
-                <input type="submit" class="btn btn-primary btn-lg btn-block" value="Login">
                 <br>
-                <p> New to Better Books? </p> <a href="/register" class="btn btn-primary btn-lg btn-block">Register</a>
+                <div class="form-group">
+                    <p><a href="/"><span class="glyphicon glyphicon-menu-left"></span> Home</a></p>
+                    <input type="submit" class="btn btn-primary btn-lg btn-block buttonSubmit" value="Login">
+                </div>
+                <br>
             </form>
         </div>
     </div>
 </div>
 
-<footer>
+<footer class="footer">
     <div class="container">
         <div class="row">
             <div class="col-lg-3">
@@ -105,6 +113,7 @@
         </div>
     </div>
 </footer>
+</div>
 
 
 <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>

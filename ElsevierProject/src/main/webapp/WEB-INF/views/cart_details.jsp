@@ -233,7 +233,11 @@
 
                 <form action="/checkout" method="post" id="checkout_form">
                     <input type="hidden" name="order_total" value="<%=cartTotal %>"/>
+<<<<<<< HEAD
                     <input type="submit" class="buttonDetails" value="Checkout"/>
+=======
+                    <input type="submit" class="btn-lg buttonOption" value="Checkout"/>
+>>>>>>> b4ad599a089937f6b17e19a6045204e2b7f2bd8c
                 </form>
         </div> <!-- End of 3rd column in row 2 -->
     </div>
