@@ -111,7 +111,7 @@
             <div class="col-md-2">
                 <h5><%= book.getTitle()%>
                 </h5>
-                <p>by <%= book.getAuthors()%>
+                <%--<p>by <%= book.getAuthors()%>--%>
                 </p>
                 <%--<%--%>
 

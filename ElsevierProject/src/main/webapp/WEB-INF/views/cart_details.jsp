@@ -65,7 +65,7 @@
                 </div>
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="#">Home</a></li>
+                        <li class="active"><a href="/">Home</a></li>
                         <li><a href="#">Just In</a></li>
                     	<li><a href="#">All-Time Faves</a></li>
                     	<li><a href="#">Bestselling</a></li>
@@ -87,6 +87,22 @@
             </div>
         </nav>
         <!-- End Header -->
+
+<!-- Breadcrumbs -->
+
+<div class="row col">
+    <nav aria-label="You are here:" role="navigation">
+        <ul class="breadcrumbs">
+
+            <li><a href="/">Home</a></li>
+            <li>
+                <span class="show-for-sr">Current: </span> Book Details
+            </li>
+        </ul>
+    </nav>
+</div>
+
+<!-- End of Breadcrumbs -->
 <!-- Main Content -->
 
 
@@ -127,10 +143,11 @@
             <br />
 <div class="container"> <!-- Beginning of second container -->
     <div class="row"> <!-- Beginning of second row -->
-        <div class="col-md-5"> <!-- Start of second column -->
+        <div class="col-md-5" > <!-- Start of second column -->
             <img class="thumbnail" src="<%=book.getBookImage()%>"/>
         </div>
         <div class="col-md-4">
+            <div class="col-xs-9"  id="verticalCenter">
                 <div class="column">
                     eBook ISBN : <span> <%=book.geteBookISBN()%> </span>
                 </div>
@@ -138,9 +155,6 @@
                     Print book ISBN: <span> <%=book.getPaperISBN()%> </span>
                 </div>
 
-                <div class="column">
-
-                </div>
                 <div class="column">
                     Published On: <span> <%=book.getPublishedDate()%> </span>
                 </div>
@@ -150,16 +164,18 @@
                         <input type="hidden" name="cart_total" value="<%=cartTotal%>"/>
                         Price <label id="price_label<%=i%>">$<%=totalPrice%>
                     </label>
+                </div>
+            </div>
+            <div class="col-xs-3"  id="verticalCenter">
                         <input type="hidden" name="cart_total" value="<%=price%>"/> <br />
                         Quantity <input type="number" min="1" name="quantity" value="<%=quantity%>"
                                         oninput="calculateTotalPrice(price.value,this.value,price_label<%=i%>)"/>
                     </form>
-                </div>
-
 
                     <div class="column">
                         <a href="/removeFromCart?bookId=<%=book.getBookId() %>"> Remove </a>
                     </div>
+            </div>
          </div> <!-- End of second column -->
 
             <%
@@ -167,14 +183,19 @@
                 }
             %>
         <div class="col-md-3"> <!-- Beginning of 3rd column in row 2 -->
+
+
+                <div class="col-xs-12">
                 <h3>Summary </h3>
-                <p></p>
+                    <p></p>
+                   <hr>
+                </div>
 
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-xs-6">
                         <label for="middle-label" class="middle">Subtotal</label>
                      </div>
-                     <div class="col-md-6">
+                     <div class="col-xs-6">
                         <input type="hidden" name="order_total" id="cart_total" value="<%=cartTotal %>"/>
                         <label for="middle-label" class="middle" id="cart_total_label">$<%=cartTotal %>
                     </div>
@@ -182,37 +203,41 @@
 
 
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-xs-6">
                         <label for="middle-label" class="middle">Shipping</label>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-xs-6">
                         <!-- Need the Shipping amount here -->
                         <label for="middle-label" class="middle"> Free </label>
                     </div>
 
-                    <div class="col-md-6">
+                    <div class="col-xs-6">
                         <label for="middle-label" class="middle">Tax </label>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-xs-6">
                         <!-- Need the tax formula and output here -->
                     </div>
                 </div>
 
-                <div class="col-md-12">
+                <div class="col-xs-12">
                     <hr>
                 </div>
 
-                <div class="col-md-6">
+                <div class="col-xs-6">
                     <label for="middle-label" class="middle">Total </label>
                 </div>
-                <div class="col-md-6">
+                <div class="col-xs-6">
                      <input type="hidden" name="order_total" id="order_total" value="<%=cartTotal %>"/>
                      <label for="middle-label" class="middle" id="order_total_label">$<%=cartTotal%></label>
                  </div>
 
                 <form action="/checkout" method="post" id="checkout_form">
                     <input type="hidden" name="order_total" value="<%=cartTotal %>"/>
-                    <input type="submit" class="btn-lg buttonDetails" value="Checkout"/>
+<<<<<<< HEAD
+                    <input type="submit" class="buttonDetails" value="Checkout"/>
+=======
+                    <input type="submit" class="btn-lg buttonOption" value="Checkout"/>
+>>>>>>> b4ad599a089937f6b17e19a6045204e2b7f2bd8c
                 </form>
         </div> <!-- End of 3rd column in row 2 -->
     </div>
