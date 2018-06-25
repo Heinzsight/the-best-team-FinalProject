@@ -95,7 +95,7 @@
     <!-- End Nav Bar / Header -->
 
     <!-- Main Content -->
-    <div class="container" style="background-color: #aecbc5; opacity: 0.09%">
+    <div class="container" style="background-color: rgba(174,203,197,0.09)">
         <div class="pageTitle">
             <h1 style="color: #a23452; font-family: 'Abril Fatface'" align="center">Your Subscription This Month</h1>
 
@@ -135,13 +135,15 @@
 
                 <div class="pick_manually">
                     <button id="pickMan" type="button" class="btn btn-outline-dark"
-                            style="margin-top: 10px; margin-bottom: 10px; width: 200px;">PICK-MY-3
+                            style="margin-top: 10px; margin-bottom: 10px; width: 200px;background-color: rgba(174,203,197,0.09);
+                            outline-color:#507298;color: #507298">PICK-MY-3
                     </button>
 
                 </div>
                 <div class="pick_auto">
                     <button id="pickAuto" type="button" class="btn btn-outline-dark"
-                            style="margin-top: 10px; margin-bottom: 10px; width: 200px">PICK-FOR-ME
+                            style="margin-top: 10px; margin-bottom: 10px; width: 200px; background-color: rgba(174,203,197,0.09);
+                            outline-color:#507298; color: #507298">PICK-FOR-ME
                     </button>
 
                 </div>
@@ -151,8 +153,12 @@
     </div>
         <%--End of Subscription Box--%>
 
-        
+
+
+
 </div>
+
+
 
 <% } %>
 <!-- End Main Content -->
