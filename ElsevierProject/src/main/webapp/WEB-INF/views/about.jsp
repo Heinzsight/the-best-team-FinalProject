@@ -1,12 +1,11 @@
 <!doctype html>
+<%@page import="com.qa.models.Customer" %>
 <html class="no-js" lang="en">
 <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>About Us | Butter Books</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/index-style.css">
-    <link rel="stylesheet" href="css/wrapper.css">
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
           integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
@@ -16,6 +15,7 @@
           rel='stylesheet' type='text/css'>
 
     <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/nav-footer-style.css">
 
     <style>
     </style>
@@ -24,113 +24,63 @@
 </head>
 
 <body>
-<div id="wrapper">
+
+<div id="wrap">
     <!-- Navigation -->
-    <header>
-        <div class="navbar navbar-default navbar-static-top">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        Menu<i class="fa fa-bars"></i>
-                    </button>
-                    <a class="navbar-brand" href="">Better Books</a>
-                </div>
-                <div class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav">
-                        <li class="active"><a href="/">Home</a></li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown"
-                               data-delay="0" data-close-others="false">Features <b class=" icon-angle-down"></b></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">Just In</a></li>
-                                <li><a href="#">All-Time Faves</a></li>
-                                <li><a href="#">Bestselling</a></li>
-                                <li><a href="#">Genres</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="/about">About</a></li>
-                        <li><a href="/about">Contact</a></li>
-                        <li><a href="/login"> Register | Login </a></li>
-                        <li>
-                            <a href="/viewCart"><i class="fas fa-shopping-cart"></i></a>
-                            <a href="/viewCart"><i class="fas fa-shopping-basket"></i></a>
-                        </li>
-                    </ul>
-                </div>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">
+                    <img alt="Brand" src="images/header/butter_books_logo.png">
+                </a>
             </div>
-        </div>
-    </header>
-    <hr>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a href="#">Just In</a></li>
+                    <li><a href="#">All Time Faves</a></li>
+                    <li><a href="#">Bestselling</a></li>
+                    <li><a href="#">Genres</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="/login"> Register | Login </a></li>
+                    <li><a href="/viewCart"><i class="fas fa-shopping-cart"></i></a></li>
+                </ul>
+                <form  class="navbar-form navbar-right">
+                    <div class="input-group">
+                        <input type="text" class="form-control input-sm" placeholder="Search" name="search">
+                        <div class="input-group-btn">
+                            <button class="btn btn-default" type="submit" style="height:30px">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
     <!-- End Header -->
     <!--Add Banner -->
     <div>
-        <img src="images/aboutBanner.jpg" alt="Butter Books logo" class="" width="100%" height="100%"/>
+        <img src="images/aboutBanner.jpg" alt="Butter Books logo" style="width:100%; height:100%;"/>
     </div>
     <!-- End Banner -->
 
     <!-- Main Content -->
 
     <h1 align="center"><b>The Better Book Mission</b></h1>
-    <h2 align="center"><b>Let's read for a better tomorrow</b></h2>
+    <h2 align="center"><b>Making reading as smooth as butter.</b></h2>
     <h4 align="left" style="margin-left:30%; margin-right:30%">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi condimentum mi est, non facilisis nisi rutrum
-        efficitur.
-        Nulla facilisi. Duis consectetur, urna bibendum rhoncus molestie, diam arcu laoreet magna, non egestas risus sem
-        sit
-        amet risus.
-        Praesent eu blandit urna. Vestibulum a orci quis dolor feugiat auctor. Mauris pretium velit vitae orci aliquam
-        vehicula.
-        Pellentesque sed turpis ac arcu vestibulum fermentum. Duis sit amet posuere purus, ut tempus mauris. Nulla
-        blandit,
-        mauris non vehicula varius, augue nunc pulvinar nibh, in tristique arcu augue id turpis. Proin rutrum lobortis
-        leo,
-        ut blandit
-        lorem pellentesque at. Pellentesque vitae arcu ante. Donec egestas facilisis urna, in dictum nunc viverra vitae.
-        <br><br>Donec vel
-        condimentum dui, suscipit sollicitudin libero. Ut placerat varius lorem, et auctor odio vulputate quis. Sed ut
-        nisl
-        ex. Curabitur
-        nisi elit, tincidunt eget ornare eget, molestie non mi. Aliquam sodales, ante sed maximus bibendum, leo nunc
-        facilisis dolor, vel
-        tristique libero nulla posuere turpis. Nulla eget porta eros. Donec in iaculis mauris, condimentum sollicitudin
-        arcu. Sed sed
-        lectus risus. Pellentesque sagittis rhoncus velit sit amet molestie. Donec ut purus sed nunc sollicitudin
-        cursus.
-        <br><br>Nullam sem massa,
-        luctus molestie erat id, elementum porttitor libero. Donec viverra lacus non justo luctus molestie. Cras non
-        nisl
-        laoreet,
-        placerat leo ac, bibendum dui. Vivamus tincidunt enim sed erat fringilla semper eu eu mi. Vestibulum ante ipsum
-        primis in
-        faucibus orci luctus et ultrices posuere cubilia Curae; Morbi scelerisque suscipit porta. Nam id orci pretium
-        enim
-        auctor suscipit.
-        Sed ullamcorper nibh dolor, ac ornare metus auctor sed. Curabitur id vehicula quam, et tincidunt quam. Aenean
-        vitae
-        dapibus nunc.
-        Nullam sollicitudin bibendum enim a ultrices. Praesent sollicitudin urna ante. Nulla facilisi. <br><br>Fusce ac
-        lacus ut nisl suscipit
-        tincidunt eget ac nibh. Pellentesque pellentesque convallis massa ultrices sodales. Aliquam eget turpis mollis,
-        luctus magna et,
-        faucibus purus. In nec facilisis risus, eu rhoncus neque. Quisque vestibulum vehicula libero. Nulla tempor justo
-        efficitur, tristique
-        diam vel, pellentesque diam. Suspendisse at faucibus nunc. Nam quis dictum augue. Nulla dictum mauris vel turpis
-        semper, id
-        accumsan nunc condimentum. Morbi eget felis blandit, venenatis sem non, vulputate est. Ut viverra ut quam a
-        eleifend. Fusce
-        rutrum bibendum dui eget dapibus. Curabitur a nisl fringilla, suscipit metus id, auctor nisl. <br><br>Integer
-        gravida in ex eget eleifend.
-        Suspendisse feugiat fringilla mi et aliquet. Morbi arcu risus, efficitur eu nunc sit amet, tincidunt commodo
-        leo.Lorem ipsum
-        dolor sit amet, consectetur adipiscing elit. Praesent eu sodales arcu. Quisque eleifend, purus in imperdiet
-        molestie,
-        lacus leo sodales quam, et aliquam ex justo a tortor. Fusce cursus vel nunc non sodales. Lorem ipsum dolor sit
-        amet,
-        consectetur
-        adipiscing elit. Nunc eget massa a nisi facilisis vestibulum quis ac diam. Fusce at odio eget sapien ultricies
-        rutrum sit amet sed
-        leo.
-
+        <br>
+        At Butter Books, we are doing more than just making reading fun. Our mission is to promote more sustainable readership through book-sharing. Oftentimes, readers purchase expensive books to never read them again after the first time. Butter Books’ large collection of pre-owned books and book renting service reduces the waste of unread books on your shelf. We also make reading more affordable and accessible. If you can’t find a book at your local library, if you want more time to finish your book without keeping others waiting, if you can’t find a place to sell or donate your used books, if you are looking for affordable, used books, Butter Books is here for you. We strive to make your reading experience as smooth as butter…So you can enjoy the books you love without guilt.
     </h4>
     <br>
     <br>
@@ -206,48 +156,46 @@
 
         </div>
     </div>
+    <div id="push"></div>
+</div>
 
     <!-- End Main Content -->
 
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3">
-                    <div class="widget">
-                        <h5 class="widgetheading">Get in touch with us</h5>
-                        <ul class="link-list">
-                            <li><a href="#">Just In</a></li>
-                            <li><a href="#">All-Time Faves</a></li>
-                            <li><a href="#">Bestselling</a></li>
-                            <li><a href="#">Genres</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-3">
-                    <div class="widget">
-                        <h5 class="widgetheading">Pages</h5>
-                        <ul class="link-list">
-                            <li><a href="/about">About</a></li>
-                            <li><a href="/about">Contact</a></li>
-                            <li><a href="#">FAQs</a></li>
-                            <li><a href="#">Order</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-3">
-                    <div class="widget">
-                        <ul class="social-network">
-                            <li><a href="#" data-placement="top" title="Facebook"><i class="fa fa-facebook"></i></a>
-                            </li>
-                            <li><a href="#" data-placement="top" title="Twitter"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#" data-placement="top" title="Google plus"><i
-                                    class="fa fa-google-plus"></i></a></li>
-                        </ul>
-                    </div>
+<div id="footer">
+    <div class="container">
+        <div class="row" style="padding-top: 15px;">
+            <div class="col-md-3">
+                <img style="padding-top: 10px;" src="images/footer/butterbooks_logo_footer.png">
+            </div>
+            <div class="col-md-3">
+                <ul class="list-unstyled">
+                    <li><a href="#">Just In</a></li>
+                    <li><a href="#">All-Time Faves</a></li>
+                    <li><a href="#">Bestselling</a></li>
+                    <li><a href="#">Genres</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3">
+                <ul class="list-unstyled">
+                    <li><a href="/aboutus">About</a></li>
+                    <li><a href="/aboutus">Contact</a></li>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">Order</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3">
+                <div class="social-networks">
+                    <a href="https://twitter.com/" class="twitter"><i class="fab fa-twitter-square"></i></a>
+                    <a href="https://www.facebook.com/" class="facebook"><i class="fab fa-facebook-square"></i></a>
+                    <a href="https://www.instagram.com/" class="instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="snapchat"><i class="fab fa-snapchat-square"></i></a>
                 </div>
             </div>
         </div>
-    </footer>
+    </div>
+    <div class="footer-copyright">
+        <p>© 2016 Copyright Text </p>
+    </div>
 </div>
 <!-- End Top Bar -->
 <br>

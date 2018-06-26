@@ -29,6 +29,16 @@
 
 </head>
 <body>
+<%@page import="com.qa.models.Customer" %>
+<%
+            try{
+            Customer c = (Customer) session.getAttribute("logged_in_customer");
+            request.setAttribute("logged_in_customer", c);
+            System.out.println(c);
+            } catch (Exception e) {
+            System.out.println(e);
+            }
+%>
 
 
 <%!
@@ -45,8 +55,10 @@
 
 
     books = (ArrayList<Book>) session.getAttribute("filtered_books");
-
+    request.setAttribute("filtered_books", books);
     bookCounts = (Map<Integer, Integer>) session.getAttribute("book_counts");
+
+    Customer c = (Customer) session.getAttribute("logged_in_customer");
 
     double cartTotal = 0.0;
 
@@ -301,6 +313,24 @@
                 %>
 
 
+<<<<<<< HEAD
+=======
+                    <div class="col-xs-6">
+                        <label for="middle-label" class="middle">Total </label>
+                    </div>
+                    <div class="col-xs-6">
+                         <input type="hidden" name="order_total" id="order_total" value="<%=cartTotal %>"/>
+                         <label for="middle-label" class="middle" id="order_total_label">$<%=cartTotal%></label>
+                     </div>
+                    <form action="/checkout" method="post" id="checkout_form">
+                        <input type="hidden" name="order_total" value="<%=cartTotal %>"/>
+                        <input type="submit" class="btn-lg buttonOption" value="Checkout"/>
+                    </form>
+            </div> <!-- End of 3rd column-->
+        </div>
+    </div>
+    <hr>
+>>>>>>> f6037cfd26b52da19c795087b115687566d7e3dd
     <div id="push"></div>
 </div> <!-- End of wrapper -->
 <!-- End of Main Content -->

@@ -1,5 +1,6 @@
 <!doctype html>
 <%@page import="com.qa.models.Book" %>
+<%@page import="com.qa.models.Customer" %>
 <html class="no-js" lang="en">
 <head>
     <meta charset="utf-8"/>
@@ -52,11 +53,15 @@
                     <li><a href="/login"> Register | Login </a></li>
                     <li><a href="/viewCart"><i class="fas fa-shopping-cart"></i></a></li>
                 </ul>
-                <form class="navbar-form navbar-right">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Search">
+                <form  class="navbar-form navbar-right">
+                    <div class="input-group">
+                        <input type="text" class="form-control input-sm" placeholder="Search" name="search">
+                        <div class="input-group-btn">
+                            <button class="btn btn-default" type="submit" style="height:30px">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
                     </div>
-                    <button type="submit" class="btn btn-default">Submit</button>
                 </form>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
@@ -99,6 +104,16 @@
             <!-- Main Content -->
 
 
+
+<%
+            try{
+            Customer c = (Customer) session.getAttribute("logged_in_customer");
+            request.setAttribute("logged_in_customer", c);
+            System.out.println(c);
+            } catch (Exception e) {
+            System.out.println(e);
+            }
+        %>
     <div class="container-fluid" style="margin-left: 100px; margin-right: 100px;">
 
         <div class="jumbotron">
@@ -148,7 +163,7 @@
     <hr>
 
     <hr>
-        <div class="container">
+        <div class="container text-center text-md-left">
             <div class="row">
                 <div class="column">
                     <p>Cool stuff here, too!</p>
@@ -164,40 +179,40 @@
 
 <div id="footer">
     <div class="container">
-        <div class="row">
-            <div class="col-lg-3">
-                <div class="widget">
-                    <h5 class="widgetheading">Get in touch with us</h5>
-                        <ul class="link-list">
-                            <li><a href="#">Just In</a></li>
-                            <li><a href="#">All-Time Faves</a></li>
-                            <li><a href="#">Bestselling</a></li>
-                            <li><a href="#">Genres</a></li>
-                        </ul>
-                </div>
+        <div class="row" style="padding-top: 15px;">
+            <div class="col-md-3">
+                <img style="padding-top: 10px;" src="images/footer/butterbooks_logo_footer.png">
             </div>
-            <div class="col-lg-3">
-                <div class="widget">
-                    <h5 class="widgetheading">Pages</h5>
-                    <ul class="link-list">
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Contact</a></li>
-                        <li><a href="#">FAQs</a></li>
-                        <li><a href="#">Order</a></li>
-                    </ul>
-                </div>
+            <div class="col-md-3">
+                <ul class="list-unstyled">
+                    <li><a href="#">Just In</a></li>
+                    <li><a href="#">All-Time Faves</a></li>
+                    <li><a href="#">Bestselling</a></li>
+                    <li><a href="#">Genres</a></li>
+                </ul>
             </div>
-            <div class="col-lg-3">
-                <div class="widget">
-                    <ul class="social-network">
-                        <li><a href="#" data-placement="top" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
-                        <li><a href="#" data-placement="top" title="Twitter"><i class="fab fa-twitter"></i></a></li>
-                        <li><a href="#" data-placement="top" title="Instagram"><i class="fab fa-instagram"></i></a></li>
-                    </ul>
+            <div class="col-md-3">
+                <ul class="list-unstyled">
+                    <li><a href="/aboutus">About</a></li>
+                    <li><a href="/aboutus">Contact</a></li>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">Order</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3">
+                <div class="social-networks">
+                    <a href="https://twitter.com/" class="twitter"><i class="fab fa-twitter-square"></i></a>
+                    <a href="https://www.instagram.com/" class="instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/" class="facebook"><i class="fab fa-facebook-square"></i></a>
+                    <a href="#" class="snapchat"><i class="fab fa-snapchat-square"></i></a>
                 </div>
             </div>
         </div>
+        <div class="row">
+            <p>© 2016 Copyright Text </p>
+        </div>
     </div>
+
 </div>
 
 
