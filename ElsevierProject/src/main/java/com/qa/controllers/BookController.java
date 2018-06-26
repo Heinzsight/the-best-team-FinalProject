@@ -2,7 +2,7 @@ package com.qa.controllers;
 
 import com.qa.models.Author;
 import com.qa.models.Book;
-import com.qa.repositories.BookRepository;
+import com.qa.services.AuthorService;
 import com.qa.services.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -13,7 +13,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 @Controller
@@ -22,6 +21,8 @@ public class BookController {
 
     @Autowired
     BookService bookService;
+    @Autowired
+    AuthorService authorService;
 
     @RequestMapping("/bookDetails")
     public ModelAndView bookDetails(@ModelAttribute("books") Iterable<Book> books, @RequestParam("bookId") int bookId) {
@@ -105,16 +106,24 @@ public class BookController {
 
         ModelAndView mav;
 
-        Author searchAuthor = new Author();
-        searchAuthor.setAuthorName(pSearchTerm);
+        Iterable<Book> b;
+
         ArrayList<Author> authors = new ArrayList<>();
-        authors.add(searchAuthor);
-        Iterable<Book> b = bookService.searchBooksByTitle(pSearchTerm, authors, pSearchTerm);
+        Author searchAuthor = null;
+        searchAuthor = authorService.findAuthorByAuthorName(pSearchTerm);
+
+        if (searchAuthor != null) {
+            authors.add(searchAuthor);
+            b = bookService.searchBooks(authors);
+        }else{
+            b = bookService.searchBooks(pSearchTerm);
+        }
+
         mav = new ModelAndView("search", "books", b);
 
         return mav;
     }
-     
+
     public ArrayList<Integer> loadBookIds(ArrayList<Book> cartItems) {
 
         ArrayList<Integer> bookIds = new ArrayList<>();

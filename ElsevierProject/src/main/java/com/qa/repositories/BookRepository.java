@@ -12,9 +12,6 @@ import java.util.List;
 
 @Repository
 public interface BookRepository extends CrudRepository<Book, Integer> {
-
-//    @Query("select b from Book b where b.title = :searchTerm or b.eBookISBN like :searchTerm or b.paperISBN like :searchTerm")
-    Iterable<Book> findBooksByTitleIsLike(String title);
-
-    Iterable<Book> findBooksByTitleLikeOrAuthorsLikeOrPaperISBNLike(String title, List<Author> Authors, String ISBN);
+    Iterable<Book> findBooksByTitleLikeOrPaperISBNLike(String title, String ISBN);
+    Iterable<Book> findBooksByAuthors(List<Author> authors);
 }
