@@ -176,7 +176,7 @@
 
     <!-- End Main Content -->
 
-    <footer style="background-color: #af3d58">
+    <footer style="background-color: #a23452">
         <div class="container">
             <div class="row">
                 <div class="col-lg-3">

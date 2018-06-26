@@ -295,7 +295,7 @@
 
 
                                         <button id="button24" type="button" class="btn btn-primary btn-lg"
-                                                style="background-color: #af3d58; border-color: #af3d58">Submit
+                                                style="background-color: #a23452; border-color: #a23452">Submit
                                         </button>
                                     </div>
                                 </div>

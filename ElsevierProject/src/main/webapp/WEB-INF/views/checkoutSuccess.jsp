@@ -13,7 +13,10 @@
 <body>
 
 <%@page import="com.qa.models.Customer" %>
+<%@page import="com.qa.models.Book" %>
+<%@page import="java.util.ArrayList" %>
 <%
+
             try{
             Customer c = (Customer) session.getAttribute("logged_in_customer");
             request.setAttribute("logged_in_customer", c);
@@ -23,41 +26,37 @@
             }
 %>
 
-<!-- Navigation -->
-<nav class="navbar navbar-static-top" style="background: #A9A9A9;">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                <i class="fas fa-bars"></i>
-            </button>
-            <img src="images/cart.jpg" alt="Butter Books logo" class="img-thumbnail pull-left" width="50" height="50"/>
-            <a class="navbar-brand" href="" style="margin-top:10px;">Butter Books</a>
-        </div>
-        <div class="collapse navbar-collapse" id="myNavbar">
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="#">Just In</a></li>
-                <li><a href="#">All-Time Faves</a></li>
-                <li><a href="#">Bestselling</a></li>
-                <li><a href="#">Genres</a></li>
-                <form  class="navbar-form navbar-left">
-                    <div class="input-group">
-                        <input type="text" class="form-control input-sm" placeholder="Search" name="search">
-                        <div class="input-group-btn">
-                            <button class="btn btn-default" type="submit" style="height:30px">
-                                <i class="fas fa-search"></i>
-                            </button>
-                        </div>
-                    </div>
-                </form>
-                <li><a href="/login"> Register | Login </a></li>
-                <li><a href="/viewCart"><i class="fas fa-shopping-cart"></i></a></li>
-            </ul>
-        </div>
-    </div>
-</nav>
-        <!-- End Header -->
 
+        <div class="container" id="confirm">
+        		<h5>Order Confirmation</h5>
+
+        		<%
+        		   ArrayList<Book> books = (ArrayList<Book>) session.getAttribute("filtered_books");
+        		   String firstName= (String) request.getAttribute("firstName");
+        		   String address1= (String) request.getAttribute("address1");
+        		   String address2= (String) request.getAttribute("address2");
+        		   String city= (String) request.getAttribute("city");
+        		   String postcode= (String) request.getAttribute("postcode");
+        		   String allTitles="";
+        		   Double grandTotal = (Double) session.getAttribute("grand_total");
+        		   System.out.println(grandTotal);
+                   int i = 0;
+                   for (Book book : books) {
+                        String newTitle = book.getTitle();
+                        if(allTitles == "") {
+                            allTitles = allTitles + newTitle;
+                        }
+                        else {
+                        allTitles = allTitles + ", " + newTitle;
+                        }
+                        i++;
+                    }
+        		%>
+        		    <div>Hi <%=firstName%>,</div>
+        			<div>Your order of: <%=allTitles%> for  was successful!</div>
+        			<div>The order will be delivered to: <%=address1%> <%=address2%>, <%=city%> <%=postcode%></div>
+        			<div>Click here to return to the home page.</div>
+        	</div>
 
 </body>
 </html>

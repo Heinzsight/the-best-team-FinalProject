@@ -21,14 +21,14 @@
 
 				<div class="col-md-3" id="ship_info">
 					<div class="form-check form-check-inline">
-					  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadioShipping1" value="0" required>
+					  <input class="form-check-input" type="radio" name="shippingRadio" id="inlineRadioShipping1" value="0" required>
 					  <label class="form-check-label" for="inlineRadioShipping1">Standard Delivery</label>
 					  <p id="ship_method">Estimated 14-20 Day Shipping (Duties and taxes may be due upon delivery)</p>
 					</div>
 				</div>
 				<div class="col-md-3" id="ship_info">
 					<div class="form-check form-check-inline">
-					  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadioShipping2" value="1" required>
+					  <input class="form-check-input" type="radio" name="shippingRadio" id="inlineRadioShipping2" value="1" required>
 					  <label class="form-check-label" for="inlineRadioShipping2">Fast Delivery</label>
 					  <p id="ship_method">Estimated 2-5 Days Shipping (Duties and taxes may be due upon delivery)</p>
 					</div>

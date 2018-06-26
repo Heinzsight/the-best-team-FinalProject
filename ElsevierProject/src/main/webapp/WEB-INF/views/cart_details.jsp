@@ -2,6 +2,7 @@
 <%@page import="com.qa.models.Book" %>
 <%@page import="java.util.ArrayList" %>
 <%@page import="java.util.Map" %>
+<%@page import="java.text.DecimalFormat" %>
 <html class="no-js" lang="en">
 <head>
     <meta charset="utf-8"/>
@@ -53,7 +54,7 @@
 
 
     books = (ArrayList<Book>) session.getAttribute("filtered_books");
-
+    request.setAttribute("filtered_books", books);
     bookCounts = (Map<Integer, Integer>) session.getAttribute("book_counts");
 
     Customer c = (Customer) session.getAttribute("logged_in_customer");
@@ -100,26 +101,11 @@
         </nav>
         <!-- End Header -->
 
-<!-- Breadcrumbs -->
-
-<div class="row col">
-    <nav aria-label="You are here:" role="navigation">
-        <ul class="breadcrumbs">
-
-            <li><a href="/">Home</a></li>
-            <li>
-                <span class="show-for-sr">Current: </span> Book Details
-            </li>
-        </ul>
-    </nav>
-</div>
-
-<!-- End of Breadcrumbs -->
 <!-- Main Content -->
 
 
 
-<div class="container-fluid">
+<div class="container">
     <div class="row">
         <div class="col-md-6">
             <%
@@ -144,9 +130,12 @@
                     double price = book.getPrice();
                     totalPrice = book.getPrice() * quantity;
                     cartTotal = cartTotal + book.getPrice() * quantity;
+
                     System.out.println("Cart Total " + cartTotal);
+                   // System.out.println("Cart Tax " + totalTax);
 
             %>
+
             <span class="col-md-offset-2">Shopping Cart</span> <!-- show-for-sr -->
         </div> <!-- End of first column -->
     </div> <!-- End of the first row -->
@@ -155,20 +144,22 @@
             <br />
 <div class="container"> <!-- Beginning of second container -->
     <div class="row"> <!-- Beginning of second row -->
-        <div class="col-md-5" > <!-- Start of second column -->
+        <div class="col-md-4" > <!-- Start of second column -->
             <img class="thumbnail" src="<%=book.getBookImage()%>"/>
         </div>
-        <div class="col-md-4">
-            <div class="col-xs-9"  id="verticalCenter">
+        <div class="col-md-5">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h3><%=book.getTitle() %></h3>
+                </div>
+            </div>
+            <div class="col-xs-9">
+
                 <div class="column">
                     eBook ISBN : <span> <%=book.geteBookISBN()%> </span>
                 </div>
                 <div class="column">
                     Print book ISBN: <span> <%=book.getPaperISBN()%> </span>
-                </div>
-
-                <div class="column">
-                    Published On: <span> <%=book.getPublishedDate()%> </span>
                 </div>
                 <div class="column">
                     <form name="f1">
@@ -178,7 +169,7 @@
                     </label>
                 </div>
             </div>
-            <div class="col-xs-3"  id="verticalCenter">
+            <div class="col-xs-3">
                         <input type="hidden" name="cart_total" value="<%=price%>"/> <br />
                         Quantity <input type="number" min="1" name="quantity" value="<%=quantity%>"
                                         oninput="calculateTotalPrice(price.value,this.value,price_label<%=i%>)"/>
@@ -199,7 +190,7 @@
 
                 <div class="col-xs-12">
                 <h3>Summary </h3>
-                    <p></p>
+
                    <hr>
                 </div>
 
@@ -227,6 +218,11 @@
                         <label for="middle-label" class="middle">Tax </label>
                     </div>
                     <div class="col-xs-6">
+                    <%
+                        double totalTax = cartTotal * 0.08;
+                        double wholePrice = cartTotal + totalTax;
+                    %>
+                    <%=totalTax %>
                         <!-- Need the tax formula and output here -->
                     </div>
                 </div>
@@ -246,11 +242,8 @@
                 <form action="/checkout" method="post" id="checkout_form">
                     <input type="hidden" name="order_total" value="<%=cartTotal %>"/>
                     <input type="hidden" name="logged_in_customer" value="<%=cartTotal %>"/>
-<<<<<<< HEAD
-                    <input type="submit" class="buttonDetails" value="Checkout"/>
-=======
+
                     <input type="submit" class="btn-lg buttonOption" value="Checkout"/>
->>>>>>> b4ad599a089937f6b17e19a6045204e2b7f2bd8c
                 </form>
         </div> <!-- End of 3rd column in row 2 -->
     </div>
