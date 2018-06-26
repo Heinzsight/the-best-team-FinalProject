@@ -15,8 +15,15 @@ public class BookService {
         return bookRepository.findAll();
 
     }
-    public Iterable<Book> searchBooks(String searchTerm) {
-        return bookRepository.findBookByTerm(searchTerm);
+
+    public Iterable<Book> searchBooksByTitle(String title) {
+        return bookRepository.findBooksByTitleIsLike("%" + title + "%");
     }
+
+//    public Iterable<Book> searchForBooks(String term) {
+//        return bookRepository.findBooksByTitleIsLikeOrAuthors("%" + term + "%");
+//    }
+
+
 
 }

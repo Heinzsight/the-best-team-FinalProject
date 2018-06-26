@@ -10,7 +10,9 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface BookRepository extends CrudRepository<Book, Integer> {
 
-    @Query("select b from Book b where b.title = :searchTerm or b.eBookISBN like :searchTerm or b.paperISBN like :searchTerm")
-    public Iterable<Book> findBookByTerm(@Param("searchTerm") String searchTerm);
+//    @Query("select b from Book b where b.title = :searchTerm or b.eBookISBN like :searchTerm or b.paperISBN like :searchTerm")
+    Iterable<Book> findBooksByTitleIsLike(String title);
+
+//    Iterable<Book> findBooksByTitleIsLikeOrAuthors(String titleOrAuthor);
 
 }

@@ -2,6 +2,7 @@ package com.qa.controllers;
 
 import com.qa.models.Book;
 import com.qa.repositories.BookRepository;
+import com.qa.services.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -18,7 +19,7 @@ import java.util.Map;
 public class BookController {
 
     @Autowired
-    BookRepository bookService;
+    BookService bookService;
 
     @RequestMapping("/bookDetails")
     public ModelAndView bookDetails(@ModelAttribute("books") Iterable<Book> books, @RequestParam("bookId") int bookId) {
@@ -99,17 +100,17 @@ public class BookController {
     @RequestMapping(value="/search")
     public ModelAndView Search(@ModelAttribute("books") Iterable<Book> books,
                                @RequestParam(value = "searchTerm", required = false) String pSearchTerm, HttpServletRequest request, HttpServletResponse response) {
-        ModelAndView mav = new ModelAndView();
-        Iterable<Book> b = bookService.findBookByTerm(pSearchTerm);
-        if (b != null) {
-            System.out.println("Success");
-            mav = new ModelAndView("search", "books", b);
-        } else {
-            System.out.println("Failure");
-            mav = new ModelAndView("/");
-        }
-        mav.addObject("books", bookService.findBookByTerm(pSearchTerm));
-        bookService.findBookByTerm(pSearchTerm);
+        ModelAndView mav;
+        Iterable<Book> b = bookService.searchBooksByTitle(pSearchTerm);
+        mav = new ModelAndView("search", "books", b);
+
+//        if (b != null) {
+//            System.out.println("Success");
+//        } else {
+//            System.out.println("Failure");
+//            mav = new ModelAndView("/");
+//        }
+//        bookService.searchBooksByTerm(pSearchTerm);
         return mav;
     }
 
