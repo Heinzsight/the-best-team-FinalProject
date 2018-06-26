@@ -1,17 +1,19 @@
 package com.qa.controllers;
 
+import com.qa.models.Author;
 import com.qa.models.Book;
 import com.qa.repositories.BookRepository;
+import com.qa.services.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @Controller
@@ -19,7 +21,7 @@ import java.util.Map;
 public class BookController {
 
     @Autowired
-    BookRepository bookService;
+    BookService bookService;
 
     @RequestMapping("/bookDetails")
     public ModelAndView bookDetails(@ModelAttribute("books") Iterable<Book> books, @RequestParam("bookId") int bookId) {
@@ -97,6 +99,22 @@ public class BookController {
 
     }
 
+    @RequestMapping(value="/search")
+    public ModelAndView Search(@ModelAttribute("books") Iterable<Book> books,
+                               @RequestParam(value = "searchTerm", required = false) String pSearchTerm, HttpServletRequest request, HttpServletResponse response) {
+
+        ModelAndView mav;
+
+        Author searchAuthor = new Author();
+        searchAuthor.setAuthorName(pSearchTerm);
+        ArrayList<Author> authors = new ArrayList<>();
+        authors.add(searchAuthor);
+        Iterable<Book> b = bookService.searchBooksByTitle(pSearchTerm, authors, pSearchTerm);
+        mav = new ModelAndView("search", "books", b);
+
+        return mav;
+    }
+     
     public ArrayList<Integer> loadBookIds(ArrayList<Book> cartItems) {
 
         ArrayList<Integer> bookIds = new ArrayList<>();

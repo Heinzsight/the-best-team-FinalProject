@@ -41,10 +41,32 @@ public class CustomerController {
             cartItems = new ArrayList<Book>();
         }
 
-
         Iterable<Book> books = bookService.findAllBooks();
 
         ModelAndView modelAndView = new ModelAndView("index", "books", books);
+
+        modelAndView.addObject("cart_items", cartItems);
+        return modelAndView;
+
+    }
+    @RequestMapping("/booksJustIn")
+    public ModelAndView booksJustIn(HttpServletRequest request) {
+
+        ArrayList<Book> cartItems = null;
+
+        HttpSession session = request.getSession();
+
+        Object items = session.getAttribute("cart_items");
+
+        if (items != null) {
+            cartItems = (ArrayList<Book>) items;
+        } else {
+            cartItems = new ArrayList<Book>();
+        }
+
+        Iterable<Book> books = bookService.findAllBooks();
+
+        ModelAndView modelAndView = new ModelAndView("books_just_in", "books", books);
 
         modelAndView.addObject("cart_items", cartItems);
         return modelAndView;
