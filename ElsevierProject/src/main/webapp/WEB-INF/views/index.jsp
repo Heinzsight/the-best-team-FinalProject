@@ -52,9 +52,9 @@
                     <li><a href="/login"> Register | Login </a></li>
                     <li><a href="/viewCart"><i class="fas fa-shopping-cart"></i></a></li>
                 </ul>
-                <form  class="navbar-form navbar-right">
+                <form  class="navbar-form navbar-right" action="/search">
                     <div class="input-group">
-                        <input type="text" class="form-control input-sm" placeholder="Search" name="search">
+                        <input type="text" class="form-control input-sm" placeholder="Search" name="searchTerm">
                         <div class="input-group-btn">
                             <button class="btn btn-default" type="submit" style="height:30px">
                                 <i class="fas fa-search"></i>

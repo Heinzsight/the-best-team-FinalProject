@@ -4,12 +4,11 @@ import com.qa.models.Book;
 import com.qa.repositories.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -95,6 +94,23 @@ public class BookController {
 
         return modelAndView;
 
+    }
+
+    @RequestMapping(value="/search")
+    public ModelAndView Search(@ModelAttribute("books") Iterable<Book> books,
+                               @RequestParam(value = "searchTerm", required = false) String pSearchTerm, HttpServletRequest request, HttpServletResponse response) {
+        ModelAndView mav = new ModelAndView();
+        Iterable<Book> b = bookService.findBookByTerm(pSearchTerm);
+        if (b != null) {
+            System.out.println("Success");
+            mav = new ModelAndView("search", "books", b);
+        } else {
+            System.out.println("Failure");
+            mav = new ModelAndView("/");
+        }
+        mav.addObject("books", bookService.findBookByTerm(pSearchTerm));
+        bookService.findBookByTerm(pSearchTerm);
+        return mav;
     }
 
     public ArrayList<Integer> loadBookIds(ArrayList<Book> cartItems) {
