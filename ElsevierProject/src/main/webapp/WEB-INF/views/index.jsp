@@ -191,16 +191,17 @@
             <div class="col-md-3">
                 <div class="social-networks">
                     <a href="https://twitter.com/" class="twitter"><i class="fab fa-twitter-square"></i></a>
-                    <a href="https://www.facebook.com/" class="facebook"><i class="fab fa-facebook-square"></i></a>
                     <a href="https://www.instagram.com/" class="instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/" class="facebook"><i class="fab fa-facebook-square"></i></a>
                     <a href="#" class="snapchat"><i class="fab fa-snapchat-square"></i></a>
                 </div>
             </div>
         </div>
+        <div class="row">
+            <p>© 2016 Copyright Text </p>
+        </div>
     </div>
-    <div class="footer-copyright">
-        <p>© 2016 Copyright Text </p>
-    </div>
+
 </div>
 
 
