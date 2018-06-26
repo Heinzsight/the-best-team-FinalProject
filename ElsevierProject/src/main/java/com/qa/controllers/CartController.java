@@ -35,7 +35,7 @@ public class CartController {
     }
 
 
-    @RequestMapping(value="/about")
+    @RequestMapping(value = "/about")
     public String aboutUs() {
         //System.out.println("Getting here!!!");
         return "about";
