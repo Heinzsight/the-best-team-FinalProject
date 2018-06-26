@@ -131,7 +131,7 @@
 
 
 
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
             <div class="col-md-6">
                 <span class="col-md-offset-2">Shopping Cart</span>
@@ -161,7 +161,14 @@
                         int quantity = bookCounts.get(book.getBookId());
                         double price = book.getPrice();
                         totalPrice = book.getPrice() * quantity;
-                        cartTotal = cartTotal + book.getPrice() * quantity;
+                        cartTotal = Math.round((cartTotal + book.getPrice() * quantity) * 100) / 100.0;
+
+                                                  double totalTax = cartTotal * 0.08;
+                                                  totalTax = Math.round(totalTax * 100) / 100.0;
+
+                                                  double wholePrice = cartTotal + totalTax;
+                                                  wholePrice = Math.round(wholePrice * 100) / 100.0;
+
 
                         System.out.println("Cart Total " + cartTotal);
                        // System.out.println("Cart Tax " + totalTax);
@@ -169,9 +176,9 @@
                 %>
 
 
-    <div class="container">
+    <div class="container" id="leftFloatedContainer">
         <div class="row">
-            <div class="col-md-9">
+            <div class="col-md-12">
                 <div class="container-fluid">
                     <div class="row">
                          <div class="col-md-6 col-xs-12" >
@@ -184,105 +191,118 @@
                                 <div class="row">
                                     <div class="col-xs-9">
 
-                                                    <div class="column">
-                                                        eBook ISBN : <span> <%=book.geteBookISBN()%> </span>
-                                                    </div>
-                                                    <div class="column">
-                                                        Print book ISBN: <span> <%=book.getPaperISBN()%> </span>
-                                                    </div>
-                                                    <div class="column">
-                                                        <form name="f1">
-                                                            <input type="hidden" name="price" value="<%=price%>"/>
-                                                            <input type="hidden" name="cart_total" value="<%=cartTotal%>"/>
-                                                            Price <label id="price_label<%=i%>">$<%=totalPrice%>
-                                                        </label>
-                                                    </div>
-                                     </div>
-                                     <div class="col-xs-3">
-                                        <input type="hidden" name="cart_total" value="<%=price%>"/> <br />
-                                                                     Quantity <input type="number" min="1" name="quantity" value="<%=quantity%>"
-                                                                                     oninput="calculateTotalPrice(price.value,this.value,price_label<%=i%>)"/>
-                                                                 </form>
+                                      <div class="column">
+                                           eBook ISBN : <span> <%=book.geteBookISBN()%> </span>
+                                      </div>
+                                      <div class="column">
+                                           Print book ISBN: <span> <%=book.getPaperISBN()%> </span>
+                                      </div>
+                                      <div class="column">
+                                          <form name="f1">
+                                              <input type="hidden" name="price" value="<%=price%>"/>
+                                              <input type="hidden" name="cart_total" value="<%=cartTotal%>"/>
+                                              Price <label id="price_label<%=i%>">$<%=totalPrice%>
+                                          </label>
+                                      </div>
+                                    </div>
+                                <div class="col-xs-3">
+                                              <input type="hidden" name="cart_total" value="<%=price%>"/> <br />
+                                              Quantity <input type="number" min="1" name="quantity" value="<%=quantity%>"
+                                              oninput="calculateTotalPrice(price.value,this.value,price_label<%=i%>)"/>
+                                          </form>
 
-                                                                 <div class="column">
-                                                                     <a href="/removeFromCart?bookId=<%=book.getBookId() %>"> Remove </a>
-                                                                 </div>
-                                     </div>
-                                 </div>
-                            </div>
+                                          <div class="column">
+                                               <a href="/removeFromCart?bookId=<%=book.getBookId() %>"> Remove </a>
+                                          </div>
+                                </div>
+                            </div> <!-- validated to here -->
                         </div>
                     </div>
-                 </div>
+                </div>
+            </div> <!-- End of first column -->
 
-                 </div> <!-- End of second column -->
+        </div>
+    </div>
+    </div> <!-- got this one div thats needed but I cant find where its partner tag is -->
 
                 <%
                         i++;
+                        if(i == books.size())
+                        {
+                 %>
+                    <div class="container" id="rightFloatedContainer">
+                        <div class="row">
+                            <div class="col-md-7"> <!-- Beginning of 3rd column -->
+                                <div class="row">
+                                                <div class="col-xs-12">
+                                                    <h3 class="centered">Summary </h3>
+
+                                                   <hr>
+                                                </div>
+                                </div>
+
+                                                 <div class="row">
+                                                     <div class="col-xs-6">
+                                                        <label for="middle-label" class="middle">Subtotal</label>
+                                                     </div>
+                                                     <div class="col-xs-6">
+                                                        <input type="hidden" name="order_total" id="cart_total" value="<%=cartTotal %>"/>
+                                                        <label for="middle-label" class="middle" id="cart_total_label">$<%=cartTotal %>
+                                                     </div>
+                                                 </div>
+
+
+                                                <div class="row">
+                                                    <div class="col-xs-6">
+                                                        <label for="middle-label" class="middle">Shipping</label>
+                                                    </div>
+                                                    <div class="col-xs-6">
+                                                        <!-- Need the Shipping amount here -->
+                                                        <label for="middle-label" class="middle"> Free </label>
+                                                    </div>
+
+                                                    <div class="col-xs-6">
+                                                        <label for="middle-label" class="middle">Tax </label>
+                                                    </div>
+                                                    <div class="col-xs-6">
+
+                                                    <%=totalTax %>
+                                                        <!-- Need the tax formula and output here -->
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-xs-12">
+                                                    <hr>
+                                                </div>
+
+                                                <div class="col-xs-6">
+                                                    <label for="middle-label" class="middle">Total </label>
+                                                </div>
+                                                <div class="col-xs-6">
+                                                     <input type="hidden" name="order_total" id="order_total" value="<%=wholePrice %>"/>
+                                                     <label for="middle-label" class="middle" id="order_total_label">$<%=wholePrice%></label>
+                                                 </div>
+                                         <div class="container">
+                                            <div class="row">
+                                                <div class="col-xs-12">
+                                                    <form action="/checkout" method="post" id="checkout_form">
+                                                        <input type="hidden" name="order_total" value="<%=cartTotal %>"/>
+                                                        <input type="submit" class="btn-lg buttonOption" class="centered" value="Checkout"/>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                         </div>
+                            </div> <!-- End of 3rd column-->
+                        </div>
+                    </div> <!-- End of second floated container -->
+
+                <%        }
                     }
                 %>
-            <div class="col-md-3"> <!-- Beginning of 3rd column -->
-                    <div class="col-xs-12">
-                    <h3>Summary </h3>
-
-                       <hr>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-xs-6">
-                            <label for="middle-label" class="middle">Subtotal</label>
-                         </div>
-                         <div class="col-xs-6">
-                            <input type="hidden" name="order_total" id="cart_total" value="<%=cartTotal %>"/>
-                            <label for="middle-label" class="middle" id="cart_total_label">$<%=cartTotal %>
-                        </div>
-                     </div>
 
 
-                    <div class="row">
-                        <div class="col-xs-6">
-                            <label for="middle-label" class="middle">Shipping</label>
-                        </div>
-                        <div class="col-xs-6">
-                            <!-- Need the Shipping amount here -->
-                            <label for="middle-label" class="middle"> Free </label>
-                        </div>
-
-                        <div class="col-xs-6">
-                            <label for="middle-label" class="middle">Tax </label>
-                        </div>
-                        <div class="col-xs-6">
-                        <%
-                            double totalTax = cartTotal * 0.08;
-                            totalTax = (totalTax * 100) / 100;
-                            double wholePrice = cartTotal + totalTax;
-                        %>
-                        <%=totalTax %>
-                            <!-- Need the tax formula and output here -->
-                        </div>
-                    </div>
-
-                    <div class="col-xs-12">
-                        <hr>
-                    </div>
-
-                    <div class="col-xs-6">
-                        <label for="middle-label" class="middle">Total </label>
-                    </div>
-                    <div class="col-xs-6">
-                         <input type="hidden" name="order_total" id="order_total" value="<%=cartTotal %>"/>
-                         <label for="middle-label" class="middle" id="order_total_label">$<%=cartTotal%></label>
-                     </div>
-
-                    <form action="/checkout" method="post" id="checkout_form">
-                        <input type="hidden" name="order_total" value="<%=cartTotal %>"/>
-                        <input type="submit" class="btn-lg buttonOption" value="Checkout"/>
-                    </form>
-            </div> <!-- End of 3rd column-->
-        </div>
-    </div>
-    <hr>
     <div id="push"></div>
-</div>
+</div> <!-- End of wrapper -->
 <!-- End of Main Content -->
 
 <!-- Beginning of Footer -->
