@@ -136,7 +136,7 @@
     <br>
     <br>
     <br>
-    <div>
+    <div  style="background-color: rgba(174,203,197,0.09)">
         <h6 align="center">Contact Us</h6>
         <div style="margin-left: 30%; margin-right: 30%">
             <!-- Special version of Bootstrap that only affects content wrapped in .bootstrap-iso -->
