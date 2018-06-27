@@ -5,8 +5,15 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Online Shopping </title>
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    <!-- Bootstrap core CSS -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom fonts for this template -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+        <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="css/flexslider.css"/>
+    <!-- Custom styles for this template -->
+        <link rel="stylesheet" href="css/nav-footer-style.css"/>
 </head>
 <body>
 
@@ -21,43 +28,56 @@
     c = (Customer) session.getAttribute("logged_in_customer");
 %>
 
-<!-- Start Top Bar -->
-<div class="top-bar">
-    <div class="top-bar-left">
-        <ul class="menu">
-            <li class="menu-text" style="color:red">Online Shopping</li>
-            <li><a href="#">Home</a></li>
+<div id="wrap">
 
-        </ul>
-    </div>
-    <div class="top-bar-right">
 
-        <ul class="dropdown menu" data-dropdown-menu>
-            <li id="cart_items"></li>
+    <!-- Navigation -->
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">
+                    <img alt="Brand" src="images/header/butter_books_logo.png">
+                </a>
+            </div>
 
-            <li><a href="/profile">Personal Details</a></li>
-            <li><a href="/addressBook">Address Book</a></li>
-            <li><a href="#">Order History </a></li>
-            <li><a href="/logout">Logout</a></li>
-            <li class="has-submenu">
-                <a href="/viewCart"> <img src="images/cart.jpg" width="50" height="50"/></a>
-                <ul class="submenu menu vertical" data-submenu>
-                    <li><a href="/viewCart"><img src="images/cart.jpg" width="50" height="50"/></a></li>
-
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a href="#">Just In</a></li>
+                    <li><a href="#">All Time Faves</a></li>
+                    <li><a href="#">Bestselling</a></li>
+                    <li><a href="#">Genres</a></li>
                 </ul>
-            </li>
-
-        </ul>
-
-    </div>
-</div>
-<!-- End Top Bar -->
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="/login"> Register | Login </a></li>
+                    <li><a href="/viewCart"><i class="fas fa-shopping-cart"></i></a></li>
+                </ul>
+                <form  class="navbar-form navbar-right" action="/search">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group addon">
+                                <input type="text" class="form-control input-sm" placeholder="Search" name="searchTerm">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+    <!-- End Header -->
 
 <div class="callout large">
     <div class="row column text-center">
 
-        <h3>You have logged in as <%=c.getFirstName() %>
-        </h3>
+        <h1>You have logged in as <%=c.getFirstName() %>
+        </h1>
     </div>
 
 
@@ -90,6 +110,59 @@
 
     </div>
 
+
+</div>
+
+<div id="push"></div>
+</div>
+
+<div id="footer">
+    <div class="container">
+        <div class="row" style="padding-top: 15px;">
+            <div class="col-md-3">
+                <img style="padding-top: 10px;" src="images/footer/butterbooks_logo_footer.png">
+            </div>
+            <div class="col-md-3">
+                <ul class="list-unstyled">
+                    <li><a href="#">Just In</a></li>
+                    <li><a href="#">All-Time Faves</a></li>
+                    <li><a href="#">Bestselling</a></li>
+                    <li><a href="#">Genres</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3">
+                <ul class="list-unstyled">
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/about">Contact</a></li>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">Order</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3">
+                <div class="social-networks">
+                    <a href="https://twitter.com/" class="twitter"><i class="fab fa-twitter-square"></i></a>
+                    <a href="https://www.instagram.com/" class="instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/" class="facebook"><i class="fab fa-facebook-square"></i></a>
+                    <a href="#" class="snapchat"><i class="fab fa-snapchat-square"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <ul class="list-inline footer-copyright">
+                <li><a>&copy; 2018 Butter Books, Inc.</a></li>
+                <li><a>|</a></li>
+                <li><a>Terms of Use</a></li>
+                <li><a>|</a></li>
+                <li><a>Copyright and Trademark</a></li>
+                <li><a>|</a></li>
+                <li><a>Privacy Policy</a></li>
+                <li><a>|</a></li>
+                <li><a>Sitemap</a></li>
+                <li><a>|</a></li>
+                <li><a>Accessibility</a></li>
+            </ul>
+        </div>
+    </div>
 
 </div>
 

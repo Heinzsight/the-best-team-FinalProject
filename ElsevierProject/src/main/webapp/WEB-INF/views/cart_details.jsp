@@ -15,7 +15,6 @@
         <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
         <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="css/flexslider.css"/>
-        <link rel="stylesheet" href="css/wrapper.css"/>
     <!-- Custom styles for this template -->
         <link rel="stylesheet" href="css/nav-footer-style.css"/>
         <link href="css/cart_details-style.css" rel="stylesheet">
@@ -108,38 +107,6 @@
             </div><!-- /.container-fluid -->
         </nav>
 
-        <%--<nav class="navbar navbar-static-top" style="background: #A9A9A9;">--%>
-            <%--<div class="container">--%>
-                <%--<div class="navbar-header">--%>
-                    <%--<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">--%>
-                        <%--<i class="fas fa-bars"></i>--%>
-                    <%--</button>--%>
-                    <%--<img src="images/cart.jpg" alt="Butter Books logo" class="img-thumbnail pull-left" width="50" height="50"/>--%>
-                    <%--<a class="navbar-brand" href="" style="margin-top:10px;">Butter Books</a>--%>
-                <%--</div>--%>
-                <%--<div class="collapse navbar-collapse" id="myNavbar">--%>
-                    <%--<ul class="nav navbar-nav">--%>
-                        <%--<li class="active"><a href="#">Home</a></li>--%>
-                        <%--<li><a href="#">Just In</a></li>--%>
-                        <%--<li><a href="#">All-Time Faves</a></li>--%>
-                        <%--<li><a href="#">Bestselling</a></li>--%>
-                        <%--<li><a href="#">Genres</a></li>--%>
-                        <%--<form  class="navbar-form navbar-left">--%>
-                            <%--<div class="input-group">--%>
-                                <%--<input type="text" class="form-control input-sm" placeholder="Search" name="search">--%>
-                                <%--<div class="input-group-btn">--%>
-                                    <%--<button class="btn btn-default" type="submit" style="height:30px">--%>
-                                        <%--<i class="fas fa-search"></i>--%>
-                                    <%--</button>--%>
-                                <%--</div>--%>
-                            <%--</div>--%>
-                        <%--</form>--%>
-                        <%--<li><a href="/login"> Register | Login </a></li>--%>
-                        <%--<li><a href="/viewCart"><i class="fas fa-shopping-cart"></i></a></li>--%>
-                    <%--</ul>--%>
-                <%--</div>--%>
-            <%--</div>--%>
-        <%--</nav>--%>
                 <!-- End Header -->
 
     <!-- Main Content -->
@@ -149,7 +116,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-6">
-                <span class="col-md-offset-2">Shopping Cart</span>
+                <h1 class="col-md-offset-2">Shopping Cart</h1>
             </div> <!-- End of first column -->
         </div> <!-- End of the first row -->
     </div> <!-- End of first container -->
@@ -246,10 +213,10 @@
                  %>
                     <div class="container" id="rightFloatedContainer" >
                         <div class="row">
-                            <div class="col-md-10"> <!-- Beginning of 3rd column -->
+                            <div class="col-md-12"> <!-- Beginning of 3rd column -->
                                             <div class="row">
                                                             <div class="col-xs-12 col-md-offset-3">
-                                                                <h3>Summary </h3>
+                                                                <h1>Summary </h1>
 
 
                                                             </div>
@@ -261,10 +228,10 @@
                                                 </div>
 
                                                  <div class="row">
-                                                     <div class="col-xs-4 col-md-offset-2">
+                                                     <div class="col-xs-5 col-md-offset-2">
                                                         <label for="middle-label" class="middle">Subtotal</label>
                                                      </div>
-                                                     <div class="col-xs-6">
+                                                     <div class="col-xs-5">
                                                         <input type="hidden" name="order_total" id="cart_total" value="<%=cartTotal %>"/>
                                                         <label for="middle-label" class="middle" id="cart_total_label">$<%=cartTotal %>
                                                      </div>
@@ -272,19 +239,19 @@
 
 
                                                 <div class="row">
-                                                    <div class="col-xs-4 col-md-offset-2">
+                                                    <div class="col-xs-5 col-md-offset-2">
                                                         <label for="middle-label" class="middle">Shipping</label>
                                                     </div>
-                                                    <div class="col-xs-6">
+                                                    <div class="col-xs-5">
                                                         <!-- Need the Shipping amount here -->
                                                         <label for="middle-label" class="middle"> Free </label>
                                                     </div>
                                                 </div>
                                                 <div class="row">
-                                                    <div class="col-xs-4 col-md-offset-2">
+                                                    <div class="col-xs-5 col-md-offset-2">
                                                         <label for="middle-label" class="middle">Tax </label>
                                                     </div>
-                                                    <div class="col-xs-6">
+                                                    <div class="col-xs-5">
                                                         <%=totalTax %>
                                                     </div>
                                                 </div>
@@ -295,10 +262,10 @@
                                                     </div>
                                                 </div>
                                                 <div class="row">
-                                                    <div class="col-xs-4 col-md-offset-2">
+                                                    <div class="col-xs-5 col-md-offset-2">
                                                         <label for="middle-label" class="middle">Total </label>
                                                     </div>
-                                                    <div class="col-xs-6">
+                                                    <div class="col-xs-5">
                                                          <input type="hidden" name="order_total" id="order_total" value="<%=wholePrice %>"/>
                                                          <label for="middle-label" class="middle" id="order_total_label">$<%=wholePrice%></label>
                                                      </div>
@@ -330,11 +297,17 @@
                                                  {
 
                                                  %>
+                                                    <div class="row">
+                                                        <div class="col-xs-12" style="text-align: center">
+                                                            <label for="label" class="middle"> You need to login before you check out! Click below to login and come back here after you are done! </label>
+                                                        </div>
+                                                    </div>
                                                 <div class="row">
-                                                    <div class="col-xs-9 col-md-offset-3">
+                                                    <div class="col-xs-8 col-md-offset-4">
                                                         <form action="/login" method="post" id="checkout_form">
+
                                                             <input type="hidden" name="order_total" value="<%=cartTotal %>"/>
-                                                            <input type="submit" class="btn-lg buttonOption" class="centered" value="Checkout"/>
+                                                            <input type="submit" class="btn-lg buttonOption" class="centered" value="Login"/>
                                                         </form>
                                                     </div>
                                                 </div>

@@ -23,6 +23,16 @@
 
 <div id="wrap">
 
+        <%
+            Customer c = null;
+            try{
+            c = (Customer) session.getAttribute("logged_in_customer");
+            request.setAttribute("logged_in_customer", c);
+            System.out.println(c);
+            } catch (Exception e) {
+            System.out.println(e);
+            }
+        %>
 
     <!-- Navigation -->
     <nav class="navbar navbar-default">
@@ -43,13 +53,34 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li><a href="#">Just In</a></li>
-                    <li><a href="#">All Time Faves</a></li>
-                    <li><a href="#">Bestselling</a></li>
-                    <li><a href="#">Genres</a></li>
+                    <li><a href="/just-in">Just In</a></li>
+                    <li><a href="/all-time-faves">All Time Faves</a></li>
+                    <li><a href="/bestselling">Bestselling</a></li>
+                    <li><a href="/genres">Genres</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="/login"> Register | Login </a></li>
+
+                    <%
+                        if (c == null){
+                            %>
+                            <li><a href="/login"> Register | Login </a></li>
+                            <%
+                        } else {
+                            %>
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Hello, <%=c.getFirstName()%> <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Action</a></li>
+                                    <li><a href="#">Another action</a></li>
+                                    <li><a href="#">Something else here</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="#">Separated link</a></li>
+                                </ul>
+                            </li>
+                            <%
+                        }
+                    %>
+
                     <li><a href="/viewCart"><i class="fas fa-shopping-cart"></i></a></li>
                 </ul>
                 <form  class="navbar-form navbar-right" action="/search">
@@ -66,29 +97,17 @@
     </nav>
     <!-- End Header -->
 
-        <%
-            try{
-            Customer c = (Customer) session.getAttribute("logged_in_customer");
-            request.setAttribute("logged_in_customer", c);
-            System.out.println(c);
-            } catch (Exception e) {
-            System.out.println(e);
-            }
-        %>
 
+
+    <div>
+        <img src="images/index/homepage_banner_1920.jpg" alt="Butter Books logo" class="img-thumbnail pull-left" style="height: 250px; width:100%; margin-right:150px;"/>
+    </div>
     <!-- Main Content -->
     <div class="container">
-
-        <div class="jumbotron">
-            <img src="images/cart.jpg" alt="Butter Books logo" class="img-thumbnail pull-left" width="150" height="150" style="margin-right:150px;"/>
-            <h1>3 Books of Your Choice</h1>
-            <p>for only $5/mo</p>
-        </div>
-
         <div class="row">
-            <div class="container-fluid .front-layout-title">
-                <h1 class="pull-left">Just In</h1>
-                <h1><a href="#" class="pull-right">View All</a></h1>
+            <div class="container-fluid front-layout-title">
+                <h3 class="pull-left">Just In</h3>
+                <h3><a href="/just-in" class="pull-right">View All</a></h3>
             </div>
         </div>
         <div class="row">
@@ -124,9 +143,9 @@
 
         </div>
         <div class="row">
-            <div class="container-fluid .front-layout-title">
-                <h1 class="pull-left">All-time Faves</h1>
-                <h1><a href="#" class="pull-right">View All</a></h1>
+            <div class="container-fluid front-layout-title">
+                <h3 class="pull-left">All-time Faves</h3>
+                <h3><a href="#" class="pull-right">View All</a></h3>
             </div>
         </div>
         <div class="row">
@@ -162,6 +181,7 @@
                 }
             %>
         <!-- End Main Content -->
+    </div>
     <div id="push"></div>
 </div>
 
@@ -212,8 +232,6 @@
             </ul>
         </div>
     </div>
-
-</div>
 
 
 <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>

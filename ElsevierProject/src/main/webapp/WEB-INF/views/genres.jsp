@@ -24,16 +24,16 @@
 <div id="wrap">
 
 
-        <%
-            Customer c = null;
-            try{
+    <%
+        Customer c = null;
+        try{
             c = (Customer) session.getAttribute("logged_in_customer");
             request.setAttribute("logged_in_customer", c);
             System.out.println(c);
-            } catch (Exception e) {
+        } catch (Exception e) {
             System.out.println(e);
-            }
-        %>
+        }
+    %>
 
     <!-- Navigation -->
     <nav class="navbar navbar-default">
@@ -98,20 +98,21 @@
     </nav>
     <!-- End Header -->
 
-
     <!-- Main Content -->
     <div class="container">
         <div class="jumbotron">
-            <h1 class="centered">Just In</h1>
+            <h1 class="centered">Genres</h1>
         </div>
-        <div class="row">
             <%
                 Iterable<Book> books = (Iterable<Book>) session.getAttribute("books");
                 int i = 0;
                 for (Book book : books) {
-                    if (i == 4) {
-                        break;
+                    if (i == 0){
+                        %>
+                            <div class="row">
+                        <%
                     }
+
             %>
 
             <div class="col-sm-3" style="height: auto;">
@@ -131,12 +132,19 @@
             </div>
 
             <%
-                    i++;
+                    if (i == 3){
+                        %>
+                            </div>
+                        <%
+                        i = 0;
+                    } else {
+                        i++;
+                    }
                 }
             %>
-
-        </div>
-        <!-- End Main Content -->
+    <%--get an even number of books in the DB--%>
+    </div>
+    <!-- End Main Content -->
         <div id="push"></div>
     </div>
 

@@ -54,10 +54,10 @@ input[type=number]
     #rightFloatedContainer
     {
         background-color: rgba(200, 200, 200, .2);
-        min-height: 350px;
+        min-height: 375px;
         position: absolute;
-        top: 170px;
-        right: 10px;
+        top: 220px;
+        right: 40px;
         width: 25%;
     }
 

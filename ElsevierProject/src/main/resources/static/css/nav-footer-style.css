@@ -16,8 +16,17 @@ h2 {
     font-family: "Abril Fatface";
 }
 
+h3 {
+    color: #a23452;
+    font-family: "Abril Fatface";
+}
+
+
+.navbar-default {
+    border-color: transparent;
+}
 .front-layout-title {
-    margin-top: 50px;
+    margin-top: 30px;
 }
 
 /* Wrapper for page content to push down footer */
@@ -38,6 +47,7 @@ h2 {
     height: 225px;
     padding: 10px;
     background-color: #a23452;
+    margin-top: 20px;
 }
 
 /* Lastly, apply responsive CSS fixes as necessary */

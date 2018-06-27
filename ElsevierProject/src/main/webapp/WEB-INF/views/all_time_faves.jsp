@@ -98,20 +98,18 @@
     </nav>
     <!-- End Header -->
 
-
     <!-- Main Content -->
     <div class="container">
         <div class="jumbotron">
-            <h1 class="centered">Just In</h1>
+            <h1 class="centered">All Time Faves</h1>
         </div>
         <div class="row">
             <%
                 Iterable<Book> books = (Iterable<Book>) session.getAttribute("books");
                 int i = 0;
                 for (Book book : books) {
-                    if (i == 4) {
-                        break;
-                    }
+                    if (i >= 4 && i < 8) {
+
             %>
 
             <div class="col-sm-3" style="height: auto;">
@@ -131,6 +129,7 @@
             </div>
 
             <%
+                    }
                     i++;
                 }
             %>
