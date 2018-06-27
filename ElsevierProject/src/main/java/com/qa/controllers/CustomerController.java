@@ -190,10 +190,15 @@ public class CustomerController {
     }
 
     @RequestMapping("/loginProcess")
-    public ModelAndView loginProcess(@RequestParam("email") String email,
+    public ModelAndView loginProcess(HttpServletRequest request,
+                                     @RequestParam("email") String email,
                                      @RequestParam("password") String password) {
+        ArrayList<Book> cartItems = null;
+
+        HttpSession session = request.getSession();
 
         ModelAndView modelAndView = null;
+
 
         System.out.println("Email is " + email);
 
@@ -207,6 +212,7 @@ public class CustomerController {
             System.out.println("Success");
             //the viewName here used to be "customer_home"
             modelAndView = new ModelAndView("index", "logged_in_customer", c);
+            modelAndView.addObject("cart_items", new ArrayList<Book>());
         } else {
             System.out.println("Failure");
             modelAndView = new ModelAndView("login");

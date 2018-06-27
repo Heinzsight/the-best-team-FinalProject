@@ -37,6 +37,9 @@
             Customer c = (Customer) session.getAttribute("logged_in_customer");
             request.setAttribute("logged_in_customer", c);
             System.out.println(c);
+
+            System.out.println(c);
+
             } catch (Exception e) {
             System.out.println(e);
             }
@@ -141,14 +144,14 @@
                     for (Book book : books) {
 
                         int quantity = bookCounts.get(book.getBookId());
-                        double price = book.getPrice();
-                        totalPrice = book.getPrice() * quantity;
-                        cartTotal = Math.round((cartTotal + book.getPrice() * quantity) * 100) / 100.0;
+                        double price = book.getPrice();          //individual book price
+                        totalPrice = book.getPrice() * quantity; //the price of the book times the quantity
+                        cartTotal = Math.round((cartTotal + book.getPrice() * quantity) * 100) / 100.0; //the whole price of the books with their quantity included
 
-                        double totalTax = cartTotal * 0.08;
-                        totalTax = Math.round(totalTax * 100) / 100.0;
-                        double wholePrice = cartTotal + totalTax;
-                        wholePrice = Math.round(wholePrice * 100) / 100.0;
+                        double totalTax = cartTotal * 0.08;      //the tax for the entire order
+                        totalTax = Math.round(totalTax * 100) / 100.0; //formatting the total order tax
+                        double wholePrice = cartTotal + totalTax;      //the entire order total with the tax included
+                        wholePrice = Math.round(wholePrice * 100) / 100.0; //formatting the whole order/tax number
 
 
                         System.out.println("Cart Total " + cartTotal);
@@ -300,7 +303,6 @@
                                                 <div class="row">
                                                     <div class="col-xs-8 col-md-offset-4">
                                                         <form action="/login" method="post" id="checkout_form">
-
                                                             <input type="hidden" name="order_total" value="<%=cartTotal %>"/>
                                                             <input type="submit" class="btn-lg buttonOption" class="centered" value="Login"/>
                                                         </form>
