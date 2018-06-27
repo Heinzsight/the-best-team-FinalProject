@@ -13,7 +13,6 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
     <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="css/flexslider.css"/>
 <!-- Custom styles for this template -->
     <link rel="stylesheet" href="css/nav-footer-style.css"/>
     <link rel="stylesheet" href="css/button.css"/>
@@ -101,7 +100,7 @@
 
 
     <div>
-        <img src="images/index/homepage_banner_1920.jpg" alt="Butter Books logo" class="img-thumbnail pull-left" style="height: 250px; width:100%; margin-right:150px;"/>
+        <img src="images/banners/homepage_banner_1920x350.jpg" alt="Butter Books logo" class="img-thumbnail pull-left" style="height: 100%; width:100%;"/>
     </div>
     <!-- Main Content -->
     <div class="container">
@@ -146,7 +145,7 @@
         <div class="row">
             <div class="container-fluid front-layout-title">
                 <h3 class="pull-left">All-time Faves</h3>
-                <h3><a href="#" class="pull-right">View All</a></h3>
+                <h3><a href="/all-time-faves" class="pull-right">View All</a></h3>
             </div>
         </div>
         <div class="row">

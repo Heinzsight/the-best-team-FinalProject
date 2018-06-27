@@ -100,10 +100,11 @@
 
 
     <!-- Main Content -->
+    <div class="container banner-container">
+        <img src="images/banners/Just_In.jpg" class="img-thumbnail""/>
+        <div class="centered banner-label">Just In</div>
+    </div>
     <div class="container">
-        <div class="jumbotron">
-            <h1 class="centered">Just In</h1>
-        </div>
         <div class="row">
             <%
                 Iterable<Book> books = (Iterable<Book>) session.getAttribute("books");
@@ -187,6 +188,7 @@
                 </ul>
             </div>
         </div>
+    </div>
 
 
         <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>

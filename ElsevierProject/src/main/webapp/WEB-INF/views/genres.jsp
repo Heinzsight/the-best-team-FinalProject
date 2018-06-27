@@ -99,10 +99,11 @@
     <!-- End Header -->
 
     <!-- Main Content -->
+    <div class="container banner-container">
+        <img src="images/banners/Genres.jpg" class="img-thumbnail pull-left" style="height: 100%; width:100%;"/>
+        <div class="centered banner-label">Genres</div>
+    </div>
     <div class="container">
-        <div class="jumbotron">
-            <h1 class="centered">Genres</h1>
-        </div>
             <%
                 Iterable<Book> books = (Iterable<Book>) session.getAttribute("books");
                 int i = 0;
@@ -195,7 +196,7 @@
                 </ul>
             </div>
         </div>
-
+    </div>
 
         <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
         <script src="js/elsevier.js"></script>
