@@ -277,9 +277,7 @@
                                                  if(c != null)
                                                  {
                                                     customer_id = c.getCustomerId();
-                                                 }
-                                                 if(1 == 1)
-                                                 {
+
 
                                                  %>
 
