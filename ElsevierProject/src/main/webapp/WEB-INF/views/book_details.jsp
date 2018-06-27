@@ -40,7 +40,7 @@
 
     <%
         Customer c = null;
-        try{
+        try {
             c = (Customer) session.getAttribute("logged_in_customer");
             request.setAttribute("logged_in_customer", c);
             System.out.println(c);
@@ -54,7 +54,8 @@
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
@@ -76,14 +77,15 @@
                 <ul class="nav navbar-nav navbar-right">
 
                     <%
-                        if (c == null){
+                        if (c == null) {
                     %>
                     <li><a href="/login"> Register | Login </a></li>
                     <%
                     } else {
                     %>
                     <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Hello, <%=c.getFirstName()%> <span class="caret"></span></a>
+                        <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                           aria-expanded="false">Hello, <%=c.getFirstName()%> <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="#">Action</a></li>
                             <li><a href="#">Another action</a></li>
@@ -98,7 +100,7 @@
 
                     <li><a href="/viewCart"><i class="fas fa-shopping-cart"></i></a></li>
                 </ul>
-                <form  class="navbar-form navbar-right" action="/search">
+                <form class="navbar-form navbar-right" action="/search">
                     <div class="form-group">
                         <div class="input-group">
                             <div class="input-group addon">
@@ -210,11 +212,11 @@
 </div>
 
 
-    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-    <script src="js/elsevier.js"></script>
-    <script>
-        $(document).foundation();
-    </script>
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="js/elsevier.js"></script>
+<script>
+    $(document).foundation();
+</script>
 </body>
 </html>
 

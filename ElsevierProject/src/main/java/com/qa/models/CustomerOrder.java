@@ -4,27 +4,27 @@ package com.qa.models;
 import javax.persistence.*;
 import java.util.List;
 
-@Entity(name="customer_order")
+@Entity(name = "customer_order")
 public class CustomerOrder {
 
     @Id
     @GeneratedValue
-    @Column(name="oid")
+    @Column(name = "oid")
     private int orderId;
 
     @OneToOne
-    @JoinColumn(name="cid")
+    @JoinColumn(name = "cid")
     private Customer customer;
 
     @OneToMany
-    @JoinColumn(name="bid")
+    @JoinColumn(name = "bid")
     private List<Book> books;
 
     @OneToOne
-    @JoinColumn(name="aid")
+    @JoinColumn(name = "aid")
     private Address address;
 
-    @Column(name="total")
+    @Column(name = "total")
     private String orderTotal;
 
 
