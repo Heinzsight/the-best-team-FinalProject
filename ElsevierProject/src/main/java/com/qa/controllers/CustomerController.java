@@ -49,7 +49,8 @@ public class CustomerController {
         return modelAndView;
 
     }
-    @RequestMapping("/booksJustIn")
+
+    @RequestMapping("/just-in")
     public ModelAndView booksJustIn(HttpServletRequest request) {
 
         ArrayList<Book> cartItems = null;
@@ -67,6 +68,78 @@ public class CustomerController {
         Iterable<Book> books = bookService.findAllBooks();
 
         ModelAndView modelAndView = new ModelAndView("books_just_in", "books", books);
+
+        modelAndView.addObject("cart_items", cartItems);
+        return modelAndView;
+
+    }
+
+    @RequestMapping("/all-time-faves")
+    public ModelAndView allTimeFaves(HttpServletRequest request) {
+
+        ArrayList<Book> cartItems = null;
+
+        HttpSession session = request.getSession();
+
+        Object items = session.getAttribute("cart_items");
+
+        if (items != null) {
+            cartItems = (ArrayList<Book>) items;
+        } else {
+            cartItems = new ArrayList<Book>();
+        }
+
+        Iterable<Book> books = bookService.findAllBooks();
+
+        ModelAndView modelAndView = new ModelAndView("all_time_faves", "books", books);
+
+        modelAndView.addObject("cart_items", cartItems);
+        return modelAndView;
+
+    }
+
+    @RequestMapping("/bestselling")
+    public ModelAndView bestSelling(HttpServletRequest request) {
+
+        ArrayList<Book> cartItems = null;
+
+        HttpSession session = request.getSession();
+
+        Object items = session.getAttribute("cart_items");
+
+        if (items != null) {
+            cartItems = (ArrayList<Book>) items;
+        } else {
+            cartItems = new ArrayList<Book>();
+        }
+
+        Iterable<Book> books = bookService.findAllBooks();
+
+        ModelAndView modelAndView = new ModelAndView("bestselling", "books", books);
+
+        modelAndView.addObject("cart_items", cartItems);
+        return modelAndView;
+
+    }
+
+    @RequestMapping("/genres")
+    public ModelAndView genres(HttpServletRequest request) {
+
+        ArrayList<Book> cartItems = null;
+
+        HttpSession session = request.getSession();
+
+        Object items = session.getAttribute("cart_items");
+
+        if (items != null) {
+            cartItems = (ArrayList<Book>) items;
+        } else {
+            cartItems = new ArrayList<Book>();
+        }
+
+        Iterable<Book> books = bookService.findAllBooks();
+
+        ModelAndView modelAndView = new ModelAndView("genres", "books", books);
 
         modelAndView.addObject("cart_items", cartItems);
         return modelAndView;
