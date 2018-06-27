@@ -6,7 +6,6 @@
     <title>Online Shopping </title>
     <%--<link rel="stylesheet" href="css/style.css">--%>
     <link href="css/bootstrap.min.css" rel="stylesheet">
-    <%--<link rel="stylesheet" href="css/index-style.css"/>--%>
     <link rel="stylesheet" href="css/header_footer.css">
     <link rel = "stylesheet" href="css/button.css">
 </head>
@@ -23,44 +22,50 @@
             }
 %>
 
-<div class="main">
+<div id="wrap">
 
 
-<!-- Start Top Bar -->
-<header>
-    <div class="navbar navbar-default navbar-static-top">
-        <div class="container">
+    <!-- Navigation -->
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    Menu<i class="fa fa-bars"></i>
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="">Better Books</a>
+                <a class="navbar-brand" href="/">
+                    <img alt="Brand" src="images/header/butter_books_logo.png">
+                </a>
             </div>
-            <div class="collapse navbar-collapse">
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="/">Home</a></li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false">Features <b class=" icon-angle-down"></b></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">Just In</a></li>
-                            <li><a href="#">All-Time Faves</a></li>
-                            <li><a href="#">Bestselling</a></li>
-                            <li><a href="#">Genres</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Contact</a></li>
-                    <li><a href="/login"> Register | Login </a></li>
-                    <li>
-                        <a href="/viewCart"><i class="fas fa-shopping-cart"></i></a>
-                        <a href="/viewCart"><i class="fas fa-shopping-basket"></i></a>
-                    </li>
+                    <li><a href="#">Just In</a></li>
+                    <li><a href="#">All Time Faves</a></li>
+                    <li><a href="#">Bestselling</a></li>
+                    <li><a href="#">Genres</a></li>
                 </ul>
-            </div>
-        </div>
-    </div>
-</header>
-<!-- End Top Bar -->
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="/login"> Register | Login </a></li>
+                    <li><a href="/viewCart"><i class="fas fa-shopping-cart"></i></a></li>
+                </ul>
+                <form  class="navbar-form navbar-right" action="/search">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group addon">
+                                <input type="text" class="form-control input-sm" placeholder="Search" name="searchTerm">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+    <!-- End Header -->
 
 <div class="container-fluid" id="main">
     <div class="row">
@@ -86,44 +91,56 @@
         </div>
     </div>
 </div>
+</div>
 
-<footer class="footer">
+<div id="footer">
     <div class="container">
-        <div class="row">
-            <div class="col-lg-3">
-                <div class="widget">
-                    <h5 class="widgetheading">Get in touch with us</h5>
-                    <ul class="link-list">
-                        <li><a href="#">Just In</a></li>
-                        <li><a href="#">All-Time Faves</a></li>
-                        <li><a href="#">Bestselling</a></li>
-                        <li><a href="#">Genres</a></li>
-                    </ul>
-                </div>
+        <div class="row" style="padding-top: 15px;">
+            <div class="col-md-3">
+                <img style="padding-top: 10px;" src="images/footer/butterbooks_logo_footer.png">
             </div>
-            <div class="col-lg-3">
-                <div class="widget">
-                    <h5 class="widgetheading">Pages</h5>
-                    <ul class="link-list">
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Contact</a></li>
-                        <li><a href="#">FAQs</a></li>
-                        <li><a href="#">Order</a></li>
-                    </ul>
-                </div>
+            <div class="col-md-3">
+                <ul class="list-unstyled">
+                    <li><a href="#">Just In</a></li>
+                    <li><a href="#">All-Time Faves</a></li>
+                    <li><a href="#">Bestselling</a></li>
+                    <li><a href="#">Genres</a></li>
+                </ul>
             </div>
-            <div class="col-lg-3">
-                <div class="widget">
-                    <ul class="social-network">
-                        <li><a href="#" data-placement="top" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
-                        <li><a href="#" data-placement="top" title="Twitter"><i class="fab fa-twitter"></i></a></li>
-                        <li><a href="#" data-placement="top" title="Instagram"><i class="fab fa-instagram"></i></a></li>
-                    </ul>
+            <div class="col-md-3">
+                <ul class="list-unstyled">
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/about">Contact</a></li>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">Order</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3">
+                <div class="social-networks">
+                    <a href="https://twitter.com/" class="twitter"><i class="fab fa-twitter-square"></i></a>
+                    <a href="https://www.instagram.com/" class="instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/" class="facebook"><i class="fab fa-facebook-square"></i></a>
+                    <a href="#" class="snapchat"><i class="fab fa-snapchat-square"></i></a>
                 </div>
             </div>
         </div>
+        <div class="row">
+            <ul class="list-inline footer-copyright">
+                <li><a>&copy; 2018 Butter Books, Inc.</a></li>
+                <li><a>|</a></li>
+                <li><a>Terms of Use</a></li>
+                <li><a>|</a></li>
+                <li><a>Copyright and Trademark</a></li>
+                <li><a>|</a></li>
+                <li><a>Privacy Policy</a></li>
+                <li><a>|</a></li>
+                <li><a>Sitemap</a></li>
+                <li><a>|</a></li>
+                <li><a>Accessibility</a></li>
+            </ul>
+        </div>
     </div>
-</footer>
+
 </div>
 
 

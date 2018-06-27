@@ -34,7 +34,7 @@
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                         Menu<i class="fa fa-bars"></i>
                     </button>
-                    <a class="navbar-brand" href="">Better Books</a>
+                    <a class="navbar-brand" href="/">Better Books</a>
                 </div>
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav">

@@ -178,11 +178,10 @@
                         totalPrice = book.getPrice() * quantity;
                         cartTotal = Math.round((cartTotal + book.getPrice() * quantity) * 100) / 100.0;
 
-                                                  double totalTax = cartTotal * 0.08;
-                                                  totalTax = Math.round(totalTax * 100) / 100.0;
-
-                                                  double wholePrice = cartTotal + totalTax;
-                                                  wholePrice = Math.round(wholePrice * 100) / 100.0;
+                        double totalTax = cartTotal * 0.08;
+                        totalTax = Math.round(totalTax * 100) / 100.0;
+                        double wholePrice = cartTotal + totalTax;
+                        wholePrice = Math.round(wholePrice * 100) / 100.0;
 
 
                         System.out.println("Cart Total " + cartTotal);
