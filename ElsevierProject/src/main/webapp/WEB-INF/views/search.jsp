@@ -1,5 +1,6 @@
 <!doctype html>
 <%@page import="com.qa.models.Book" %>
+<%@ page import="com.qa.models.Customer" %>
 <html class="no-js" lang="en">
 <head>
     <meta charset="utf-8"/>
@@ -13,16 +14,25 @@
     <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/flexslider.css"/>
-    <%--<link rel="stylesheet" href="css/wrapper.css"/>--%>
     <!-- Custom styles for this template -->
     <link rel="stylesheet" href="css/nav-footer-style.css"/>
+    <link rel="stylesheet" href="css/button.css"/>
 </head>
 
 <body>
 
-
 <div id="wrap">
 
+    <%
+        Customer c = null;
+        try{
+            c = (Customer) session.getAttribute("logged_in_customer");
+            request.setAttribute("logged_in_customer", c);
+            System.out.println(c);
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    %>
 
     <!-- Navigation -->
     <nav class="navbar navbar-default">
@@ -43,83 +53,64 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li><a href="#">Just In</a></li>
-                    <li><a href="#">All Time Faves</a></li>
-                    <li><a href="#">Bestselling</a></li>
-                    <li><a href="#">Genres</a></li>
+                    <li><a href="/just-in">Just In</a></li>
+                    <li><a href="/all-time-faves">All Time Faves</a></li>
+                    <li><a href="/bestselling">Bestselling</a></li>
+                    <li><a href="/genres">Genres</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
+
+                    <%
+                        if (c == null){
+                    %>
                     <li><a href="/login"> Register | Login </a></li>
+                    <%
+                    } else {
+                    %>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Hello, <%=c.getFirstName()%> <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">Separated link</a></li>
+                        </ul>
+                    </li>
+                    <%
+                        }
+                    %>
+
                     <li><a href="/viewCart"><i class="fas fa-shopping-cart"></i></a></li>
                 </ul>
                 <form  class="navbar-form navbar-right" action="/search">
-                    <div class="input-group">
-                        <input type="text" class="form-control input-sm" placeholder="Search" name="searchTerm">
-                        <div class="input-group-btn">
-                            <button class="btn btn-default" type="submit" style="height:30px">
-                                <i class="fas fa-search"></i>
-                            </button>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group addon">
+                                <input type="text" class="form-control input-sm" placeholder="Search" name="searchTerm">
+                            </div>
                         </div>
                     </div>
                 </form>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
     </nav>
-
-    <%--<nav class="navbar navbar-static-top" style="background: #A9A9A9;">--%>
-    <%--<div class="container">--%>
-    <%--<div class="navbar-header">--%>
-    <%--<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">--%>
-    <%--<i class="fas fa-bars"></i>--%>
-    <%--</button>--%>
-    <%--<img src="images/cart.jpg" alt="Butter Books logo" class="img-thumbnail pull-left" width="50" height="50"/>--%>
-    <%--<a class="navbar-brand" href="" style="margin-top:10px;">Butter Books</a>--%>
-    <%--</div>--%>
-    <%--<div class="collapse navbar-collapse" id="myNavbar">--%>
-    <%--<ul class="nav navbar-nav">--%>
-    <%--<li class="active"><a href="#">Home</a></li>--%>
-    <%--<li><a href="#">Just In</a></li>--%>
-    <%--<li><a href="#">All-Time Faves</a></li>--%>
-    <%--<li><a href="#">Bestselling</a></li>--%>
-    <%--<li><a href="#">Genres</a></li>--%>
-    <%--<form  class="navbar-form navbar-left">--%>
-    <%--<div class="input-group">--%>
-    <%--<input type="text" class="form-control input-sm" placeholder="Search" name="search">--%>
-    <%--<div class="input-group-btn">--%>
-    <%--<button class="btn btn-default" type="submit" style="height:30px">--%>
-    <%--<i class="fas fa-search"></i>--%>
-    <%--</button>--%>
-    <%--</div>--%>
-    <%--</div>--%>
-    <%--</form>--%>
-    <%--<li><a href="/login"> Register | Login </a></li>--%>
-    <%--<li><a href="/viewCart"><i class="fas fa-shopping-cart"></i></a></li>--%>
-    <%--</ul>--%>
-    <%--</div>--%>
-    <%--</div>--%>
-    <%--</nav>--%>
     <!-- End Header -->
-
-    <!-- Main Content -->
 
 
     <div class="container-fluid" style="margin-left: 100px; margin-right: 100px;">
 
-        <div class="jumbotron">
-            <img src="images/cart.jpg" alt="Butter Books logo" class="img-thumbnail pull-left" width="150" height="150" style="margin-right:150px;"/>
-            <h1>3 Books of Your Choice</h1>
-            <p>for only $5/mo</p>
-        </div>
+        <h1>Search Results for "${param.searchTerm}"</h1>
+
         <%
             Iterable<Book> books = (Iterable<Book>) session.getAttribute("books");
             int i = 0;
             for (Book book : books) {
                 if (i == 0) {
         %>
+
         <div class="row">
             <%
-
-
                 }
             %>
             <div class="col-sm-3" style="height: auto;">
@@ -127,15 +118,15 @@
                     <div class="row">
                         <a href="/bookDetails?bookId=<%=book.getBookId()%>"><img class="img-responsive" style="width:auto;" src="<%=book.getBookImage()%>"></a>
                     </div>
-                    <div class="row">
-                        <h5><%= book.getTitle()%></h5>
+                        <h2><%= book.getTitle()%></h2>
+                        <p><%= book.getAuthors().get(0).getAuthorName()%></p>
                         <p>$<%= book.getPrice()%></p>
-                    </div>
                     <div class="row">
-                        <a href="/bookDetails?bookId=<%=book.getBookId()%>" class="button expanded">View book details</a>
+                        <a href="/bookDetails?bookId=<%=book.getBookId()%>" class="btn buttonOption">More Details</a>
+                        <a href="/addToCart?bookId=<%=book.getBookId()%>" class="btn buttonOption">Add to Cart</a>
                     </div>
+                    <br>
                 </div>
-                <!--  a href="/addToCart?bookId=" class="button expanded">Add to Cart</a>-->
             </div>
             <%
                 if (i == 3) {
@@ -148,14 +139,37 @@
                 }
 
             } %>
+        <br>
     </div>
+    <br>
+    <br>
     <hr>
-
-    <hr>
-    <div class="container text-center text-md-left">
+    <div class="container">
         <div class="row">
-            <div class="column">
-                <p>Cool stuff here, too!</p>
+            <div class="col">
+
+                <p>Want a book we don't have? Feel free to leave a request, and we'll see what we can do!</p>
+                <h1>Request a Book</h1>
+                <form action="submitRequest" method="post" class="form-inline">
+                    <div class="form-group">
+                        <label for="author">Author Name*</label>
+                        <input class='form-control' type="text" placeholder="Author Name*" name="author" id="author" required/>
+                    </div>
+                    <div class="form-group">
+                        <label for="title">Title*</label>
+                        <input class='form-control' type="text" placeholder="Enter Title*" name="title" id="title" required/>
+                    </div>
+                    <div class="form-group">
+                        <label for="isbn">ISBN</label>
+                        <input class='form-control' type="text" placeholder="Enter ISBN" name="ISBN" id="ISBN"/>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" class="btn btn-primary buttonSubmit" value="Request">
+                    </div>
+                    <br>
+                </form>
+                <p>* indicates required fields, though all fields help us!</p>
+
 
             </div>
         </div>
@@ -182,8 +196,8 @@
             </div>
             <div class="col-md-3">
                 <ul class="list-unstyled">
-                    <li><a href="/aboutus">About</a></li>
-                    <li><a href="/aboutus">Contact</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/about">Contact</a></li>
                     <li><a href="#">FAQs</a></li>
                     <li><a href="#">Order</a></li>
                 </ul>
@@ -198,12 +212,22 @@
             </div>
         </div>
         <div class="row">
-            <p>© 2016 Copyright Text </p>
+            <ul class="list-inline footer-copyright">
+                <li><a>&copy; 2018 Butter Books, Inc.</a></li>
+                <li><a>|</a></li>
+                <li><a>Terms of Use</a></li>
+                <li><a>|</a></li>
+                <li><a>Copyright and Trademark</a></li>
+                <li><a>|</a></li>
+                <li><a>Privacy Policy</a></li>
+                <li><a>|</a></li>
+                <li><a>Sitemap</a></li>
+                <li><a>|</a></li>
+                <li><a>Accessibility</a></li>
+            </ul>
         </div>
     </div>
-
 </div>
-
 
 <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 <script src="js/elsevier.js"></script>
