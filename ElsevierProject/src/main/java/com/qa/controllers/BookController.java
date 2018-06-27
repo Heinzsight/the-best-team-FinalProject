@@ -119,8 +119,9 @@ public class BookController {
             b = bookService.searchBooks(pSearchTerm);
         }
 
-        mav = new ModelAndView("search", "books", b);
 
+        mav = new ModelAndView("search", "books", b);
+        mav.addObject("searchTerm", pSearchTerm);
         return mav;
     }
 

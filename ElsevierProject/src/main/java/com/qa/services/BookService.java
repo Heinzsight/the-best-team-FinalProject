@@ -22,14 +22,8 @@ public class BookService {
     public Iterable<Book> searchBooks(String term) {
         return bookRepository.findBooksByTitleLikeOrPaperISBNLike("%" + term + "%", "%" + term + "%");
     }
+
     public Iterable<Book> searchBooks(List<Author> author) {
         return bookRepository.findBooksByAuthors(author);
     }
-
-//    public Iterable<Book> searchForBooks(String term) {
-//        return bookRepository.findBooksByTitleIsLikeOrAuthors("%" + term + "%");
-//    }
-
-
-
 }

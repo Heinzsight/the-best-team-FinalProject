@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="css/flexslider.css"/>
 <!-- Custom styles for this template -->
     <link rel="stylesheet" href="css/nav-footer-style.css"/>
+    <link rel="stylesheet" href="css/button.css"/>
 </head>
   
 <body>
@@ -130,7 +131,7 @@
                         <p>$<%= book.getPrice()%></p>
                     </div>
                     <div class="row">
-                        <a href="/bookDetails?bookId=<%=book.getBookId()%>" class="button expanded">View book details</a>
+                        <a href="/bookDetails?bookId=<%=book.getBookId()%>" class="btn-sm buttonOption">View book details</a>
                     </div>
                 </div>
                 <!--  a href="/addToCart?bookId=" class="button expanded">Add to Cart</a>-->
@@ -232,7 +233,7 @@
             </ul>
         </div>
     </div>
-
+</div>
 
 <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 <script src="js/elsevier.js"></script>
