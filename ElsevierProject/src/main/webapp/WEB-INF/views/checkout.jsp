@@ -35,9 +35,11 @@
                 System.out.println("Address: "+address);
 
     %>
+    <div>
     <a class="navbar-brand" href="#">
     <img alt="Brand"" src="images/header/butter_books_logo.png">
     </a>
+    </div>
     <br>
 <form id="regForm" action="/checkoutProcess" method="post">
 
