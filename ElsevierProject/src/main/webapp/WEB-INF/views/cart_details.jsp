@@ -22,8 +22,11 @@
         <link href="css/button.css" rel="stylesheet">
 
         <style>
-
-
+            body
+                {
+                    min-height: 500px;
+                    width: 100%;
+                }
         </style>
 
 
@@ -242,19 +245,24 @@
                         if(i == books.size())
                         {
                  %>
-                    <div class="container" id="rightFloatedContainer">
+                    <div class="container" id="rightFloatedContainer" >
                         <div class="row">
-                            <div class="col-md-7"> <!-- Beginning of 3rd column -->
-                                <div class="row">
-                                                <div class="col-xs-12">
-                                                    <h3 class="centered">Summary </h3>
+                            <div class="col-md-10"> <!-- Beginning of 3rd column -->
+                                            <div class="row">
+                                                            <div class="col-xs-12 col-md-offset-3">
+                                                                <h3>Summary </h3>
 
-                                                   <hr>
+
+                                                            </div>
+                                            </div>
+                                                <div class="row">
+                                                    <div class="col-xs-12">
+                                                        <hr>
+                                                    </div>
                                                 </div>
-                                </div>
 
                                                  <div class="row">
-                                                     <div class="col-xs-6">
+                                                     <div class="col-xs-4 col-md-offset-2">
                                                         <label for="middle-label" class="middle">Subtotal</label>
                                                      </div>
                                                      <div class="col-xs-6">
@@ -265,45 +273,71 @@
 
 
                                                 <div class="row">
-                                                    <div class="col-xs-6">
+                                                    <div class="col-xs-4 col-md-offset-2">
                                                         <label for="middle-label" class="middle">Shipping</label>
                                                     </div>
                                                     <div class="col-xs-6">
                                                         <!-- Need the Shipping amount here -->
                                                         <label for="middle-label" class="middle"> Free </label>
                                                     </div>
-
-                                                    <div class="col-xs-6">
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-xs-4 col-md-offset-2">
                                                         <label for="middle-label" class="middle">Tax </label>
                                                     </div>
                                                     <div class="col-xs-6">
-
-                                                    <%=totalTax %>
-                                                        <!-- Need the tax formula and output here -->
+                                                        <%=totalTax %>
                                                     </div>
                                                 </div>
 
-                                                <div class="col-xs-12">
-                                                    <hr>
+                                                <div class="row">
+                                                    <div class="col-xs-12">
+                                                        <hr>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-xs-4 col-md-offset-2">
+                                                        <label for="middle-label" class="middle">Total </label>
+                                                    </div>
+                                                    <div class="col-xs-6">
+                                                         <input type="hidden" name="order_total" id="order_total" value="<%=wholePrice %>"/>
+                                                         <label for="middle-label" class="middle" id="order_total_label">$<%=wholePrice%></label>
+                                                     </div>
+                                                 </div>
+                                                 <%
+
+                                                 if(1 == 1)
+                                                 {
+
+                                                 %>
+
+                                                    <div class="row">
+                                                       <div class="col-xs-9 col-md-offset-3">
+                                                          <form action="/checkout" method="post" id="checkout_form">
+                                                               <input type="hidden" name="order_total" value="<%=cartTotal %>"/>
+                                                               <input type="submit" class="btn-lg buttonOption" class="centered" value="Checkout"/>
+                                                          </form>
+                                                        </div>
+                                                    </div>
+                                                 <%
+
+                                                 }
+                                                 else
+                                                 {
+
+                                                 %>
+                                                <div class="row">
+                                                    <div class="col-xs-9 col-md-offset-3">
+                                                        <form action="/login" method="post" id="checkout_form">
+                                                            <input type="hidden" name="order_total" value="<%=cartTotal %>"/>
+                                                            <input type="submit" class="btn-lg buttonOption" class="centered" value="Checkout"/>
+                                                        </form>
+                                                    </div>
                                                 </div>
 
-                                                <div class="col-xs-6">
-                                                    <label for="middle-label" class="middle">Total </label>
-                                                </div>
-                                                <div class="col-xs-6">
-                                                     <input type="hidden" name="order_total" id="order_total" value="<%=wholePrice %>"/>
-                                                     <label for="middle-label" class="middle" id="order_total_label">$<%=wholePrice%></label>
-                                                 </div>
-                                         <div class="container">
-                                            <div class="row">
-                                                <div class="col-xs-12">
-                                                    <form action="/checkout" method="post" id="checkout_form">
-                                                        <input type="hidden" name="order_total" value="<%=cartTotal %>"/>
-                                                        <input type="submit" class="btn-lg buttonOption" class="centered" value="Checkout"/>
-                                                    </form>
-                                                </div>
-                                            </div>
-                                         </div>
+                                                <%
+                                                }
+                                                %>
                             </div> <!-- End of 3rd column-->
                         </div>
                     </div> <!-- End of second floated container -->
@@ -312,25 +346,6 @@
                     }
                 %>
 
-
-<<<<<<< HEAD
-=======
-                    <div class="col-xs-6">
-                        <label for="middle-label" class="middle">Total </label>
-                    </div>
-                    <div class="col-xs-6">
-                         <input type="hidden" name="order_total" id="order_total" value="<%=cartTotal %>"/>
-                         <label for="middle-label" class="middle" id="order_total_label">$<%=cartTotal%></label>
-                     </div>
-                    <form action="/checkout" method="post" id="checkout_form">
-                        <input type="hidden" name="order_total" value="<%=cartTotal %>"/>
-                        <input type="submit" class="btn-lg buttonOption" value="Checkout"/>
-                    </form>
-            </div> <!-- End of 3rd column-->
-        </div>
-    </div>
-    <hr>
->>>>>>> f6037cfd26b52da19c795087b115687566d7e3dd
     <div id="push"></div>
 </div> <!-- End of wrapper -->
 <!-- End of Main Content -->
