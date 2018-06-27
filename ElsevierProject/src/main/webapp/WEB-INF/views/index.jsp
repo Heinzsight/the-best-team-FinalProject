@@ -66,7 +66,7 @@
     </nav>
     <!-- End Header -->
 
-    <%
+        <%
             try{
             Customer c = (Customer) session.getAttribute("logged_in_customer");
             request.setAttribute("logged_in_customer", c);
@@ -77,7 +77,7 @@
         %>
 
     <!-- Main Content -->
-    <div class="container-fluid" style="margin-left: 100px; margin-right: 100px;">
+    <div class="container">
 
         <div class="jumbotron">
             <img src="images/cart.jpg" alt="Butter Books logo" class="img-thumbnail pull-left" width="150" height="150" style="margin-right:150px;"/>
@@ -124,7 +124,7 @@
 
         </div>
         <div class="row">
-            <div class="container-fluid">
+            <div class="container-fluid .front-layout-title">
                 <h1 class="pull-left">All-time Faves</h1>
                 <h1><a href="#" class="pull-right">View All</a></h1>
             </div>
