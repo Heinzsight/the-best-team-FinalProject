@@ -132,7 +132,8 @@ public class CustomerController {
 
         if (c != null) {
             System.out.println("Success");
-            modelAndView = new ModelAndView("customer_home", "logged_in_customer", c);
+            //the viewName here used to be "customer_home"
+            modelAndView = new ModelAndView("index", "logged_in_customer", c);
         } else {
             System.out.println("Failure");
             modelAndView = new ModelAndView("login");

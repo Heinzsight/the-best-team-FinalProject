@@ -213,10 +213,10 @@
                  %>
                     <div class="container" id="rightFloatedContainer" >
                         <div class="row">
-                            <div class="col-md-10"> <!-- Beginning of 3rd column -->
+                            <div class="col-md-12"> <!-- Beginning of 3rd column -->
                                             <div class="row">
                                                             <div class="col-xs-12 col-md-offset-3">
-                                                                <h3>Summary </h3>
+                                                                <h1>Summary </h1>
 
 
                                                             </div>
@@ -228,10 +228,10 @@
                                                 </div>
 
                                                  <div class="row">
-                                                     <div class="col-xs-4 col-md-offset-2">
+                                                     <div class="col-xs-5 col-md-offset-2">
                                                         <label for="middle-label" class="middle">Subtotal</label>
                                                      </div>
-                                                     <div class="col-xs-6">
+                                                     <div class="col-xs-5">
                                                         <input type="hidden" name="order_total" id="cart_total" value="<%=cartTotal %>"/>
                                                         <label for="middle-label" class="middle" id="cart_total_label">$<%=cartTotal %>
                                                      </div>
@@ -239,19 +239,19 @@
 
 
                                                 <div class="row">
-                                                    <div class="col-xs-4 col-md-offset-2">
+                                                    <div class="col-xs-5 col-md-offset-2">
                                                         <label for="middle-label" class="middle">Shipping</label>
                                                     </div>
-                                                    <div class="col-xs-6">
+                                                    <div class="col-xs-5">
                                                         <!-- Need the Shipping amount here -->
                                                         <label for="middle-label" class="middle"> Free </label>
                                                     </div>
                                                 </div>
                                                 <div class="row">
-                                                    <div class="col-xs-4 col-md-offset-2">
+                                                    <div class="col-xs-5 col-md-offset-2">
                                                         <label for="middle-label" class="middle">Tax </label>
                                                     </div>
-                                                    <div class="col-xs-6">
+                                                    <div class="col-xs-5">
                                                         <%=totalTax %>
                                                     </div>
                                                 </div>
@@ -262,17 +262,17 @@
                                                     </div>
                                                 </div>
                                                 <div class="row">
-                                                    <div class="col-xs-4 col-md-offset-2">
+                                                    <div class="col-xs-5 col-md-offset-2">
                                                         <label for="middle-label" class="middle">Total </label>
                                                     </div>
-                                                    <div class="col-xs-6">
+                                                    <div class="col-xs-5">
                                                          <input type="hidden" name="order_total" id="order_total" value="<%=wholePrice %>"/>
                                                          <label for="middle-label" class="middle" id="order_total_label">$<%=wholePrice%></label>
                                                      </div>
                                                  </div>
                                                  <%
 
-                                                 if(1 == 1)
+                                                 if(c != null)
                                                  {
 
                                                  %>
@@ -292,11 +292,17 @@
                                                  {
 
                                                  %>
+                                                    <div class="row">
+                                                        <div class="col-xs-12" style="text-align: center">
+                                                            <label for="label" class="middle"> You need to login before you check out! Click below to login and come back here after you are done! </label>
+                                                        </div>
+                                                    </div>
                                                 <div class="row">
-                                                    <div class="col-xs-9 col-md-offset-3">
+                                                    <div class="col-xs-8 col-md-offset-4">
                                                         <form action="/login" method="post" id="checkout_form">
+
                                                             <input type="hidden" name="order_total" value="<%=cartTotal %>"/>
-                                                            <input type="submit" class="btn-lg buttonOption" class="centered" value="Checkout"/>
+                                                            <input type="submit" class="btn-lg buttonOption" class="centered" value="Login"/>
                                                         </form>
                                                     </div>
                                                 </div>
