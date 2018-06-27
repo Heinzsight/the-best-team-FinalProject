@@ -34,6 +34,11 @@ public class AddressService {
         return addressRespository.findAddressByType(customerId, addressType);
     }
 
+    public Address findAddressByCustomerId(int customerId) {
+
+        return addressRespository.findAddressByCustomerId(customerId);
+    }
+
     public Address saveAddress(Address address) {
 
         return addressRespository.save(address);

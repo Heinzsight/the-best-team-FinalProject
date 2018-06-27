@@ -24,6 +24,17 @@
 <div id="wrap">
 
 
+        <%
+            Customer c = null;
+            try{
+            c = (Customer) session.getAttribute("logged_in_customer");
+            request.setAttribute("logged_in_customer", c);
+            System.out.println(c);
+            } catch (Exception e) {
+            System.out.println(e);
+            }
+        %>
+
     <!-- Navigation -->
     <nav class="navbar navbar-default">
         <div class="container-fluid">
@@ -49,7 +60,28 @@
                     <li><a href="/genres">Genres</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
+
+                    <%
+                        if (c == null){
+                    %>
                     <li><a href="/login"> Register | Login </a></li>
+                    <%
+                    } else {
+                    %>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Hello, <%=c.getFirstName()%> <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">Separated link</a></li>
+                        </ul>
+                    </li>
+                    <%
+                        }
+                    %>
+
                     <li><a href="/viewCart"><i class="fas fa-shopping-cart"></i></a></li>
                 </ul>
                 <form  class="navbar-form navbar-right" action="/search">
@@ -65,16 +97,6 @@
         </div><!-- /.container-fluid -->
     </nav>
     <!-- End Header -->
-
-        <%
-            try{
-            Customer c = (Customer) session.getAttribute("logged_in_customer");
-            request.setAttribute("logged_in_customer", c);
-            System.out.println(c);
-            } catch (Exception e) {
-            System.out.println(e);
-            }
-        %>
 
 
     <!-- Main Content -->

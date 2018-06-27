@@ -13,8 +13,11 @@
 <body>
 <%@page import="com.qa.models.Customer" %>
 <%@page import="com.qa.models.Book" %>
+<%@page import="com.qa.models.Address" %>
+<%@page import="com.qa.models.Author" %>
 <%@page import="java.util.Map" %>
 <%@page import="java.util.ArrayList" %>
+<%@page import="java.util.List" %>
     <%
                 Customer c = null;
                 try{
@@ -22,13 +25,20 @@
                 ArrayList<Book> books = (ArrayList<Book>) session.getAttribute("filtered_books");
                 request.setAttribute("logged_in_customer", c);
                 request.setAttribute("filtered_books", books);
+
                 System.out.println("Books: "+books);
 
                 } catch (Exception e) {
                 System.out.println(e);
                 }
+                Address address = (Address) request.getAttribute("address");
+                System.out.println("Address: "+address);
 
     %>
+    <a class="navbar-brand" href="#">
+    <img alt="Brand"" src="images/header/butter_books_logo.png">
+    </a>
+    <br>
 <form id="regForm" action="/checkoutProcess" method="post">
 
     <%
@@ -36,6 +46,7 @@
         double orderTotal = (Double) request.getAttribute("order_total");
         double shipping = (Double) 0.00;
         double tax = (Double) orderTotal*.08;
+        tax = Math.round(tax * 100)/100.0;
         double grandTotal = (Double) orderTotal+shipping+tax;
         System.out.println("Total: "+ grandTotal);
         request.setAttribute("grand_total", grandTotal);
@@ -53,7 +64,7 @@
 
                 <li><a href="/">Home</a></li>
                 <li>
-                    <span class="show-for-sr">Current: </span> Cart Details
+                    <span class="show-for-sr">Current: </span> Checkout
                 </li>
             </ul>
         </nav>
@@ -64,97 +75,152 @@
 
 
         <div class="row" >
-            <div class="col-lg-12">
-                <div style="text-align:left;margin-top:40px;">
+            <div class="col-sm-12">
+                <div style="text-align:left;margin-top:40px;padding-bottom:20px;">
                   <span class="step">01 Account Info</span>
                   <span class="step">02 Shipping Info</span>
                   <span class="step">03 Payment Selection</span>
                 </div>
 
+            <div class="col-sm-7" >
+                    <div class="tab" >
+                       <h5 id="cust_info_header"> Customer Information </h5>
+                            <div class="row">
+                                   <div class="col-sm-6">
+                                       <%
+                                       String fname = " ";
+                                       if(c != null)
+                                       {
+                                       fname = c.getFirstName();
+
+                                       }
+                                       %>
+                                       <div class="col">
+                                           <label> First name </label>
+                                           <input type="text" name="firstName" id="firstName" size="30" required value=<%=fname %> ></input>
+                                       </div>
+                                       <%
+                                       String addressFirstLine = " ";
+                                       if(address != null)
+                                       {
+                                       addressFirstLine = address.getAddressLine1();
+
+                                       }
+                                       %>
+                                       <div class="col">
+                                           <label> Address </label>
+                                           <input type="text" name="addressLine1" id="addressLine1" size="30" required value=<%=addressFirstLine %> ></input>
+                                       </div>
+
+                                       <%
+                                       String addressCountry = "selected";
+                                       if(address != null)
+                                       {
+                                       addressCountry = address.getCountry();
+
+                                       }
+                                       %>
+                                       <div class="col">
+                                            <label> Country</label>
+                                            <select required name="Country" value=<%=addressCountry %>>
+                                                <option selected="true" disabled hidden value= <%=addressCountry %> >Select your Country</option>
+                                            <option value="USA">USA</option>
+                                            <option value="Mexico">Mexico</option>
+                                            <option value="Canada">Canada</option>
+                                            <option value="U.K.">United Kingdom</option>
+                                          </select>
+                                       </div>
+                                       <%
+                                       String addressPostCode = "";
+                                       if(address != null)
+                                       {
+                                       addressPostCode = address.getPostcode();
+
+                                       }
+                                       %>
+                                       <div class="col">
+                                           <label> Postal code </label>
+                                           <input type="number" name="postcode" id="postcode" size="30" required value=<%=addressPostCode%> ></input>
+                                       </div>
+                                   <%
+                                   String mail = " ";
+                                   if(c != null)
+                                   {
+                                   mail = c.getEmail();
+
+                                   }
+                                   %>
+                                       <div class="col">
+                                           <label> Email </label>
+                                           <input type="email" name="email" id="email" size="30" required value=<%=mail%> ></input>
+                                       </div>
+                                   </div>
+                                   <div class="col-sm-6">
+                                   <%
+                                      String lname = "";
+                                      if(c != null)
+                                      {
+                                      lname = c.getLastName();
+
+                                      }
+                                   %>
+                                       <div class="col">
+                                            <label> Last name </label>
+                                            <input type="text" name="lastName" id="lastName" size="30" required value=<%= lname %> ></input>
+                                       </div>
+                                   <%
+                                   String addressSecondLine = "";
+                                   if(address != null)
+                                   {
+                                   addressSecondLine = address.getAddressLine2();
+
+                                   }
+                                   %>
+                                       <div class="col">
+                                            <label> Address 2 </label>
+                                            <input type="text" name="addressLine2" id="addressLine2" size="30" required value=<%= addressSecondLine %> ></input>
+                                       </div>
+                                   <%
+                                   String addressCity = "";
+                                   if(address != null)
+                                   {
+                                   addressCity = address.getCity();
+
+                                   }
+                                   %>
+                                       <div class="col">
+                                           <label> City </label>
+                                           <input type="text" name="city" id="city" size="30" required value=<%=addressCity%> ></input>
+                                       </div>
+                                   <%
+                                   String addressState = "";
+                                   if(address != null)
+                                   {
+                                   addressState = address.getState();
+
+                                   }
+                                   %>
+                                       <div class="col">
+                                           <label> State/Province </label>
+                                           <input type="text" name="state" id="state" size="30" required value=<%=addressState%> ></input>
+                                       </div>
+                                   <%
+                                   String addressPhone = " ";
+                                   if(address != null)
+                                   {
+                                   addressPhone = address.getPhoneNumber();
+
+                                   }
+                                   %>
+                                       <div class="col">
+                                           <label> Phone </label>
+                                           <input type="tel" name="phone" id="phone" size="30" required value=<%=addressPhone%> ></input>
+                                       </div>
 
 
-            <div class="tab" >
-               <h5 id="cust_info_header"> Customer Information </h5>
-
-                           <div class="col-md-4">
-                               <%
-                               String fname = "";
-                               if(c != null)
-                               {
-                               fname = c.getFirstName();
-
-                               }
-                               %>
-                               <div class="col">
-                                   <label> First name </label>
-                                   <input type="text" name="firstName" id="firstName" size="30" value=<%=fname %> required/>
-                               </div>
-
-                           <%
-                               String lname = "";
-                               if(c != null)
-                               {
-                               lname = c.getLastName();
-
-                               }
-                           %>
-
-                               <div class="col">
-                                   <label> Address </label>
-                                   <input type="text" name="addressLine1" id="addressLine1" size="30" value=<%= lname %> required/>
-                               </div>
-
-                               <div class="col">
-                                    <label> Country</label>
-                                    <select required name="Country" value="selected">
-                                    	<option selected="true" disabled hidden value="selected" >Select your Country</option>
-               					    <option value="USA">USA</option>
-               					    <option value="Mexico">Mexico</option>
-               					    <option value="Canada">Canada</option>
-               					    <option value="U.K.">United Kingdom</option>
-               					  </select>
-                               </div>
-
-                               <div class="col">
-                                   <label> Postal code </label>
-                                   <input type="number" name="postcode" id="postcode" size="30" required/>
-                               </div>
-
-                               <div class="col">
-                                   <label> Email </label>
-                                   <input type="email" name="email" id="email" size="30" required/>
-                               </div>
-                           </div>
-                           <div class="col-md-4">
-                               <div class="col">
-                                    <label> Last name </label>
-                                    <input type="text" name="lastName" id="lastName" size="30" required/>
-                               </div>
-
-                               <div class="col">
-                                    <label> Address 2 </label>
-                                    <input type="text" name="addressLine2" id="addressLine2" size="30" required/>
-                               </div>
-
-                               <div class="col">
-                                   <label> City </label>
-                                   <input type="text" name="city" id="city" size="30" required/>
-                               </div>
-
-                               <div class="col">
-                                   <label> State/Province </label>
-                                   <input type="text" name="state" id="state" size="30" required/>
-                               </div>
-
-                               <div class="col">
-                                   <label> Phone </label>
-                                   <input type="tel" name="phone" id="phone" size="30" required/>
-                               </div>
-
-
-                           </div>
-                </div>
-
+                                   </div>
+                    </div>
+                    </div>
 
 
                 <div class="tab" >
@@ -170,9 +236,9 @@
                 					<div id="zip">Area Code</div>
                 					<div id="tel">Tel: Telephone</div>
                 					<br>
-                					<a id = "link_address" href="#">Edit Address</a>
+                					<!--<a id = "link_address" href="#">Edit Address</a>
                 					<span class="dot"></span>
-                					<a id = "link_address" href="#">Add New</a>
+                					<a id = "link_address" href="#">Add New</a>-->
                 				</div>
                 			</div>
                 		</div>
@@ -203,7 +269,65 @@
 
                 </div>
 
-                <div class="tab" ><tags:payment_selection/></div>
+                <div class="tab" >
+
+
+                    <h5> Payment Selection </h5>
+                    <div class="container" id="ship_info">
+                        <div id="required_later">
+                            <div class="row">
+                                <div class="col-lg-8">
+                                    <div class="form-check form-check-inline">
+                                      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" onclick="radio3();" value="option1" required>
+                                      <label class="form-check-label" for="inlineRadio1">Credit Card</label>
+                                        <div class="col">
+                                            <label> Card number </label>
+                                            <input type="text" name="cardNum" id="cardNum" size="30" required/>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label> Name on card </label>
+                                    <input type="text" name="cardName" id="cardName" size="30" required/>
+                                </div>
+                                <div class="col-md-3">
+                                    <label> Exp. date </label>
+                                    <input type="text" name="expDate" id="expDate" size="30" required/>
+                                </div>
+                                <div class="col-md-3">
+                                    <label> CVV Code </label>
+                                    <input type="text" name="cvvCode" id="cvvCode" size="30" required/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                        <br>
+                        <div class="row">
+                            <div class="col-lg-6" id="ship_info">
+                                <div class="form-check form-check-inline">
+                                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" onclick="radio4();" value="option2" required>
+                                  <label class="form-check-label" for="inlineRadio2">PayPal</label>
+                                  <p id="ship_method">You will be redirected to PayPal website to complete your purchase securely.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                </div>
+                                                                    <div class="row" id="checkoutButtons">
+                                                                        <div style="overflow:auto;">
+                                                                            <div style="float:center;">
+                                                                                <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+                                                                                <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                </div>
+
                 <div class="col-sm-4" id="sumUp">
                             <div class="col-sm-12">
                 						<h4>Order Summary</h4>
@@ -216,6 +340,12 @@
                                                         Map<Integer, Integer> bookCounts = (Map<Integer, Integer>) session.getAttribute("book_counts");
                                                         int i = 0;
                                                         for (Book book : books) {
+                                                            List<Author> authors = book.getAuthors();
+                                                            System.out.println("Authors: " + authors);
+                                                            String allAuthors = "";
+                                                            for (Author author : authors) {
+                                                            allAuthors = allAuthors + author.getAuthorName();
+                                                            }
                                                             String title = book.getTitle();
                                                             String format = book.getFormat();
                                                             String image = book.getBookImage();
@@ -229,10 +359,10 @@
                                                             <img class="thumbnail" src="<%=image%>"/>
                                                         </div>
                                                         <div class="col-sm-6">
-                                                            <span><%=title%></span>
-                                                            <span>by Author</span>
-                                                            <span><%=format%>, Qty <%=quantity%></span>
-                                                            <span>$<%=totalPrice%></span>
+                                                            <div><%=title%></div>
+                                                            <div>by <%=allAuthors%></div>
+                                                            <div><%=format%>, Qty <%=quantity%></div>
+                                                            <div>$<%=totalPrice%></div>
                                                         </div>
                                                     </div>
                                                     <%
@@ -259,7 +389,7 @@
                                                     <label for="middle-label" class="middle">Shipping</label>
                                                 </div>
                                                 <div class="small-3 columns">
-                                                    <label for="middle-label" class="middle" id="shippingDiv">0</label>
+                                                    <label for="middle-label" class="middle" id="shippingDiv">Calculating..</label>
                                                 </div>
 
                                             </div>
@@ -280,25 +410,21 @@
                                                 </div>
                                                 <div class="small-3 columns">
 
-                                                    <label for="middle-label" class="middle" id="order_total_label">Calculating...</label>
+                                                    <label for="middle-label" class="middle" id="order_total_label">Calculating..</label>
+                                                    <input type="text" name="orderTotalVar" style="display: none;" id="orderTotalVar" value=""></input>
                                                 </div>
 
                                             </div>
 
                             </div>
 
+
                         </div>
 
+
             </div>
 
-            <div class="col-sm-4">
-                <div style="overflow:auto;">
-                    <div style="float:center;">
-                        <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
-                        <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
-                    </div>
-                </div>
-            </div>
+
 
         </div>
     </div>
@@ -315,12 +441,17 @@
     <script src="js/elsevier.js"></script>
     <script src="js/update_cart.js"></script>
     <script>
-        total = Number(document.getElementById("orderTotal").innerHTML);
-        tax = Number(document.getElementById("orderTax").innerHTML);
-        //var both = + total + tax;
+        totalhtml = document.getElementById("orderTotal").innerHTML;
+        taxhtml = document.getElementById("orderTax").innerHTML;
+        total = parseFloat(totalhtml);
+        tax = parseFloat(taxhtml);
+        shipping = 0;
+        var both = + total + tax;
+        isCreditCard = true;
         console.log("total: " + total);
-        console.log("tax: " + tax);
-        //console.log("both: " both);
+        console.log("type: " + typeof(total));
+        console.log("tax: " + taxhtml);
+        console.log("both: " + both);
         currentTab = 0; // Current tab is set to be the first tab (0)
         showTab(currentTab); // Display the current tab
 
@@ -362,6 +493,7 @@
           var phone = document.getElementById('phone').value;
           var shipping1 = document.getElementById('inlineRadioShipping1').value;
           var shipping2 = document.getElementById('inlineRadioShipping2').value;
+
           document.getElementById('fullName').innerHTML = firstName + " " + lastName;
           document.getElementById('fullAddress').innerHTML = address1 + " " + address2;
           document.getElementById('city').innerHTML = city;
@@ -387,7 +519,7 @@
 
         function validateForm() {
           // This function deals with validation of the form fields
-          var x, y, i, valid = true, radioChecked = false, radioExists = false, isCreditCard = true;
+          var x, y, i, valid = true, radioChecked = false, radioExists = false;
           x = document.getElementsByClassName("tab");
           y = x[currentTab].getElementsByTagName("input");
           // A loop that checks every input field in the current tab:
@@ -399,12 +531,10 @@
               {
                 radioChecked = true;
               }
-              if((y[i].id == "inlineRadio2")&&(radioChecked == true))
-              {
-                isCreditCard = false;
-              }
+
             }
-            if ((y[i].value == "")) {
+            console.log("Credit Card: " + isCreditCard);
+            if ((y[i].value == "")&&(isCreditCard == true)) {
               // add an "invalid" class to the field:
               y[i].className += " invalid";
               // and set the current valid status to false:
@@ -417,9 +547,11 @@
             // and set the current valid status to false:
             valid = false;
           }
+
           // If the valid status is true, mark the step as finished and valid:
           if (valid) {
             document.getElementsByClassName("step")[currentTab].className += " finish";
+            isCreditCard = true;
           }
           return valid; // return the valid status
         }
@@ -437,15 +569,40 @@
         function radio1() {
             console.log("here");
             document.getElementById('shippingDiv').innerHTML = "0.00";
+            shipping = 0.00;
+            grandTotal = both + shipping;
+            document.getElementById('order_total_label').innerHTML = grandTotal;
+            document.getElementById('orderTotalVar').value = grandTotal;
             $("#required_later").prop("required", false);
             $("#required_later").prop("disabled", true);
         }
         function radio2() {
             console.log("here2");
+            shipping = 8.00;
+            grandTotal = both + shipping;
+            document.getElementById('order_total_label').innerHTML = grandTotal;
+            document.getElementById('orderTotalVar').value = grandTotal;
             document.getElementById('shippingDiv').innerHTML = "8.00";
             $("#required_later").prop("required", true);
             $("#required_later").prop("disabled", false);
             $("#required_later").focus();
+        }
+        function radio3() {
+            isCreditCard = true;
+            console.log("C: " + isCreditCard);
+            $('#cardNum').attr('required');
+            $('#cardName').attr('required');
+            $('#expDate').attr('required');
+            $('#cvvCode').attr('required');
+
+        }
+        function radio4() {
+            isCreditCard = false;
+            console.log("C: " + isCreditCard);
+            $('#cardNum').removeAttr('required');
+            $('#cardName').removeAttr('required');
+            $('#expDate').removeAttr('required');
+            $('#cvvCode').removeAttr('required');
         }
     </script>
     <script src="js/validations.js"></script>

@@ -35,11 +35,15 @@
 <%
             try{
             Customer c = (Customer) session.getAttribute("logged_in_customer");
+            System.out.println("First name is: "+c.getFirstName());
             request.setAttribute("logged_in_customer", c);
+<<<<<<< HEAD
             System.out.println(c);
 
             System.out.println(c);
 
+=======
+>>>>>>> fb0cc94d14ab5ec301e88a33e9b7c2ee5b51742a
             } catch (Exception e) {
             System.out.println(e);
             }
@@ -274,8 +278,12 @@
                                                      </div>
                                                  </div>
                                                  <%
-
+                                                 int customer_id=-1;
                                                  if(c != null)
+                                                 {
+                                                    customer_id = c.getCustomerId();
+                                                 }
+                                                 if(1 == 1)
                                                  {
 
                                                  %>
@@ -284,6 +292,7 @@
                                                        <div class="col-xs-9 col-md-offset-3">
                                                           <form action="/checkout" method="post" id="checkout_form">
                                                                <input type="hidden" name="order_total" value="<%=cartTotal %>"/>
+                                                               <input type="hidden" name="customer_id" value="<%=customer_id %>"/>
                                                                <input type="submit" class="btn-lg buttonOption" class="centered" value="Checkout"/>
                                                           </form>
                                                         </div>

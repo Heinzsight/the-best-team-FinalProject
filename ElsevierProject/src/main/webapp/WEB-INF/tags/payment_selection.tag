@@ -5,11 +5,11 @@
             <div class="row">
                 <div class="col-lg-8">
                     <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" onclick="radio3();" value="option1" required>
                       <label class="form-check-label" for="inlineRadio1">Credit Card</label>
                         <div class="col">
                             <label> Card number </label>
-                            <input type="text" name="cardNum" id="cardNum" size="30" required/>
+                            <input type="text" name="cardNum" id="cardNum" size="30"/>
                         </div>
                     </div>
 
@@ -37,7 +37,7 @@
 	    <div class="row">
 			<div class="col-lg-6" id="ship_info">
 		        <div class="form-check form-check-inline">
-		          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+		          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" onclick="radio4();" value="option2" required>
 		          <label class="form-check-label" for="inlineRadio2">PayPal</label>
 		          <p id="ship_method">You will be redirected to PayPal website to complete your purchase securely.</p>
 		        </div>
