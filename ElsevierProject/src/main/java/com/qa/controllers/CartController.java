@@ -1,5 +1,9 @@
 package com.qa.controllers;
 
+import com.qa.models.Address;
+import com.qa.models.Customer;
+import com.qa.services.AddressService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,6 +16,9 @@ import java.util.Map;
 @SessionAttributes(names = {"book_counts", "books", "cart_items", "Address"})
 @Controller
 public class CartController {
+
+    @Autowired
+    AddressService addressService;
 
     @RequestMapping("/updatePrice")
     public ModelAndView bookDetails(@RequestParam("price") double price, @RequestParam("quantity") int quantity) {
@@ -26,10 +33,13 @@ public class CartController {
 
 
     @RequestMapping("/checkout")
-    public ModelAndView checkoutForm(@ModelAttribute("book_counts") Map<Integer, Integer> bookCounts, @RequestParam("order_total") double orderTotal) {
-
+    public ModelAndView checkoutForm(@ModelAttribute("book_counts") Map<Integer, Integer> bookCounts, @RequestParam("customer_id") int customer_id, @RequestParam("order_total") double orderTotal) {
+        System.out.println("logged_in_customer id: "+customer_id);
+        Address address = addressService.findAddressByCustomerId(customer_id);
+        System.out.println("Address 1: "+address);
         ModelAndView modelAndView = new ModelAndView("checkout", "order_total", orderTotal);
         modelAndView.addObject("book_counts", bookCounts);
+        modelAndView.addObject("address", address);
         return modelAndView;
 
     }

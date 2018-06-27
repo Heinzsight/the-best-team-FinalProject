@@ -26,7 +26,8 @@
             }
 %>
 
-
+        <img src="images/header/butter_books_logo.png">
+        <br>
         <div class="container" id="confirm">
         		<h5>Order Confirmation</h5>
 
@@ -38,8 +39,8 @@
         		   String city= (String) request.getAttribute("city");
         		   String postcode= (String) request.getAttribute("postcode");
         		   String allTitles="";
-        		   Double grandTotal = (Double) session.getAttribute("grand_total");
-        		   System.out.println(grandTotal);
+        		   String orderTotal = (String) request.getAttribute("orderTotal");
+        		   System.out.println("Total: " + orderTotal);
                    int i = 0;
                    for (Book book : books) {
                         String newTitle = book.getTitle();
@@ -53,9 +54,9 @@
                     }
         		%>
         		    <div>Hi <%=firstName%>,</div>
-        			<div>Your order of: <%=allTitles%> for  was successful!</div>
+        			<div>Your order of: <%=allTitles%> for <%=orderTotal%> was successful!</div>
         			<div>The order will be delivered to: <%=address1%> <%=address2%>, <%=city%> <%=postcode%></div>
-        			<div>Click here to return to the home page.</div>
+        			<span> Click </span> <a href="/"> Here </a> <span> to return to the homepage. </span>
         	</div>
 
 </body>

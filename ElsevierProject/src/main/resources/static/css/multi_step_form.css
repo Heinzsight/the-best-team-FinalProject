@@ -7,7 +7,8 @@ input.invalid {
   display: none;
 }
 .step {
-  border-bottom: 1px solid red;
+  color: #DCDCDC;
+  border-bottom: 2px solid #DCDCDC;
   padding-bottom: 3px;
 }
 /* Mark the active step: */
@@ -16,7 +17,8 @@ input.invalid {
 }
 /* Mark the steps that are finished and valid: */
 .step.finish {
-  border-bottom: 1px solid blue;
+  color: #808080;
+  border-bottom: 2px solid #808080;
 }
 h4, h5 {
 	font-weight: bold;
@@ -26,7 +28,7 @@ h4, h5 {
 }
 input:focus {
 	outline: none !important;
-    border:1.2px solid navy !important;
+    border:1.2px solid #507298 !important;
     box-shadow: none !important;
 }
 label {
@@ -34,7 +36,7 @@ label {
 }
 #link_address {
 	font-size: 10px !important;
-	color: navy !important;
+	color: #507298 !important;
 	text-decoration: underline;
 }
 .dot {
@@ -60,8 +62,11 @@ label {
 	margin-left: 15px;
 	border:1px solid #507298;
 	background-color: #507298;
-
+    color: white;
 	padding-bottom: 15px;
+}
+#sumUp label {
+    color: white;
 }
 .hr {
 	height: 4px;
@@ -87,4 +92,11 @@ label {
 #address {
 	overflow: hidden;
     white-space: nowrap;
+}
+#checkoutButtons {
+    padding-top: 5px;
+}
+#brand {
+margin-top: 15px;
+height: 65px;
 }
