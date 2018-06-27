@@ -11,6 +11,10 @@ public class CustomerOrderService {
     @Autowired
     private CustomerOrderRepository customerOrderRepository;
 
+    public CustomerOrder saveCustomerOrder(CustomerOrder order) {
+        return customerOrderRepository.save(order);
+    }
+
     public CustomerOrder getCustomerOrderByCustomer(Customer customer) {
         return customerOrderRepository.getCustomerOrderByCustomer(customer);
     }

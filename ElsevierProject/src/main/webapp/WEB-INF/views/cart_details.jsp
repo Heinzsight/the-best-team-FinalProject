@@ -37,13 +37,6 @@
             Customer c = (Customer) session.getAttribute("logged_in_customer");
             System.out.println("First name is: "+c.getFirstName());
             request.setAttribute("logged_in_customer", c);
-<<<<<<< HEAD
-            System.out.println(c);
-
-            System.out.println(c);
-
-=======
->>>>>>> fb0cc94d14ab5ec301e88a33e9b7c2ee5b51742a
             } catch (Exception e) {
             System.out.println(e);
             }
