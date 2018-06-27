@@ -12,9 +12,8 @@
         <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
         <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="css/flexslider.css"/>
-        <link rel="stylesheet" href="css/wrapper.css"/>
     <!-- Custom styles for this template -->
-        <link href="css/index-style.css" rel="stylesheet">
+        <link rel="stylesheet" href="css/nav-footer-style.css"/>
         <link href="css/cart_empty-style.css" rel="stylesheet">
         <link href="css/button.css" rel="stylesheet">
 

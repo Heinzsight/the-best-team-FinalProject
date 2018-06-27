@@ -4,9 +4,15 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Online Shopping </title>
-    <%--<link rel="stylesheet" href="css/style.css">--%>
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/header_footer.css">
+    <!-- Bootstrap core CSS -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom fonts for this template -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+        <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="css/flexslider.css"/>
+    <!-- Custom styles for this template -->
+        <link rel="stylesheet" href="css/nav-footer-style.css"/>
     <link rel = "stylesheet" href="css/button.css">
 </head>
 <body>
@@ -83,7 +89,6 @@
                 </div>
                 <br>
                 <div class="form-group">
-                    <p><a href="/"><span class="glyphicon glyphicon-menu-left"></span> Home</a></p>
                     <input type="submit" class="btn btn-primary btn-lg btn-block buttonSubmit" value="Login">
                 </div>
                 <br>
