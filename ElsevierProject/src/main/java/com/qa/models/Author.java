@@ -58,5 +58,4 @@ public class Author {
         this.expertise = expertise;
     }
 
-
 }

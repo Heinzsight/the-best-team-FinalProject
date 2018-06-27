@@ -6,6 +6,20 @@ body {
     /* The html and body elements cannot have any padding or margin. */
 }
 
+h1 {
+    color: #a23452;
+    font-family: "Abril Fatface";
+}
+
+h2 {
+    color: #444444;
+    font-family: "Abril Fatface";
+}
+
+.front-layout-title {
+    padding-top: 50px;
+}
+
 /* Wrapper for page content to push down footer */
 #wrap {
     min-height: 100%;
@@ -21,7 +35,7 @@ body {
     height: 60px;
 }
 #footer {
-    height: 140px;
+    height: 225px;
     padding: 10px;
     background-color: #a23452;
 }
@@ -72,10 +86,8 @@ body {
 
 
 #footer .footer-copyright {
-    background-color: #333333;
-    padding-top: 3px;
-    padding-bottom: 3px;
     text-align: center;
+    color: white;
 }
 
 #footer .row {
@@ -106,8 +118,7 @@ body {
 
 #footer a:hover,
 #footer a:focus {
-    text-decoration: none;
-    color: white;
+    text-decoration: underline;
 }
 
 #footer .social-networks {
@@ -141,16 +152,4 @@ body {
 
 #footer .twitter:hover {
     color: #00B6F1;
-}
-
-#footer .btn {
-    color: white;
-    background-color: #d84b6b;
-    border-radius: 20px;
-    border: none;
-    width: 150px;
-    display: block;
-    margin: 0 auto;
-    margin-top: 10px;
-    line-height: 25px;
 }

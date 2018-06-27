@@ -1,15 +1,16 @@
 package com.qa.controllers;
 
+import com.qa.models.Author;
 import com.qa.models.Book;
-import com.qa.repositories.BookRepository;
+import com.qa.services.AuthorService;
+import com.qa.services.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -19,7 +20,9 @@ import java.util.Map;
 public class BookController {
 
     @Autowired
-    BookRepository bookService;
+    BookService bookService;
+    @Autowired
+    AuthorService authorService;
 
     @RequestMapping("/bookDetails")
     public ModelAndView bookDetails(@ModelAttribute("books") Iterable<Book> books, @RequestParam("bookId") int bookId) {
@@ -95,6 +98,30 @@ public class BookController {
 
         return modelAndView;
 
+    }
+
+    @RequestMapping(value="/search")
+    public ModelAndView Search(@ModelAttribute("books") Iterable<Book> books,
+                               @RequestParam(value = "searchTerm", required = false) String pSearchTerm, HttpServletRequest request, HttpServletResponse response) {
+
+        ModelAndView mav;
+
+        Iterable<Book> b;
+
+        ArrayList<Author> authors = new ArrayList<>();
+        Author searchAuthor = null;
+        searchAuthor = authorService.findAuthorByAuthorName(pSearchTerm);
+
+        if (searchAuthor != null) {
+            authors.add(searchAuthor);
+            b = bookService.searchBooks(authors);
+        }else{
+            b = bookService.searchBooks(pSearchTerm);
+        }
+
+        mav = new ModelAndView("search", "books", b);
+
+        return mav;
     }
 
     public ArrayList<Integer> loadBookIds(ArrayList<Book> cartItems) {
