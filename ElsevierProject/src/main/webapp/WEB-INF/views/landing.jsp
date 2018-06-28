@@ -113,12 +113,14 @@
             <% Iterable<Book> books1 = (Iterable<Book>) session.getAttribute("books");
 
                 int i = 0;
-                for (Book book : books1) {
-                    if (i >= 1) {
-                        break;
-                    } else {
-                        i++;
-                    }
+                if(books1 != null)
+                {
+                    for (Book book : books1) {
+                        if (i >= 1) {
+                            break;
+                        } else {
+                            i++;
+                        }
             %>
 
 
@@ -160,7 +162,6 @@
 
         </div>
         <%--End of Subscription Box--%>
-
 
     </div>
 
@@ -318,7 +319,14 @@
     <%--End of Details Container--%>
 
 
-    <% } %>
+    <%              }
+                }
+       else{
+       %>
+
+
+            <p> You dont have any books to show</p>
+            <% } %>
     <!-- End Main Content -->
 
 <div id="push"></div>
