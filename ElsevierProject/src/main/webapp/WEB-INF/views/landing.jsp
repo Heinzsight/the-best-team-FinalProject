@@ -37,7 +37,7 @@
             }
 
             Customer c = (Customer) session.getAttribute("logged_in_customer");
-            Address address = (Address) request.getAttribute("address");
+            Address address = (Address) request.getAttribute("Address");
             System.out.println("Address: "+address);
 %>
 <div id="wrap">
@@ -264,19 +264,29 @@
         <p>
         <ul style="list-style-type:none">
 
-            <li>Name</li>
+            <li><b>Name:</b></li>
             <li><span><%=c.getFirstName()%></span> <span><%=c.getLastName()%></span></li> <!-- Name-->
-            <li>Email</li>
+            <li><b>Email:</b></li>
             <li><%=c.getEmail()%></li> <!-- Email-->
-            <li>Address 1</li>
-            <%  if(address.getAddressLine1() != null)
-                { %>
-            <li><%=address.getAddressLine1()%></li>  <!-- Address 1-->
-            <%
-                }
+            <li><b>Address:</b></li>
+           <%if(address != null)
+               {
+           %>
+           <li><%=address.getAddressLine1()%></li>  <!-- Address 1-->
+           <li><b>City, Zip, State:</b></li>
+           <li><span><%=address.getCity()%> , </span> <span><%=address.getState()%></span> <span> <%=address.getPostcode()%> </span></li><!-- Address 2 / City, Zip, State-->
+           <%
+               }
+               else
+               {
+                    %>
+                               <li> N/A</li>  <!-- Address 1-->
+                               <li>Address 2/ City, Zip, State</li>
+                               <li><span>N/A , </span> <span> N/A </span> <span> N/A</span></li><!-- Address 2 / City, Zip, State-->
+                               <%
+               }
             %>
-           <!-- <li>Address 2/ City, Zip, State</li> -->
-           <!-- <li><span><%=address.getCity()%> , </span> <span><%=address.getState()%></span> <span> <%=address.getPostcode()%> </span></li> <!-- Address 2 / City, Zip, State--> -->
+
         </ul>
         </p>
 

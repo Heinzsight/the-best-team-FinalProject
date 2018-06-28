@@ -1,8 +1,11 @@
 package com.qa.controllers;
 
+import com.qa.models.Address;
 import com.qa.models.Book;
 import com.qa.models.Customer;
+import com.qa.services.AddressService;
 import com.qa.services.BookService;
+import com.qa.services.CustomerOrderService;
 import com.qa.services.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -17,7 +20,7 @@ import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
 
 @Controller
-@SessionAttributes(names = {"books", "cart_items", "logged_in_customer", "Address"})
+@SessionAttributes(names = {"books", "cart_items", "logged_in_customer", "Address", "customer_orders"})
 public class CustomerController {
 
     @Autowired
@@ -25,6 +28,12 @@ public class CustomerController {
 
     @Autowired
     CustomerService customerService;
+
+    @Autowired
+    AddressService addressService;
+
+    @Autowired
+    CustomerOrderService customerOrderService;
 
     @RequestMapping("/")
     public ModelAndView indexPage(HttpServletRequest request) {
@@ -302,9 +311,14 @@ public class CustomerController {
     }
 
     @RequestMapping(value = "/landing")
-    public String landing() {
-        System.out.println("Getting here!!!");
-        return "landing";
+    public ModelAndView landing(@ModelAttribute("logged_in_customer") Customer loggedInCustomer) {
+        ModelAndView modelAndView = new ModelAndView("landing", "logged_in_customer", loggedInCustomer);
+
+        Address address = addressService.findAddressByCustomerId(loggedInCustomer.getCustomerId());
+        modelAndView.addObject("Address",address);
+
+        
+        return modelAndView;
     }
 
 }
