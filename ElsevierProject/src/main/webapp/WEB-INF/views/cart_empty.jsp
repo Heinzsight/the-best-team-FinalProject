@@ -81,14 +81,8 @@
 <div class="container-fluid">
     <div class="row column text-center">
         <h1>Your cart is now empty </h1>
-
-        <a href="/" class="btn-lg buttonOption"> Continue shopping </a>
-        <br />
-        <br />
-        <a href="/profile" class="btn-lg buttonOption"> To the profile page </a>
-        <br />
-        <br />
-        <a href="/landing" class="btn-lg buttonOption"> To the Landing </a>
+        <br>
+        <a href="/" class="btn-lg buttonSubmit" style="margin-bottom: 10px"> CONTINUE SHOPPING </a>
 
     </div>
 </div>
