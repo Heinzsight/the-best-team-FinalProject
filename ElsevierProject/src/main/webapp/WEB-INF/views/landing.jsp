@@ -111,6 +111,7 @@
             <h1 style="color: #a23452; font-family: 'Abril Fatface'" align="center">Your Subscription This Month</h1>
 
             <% Iterable<Book> books1 = (Iterable<Book>) session.getAttribute("books");
+
                 int i = 0;
                 for (Book book : books1) {
                     if (i >= 1) {
@@ -176,7 +177,7 @@
             <% //Need to write code to fetch order history
                 Iterable<CustomerOrder> orders = (Iterable<CustomerOrder>) session.getAttribute("customer_orders");
                 int j = 0;
-             if(orders != null)
+            if(orders != null)
              {
                 for (CustomerOrder order: orders) {
                     if (j >= 4) {
@@ -184,6 +185,8 @@
                     } else {
                         j++;
                     }
+                    for(Book book1: order.getBooks())
+                    {
             %>
 
             <div class="row">
@@ -192,9 +195,9 @@
                 <div class="col-md-2">
 
 
-                    <a href="/bookDetails?bookId=<%=book2.getBookId()%>"><img class="img-responsive"
+                    <a href="/bookDetails?bookId=<%=book1.getBookId()%>"><img class="img-responsive"
 
-                                                                              src="<%=book2.getBookImage()%>"></a>
+                    src="<%=book1.getBookImage()%>"></a>
 
 
                 </div>
@@ -202,9 +205,9 @@
 
                 <!-- Book Title/ Author -->
                 <div class="col-md-2">
-                    <h5><%= book2.getTitle()%>
+                    <h5><%= book1.getTitle()%>
                     </h5>
-                    <%--<p>by <%= book.getAuthors()%>--%>
+                    <%--<p>by <%= book1.getAuthors()%>--%>
                     </p>
                     <%--<%--%>
 
@@ -218,7 +221,7 @@
                 <div class="col-md-3">
 
 
-                    <h5><%=book2.getFormat()%> - $<%=book2.getPrice()%>
+                    <h5><%=book1.getFormat()%> - $<%=book1.getPrice()%>
                     </h5>
                 </div>
                 <!-- End Book Format and price -->
@@ -239,7 +242,21 @@
 
 
             <%
+                    }
                 }
+            }
+            else{
+
+            %>
+
+               <div class="container-fluid">
+                  <div class="row">
+                     <div class="col-xs-12">
+                        <h1> You do not have any order history to display</h1>
+                     </div>
+                  </div>
+               </div>
+            <%
             }
             %>
 
@@ -288,7 +305,7 @@
                     %>
                                <li> N/A</li>  <!-- Address 1-->
                                <li>Address 2/ City, Zip, State</li>
-                               <li><span>N/A , </span> <span> N/A </span> <span> N/A</span></li><!-- Address 2 / City, Zip, State-->
+                               <li><span>N/A , </span> <span> N/A </span> <span> N/A</span></li><!-- City, Zip, State-->
                                <%
                }
             %>
