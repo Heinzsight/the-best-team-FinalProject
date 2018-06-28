@@ -75,11 +75,9 @@
                         <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                            aria-expanded="false">Hello, <%=c.getFirstName()%> <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">Action</a></li>
-                            <li><a href="#">Another action</a></li>
-                            <li><a href="#">Something else here</a></li>
+                            <li><a href="/landing">Account Details</a></li>
                             <li role="separator" class="divider"></li>
-                            <li><a href="#">Separated link</a></li>
+                            <li><a href="#">logout</a></li>
                         </ul>
                     </li>
                     <%
@@ -104,15 +102,16 @@
 
 
     <div class="container banner-container">
-        <img src="images/banners/homepage_banner_1920x350.jpg" class="img-thumbnail" style="height: 100%; width:100%;"/>
-        <div class="centered banner-label">Genres</div>
+        <img src="images/banners/Homepage_Banner_NEW.jpg" class="img" style="height: 100%; width:100%;"/>
+        <div class="top-right main-banner-label">Making reading as <br> smooth as butter.</div>
+        <center><a href="/genres" class="btn btn-primary buttonSubmit top-right main-banner-button">BROWSE</a></center>
     </div>
     <!-- Main Content -->
     <div class="container">
         <div class="row">
             <div class="container-fluid front-layout-title">
-                <h3 class="pull-left">Just In</h3>
-                <h3><a href="/just-in" class="pull-right">View All</a></h3>
+                <h3 class="pull-left" style="margin-top: 0px">Just In</h3>
+                <h4><a href="/just-in" class="pull-right">View All</a></h4>
             </div>
         </div>
         <div class="row">
@@ -133,14 +132,10 @@
                                                                                  src="<%=book.getBookImage()%>"></a>
                     </div>
                     <div class="row">
-                        <h5><%= book.getTitle()%>
-                        </h5>
-                        <p>$<%= book.getPrice()%>
-                        </p>
-                    </div>
-                    <div class="row">
-                        <a href="/bookDetails?bookId=<%=book.getBookId()%>" class="btn-sm buttonOption">View book
-                            details</a>
+                        <h4><%= book.getTitle()%>
+                        </h4>
+                        <h4 style="color: #444444;">$<%= book.getPrice()%>
+                        </h4>
                     </div>
                 </div>
                 <!--  a href="/addToCart?bookId=" class="button expanded">Add to Cart</a>-->
@@ -154,8 +149,8 @@
         </div>
         <div class="row">
             <div class="container-fluid front-layout-title">
-                <h3 class="pull-left">All-time Faves</h3>
-                <h3><a href="/all-time-faves" class="pull-right">View All</a></h3>
+                <h3 class="pull-left" style="margin-top: 0px">All-time Faves</h3>
+                <h4><a href="/all-time-faves" class="pull-right">View All</a></h4>
             </div>
         </div>
         <div class="row">
@@ -174,14 +169,10 @@
                                                                                  src="<%=book.getBookImage()%>"></a>
                     </div>
                     <div class="row">
-                        <h5><%= book.getTitle()%>
-                        </h5>
-                        <p>$<%= book.getPrice()%>
-                        </p>
-                    </div>
-                    <div class="row">
-                        <a href="/bookDetails?bookId=<%=book.getBookId()%>" class="btn-sm buttonOption">View book
-                            details</a>
+                        <h4><%= book.getTitle()%>
+                        </h4>
+                        <h4 style="color: #444444;">$<%= book.getPrice()%>
+                        </h4>
                     </div>
                 </div>
                 <!--  a href="/addToCart?bookId=" class="button expanded">Add to Cart</a>-->
@@ -199,6 +190,7 @@
         </div>
         <div id="push"></div>
     </div>
+</div>
 
     <div id="footer">
         <div class="container">
@@ -231,7 +223,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
+            <div class="row" style="margin-bottom: 0px">
                 <ul class="list-inline footer-copyright">
                     <li><a>&copy; 2018 Butter Books, Inc.</a></li>
                     <li><a>|</a></li>
@@ -249,10 +241,11 @@
         </div>
     </div>
 
-    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-    <script src="js/elsevier.js"></script>
-    <script>
-        $(document).foundation();
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="js/elsevier.js"></script>
+<script src="js/bootstrap.js"></script>
+<script>
+    $(document).foundation();
     </script>
 </body>
 </html>

@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Butter Books-Book Details</title>
+    <title>Book Details</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link href="css/button.css" rel="stylesheet">
@@ -129,28 +129,28 @@
             <img class="image" src="<%=book.getBookImage()%>"/>
         </div>
         <div class="col-md-6">
-            <h1><%=book.getTitle() %>
+            <h1 style="font-size: 36px"><%=book.getTitle() %>
             </h1>
-            <h2>by <%= book.getAuthors().get(0).getAuthorName()%>
+            <h2 style="font-size: 28px">by <%= book.getAuthors().get(0).getAuthorName()%>
             </h2>
-
-            <label><h4>Select format:</h4>
+<br>
+            <label><p style = "margin-bottom: 0px; font-size: 20px" style="">Select format:</p>
                 <select name="format">
-                    <option value="print">Paperback - <%=book.getPrice()%>
+                    <option value="print">Paperback - $ <%=book.getPrice()%>
                     </option>
-                    <option value="eBook">eBook - <%=book.getPrice()%>
+                    <option value="eBook">eBook - $ <%=book.getPrice()%>
                     </option>
                 </select>
             </label>
             <br>
-            <a href="/addToCart?bookId=<%=book.getBookId()%>" class="btn-lg buttonOption">ADD TO CART</a>
+            <a href="/addToCart?bookId=<%=book.getBookId()%>" class="btn-lg buttonSubmit">ADD TO CART</a>
             <br>
             <br>
-            <p><strong>ISBN: </strong><%=book.getPaperISBN()%>
-            </p>
-            <label>
-                <h4>Overview:</h4>
-            </label>
+            <br>
+            <p><strong>ISBN: </strong><%=book.getPaperISBN()%></p>
+            <br>
+            <p>Overview:</p>
+
             <p><%=book.getDescription() %>
             </p>
         </div>

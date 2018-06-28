@@ -53,10 +53,10 @@ input[type=number]
 
     #rightFloatedContainer
     {
-        background-color: rgba(200, 200, 200, .2);
+        background-color: rgba(174, 203, 197, .09);
         min-height: 375px;
         position: absolute;
-        top: 220px;
+        top: 105px;
         right: 40px;
         width: 25%;
     }
@@ -75,8 +75,6 @@ input[type=number]
         float: left;
         width: 100%;
     }
-
-//Mobile design
 
 @media only screen and (max-width: 768px) {
 
