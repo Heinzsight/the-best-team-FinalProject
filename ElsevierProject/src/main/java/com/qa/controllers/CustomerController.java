@@ -17,7 +17,9 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.io.IOException;
 import java.util.ArrayList;
 
 @Controller
@@ -164,9 +166,11 @@ public class CustomerController {
     }
 
     @RequestMapping("/logout")
-    public ModelAndView logout() {
-        ModelAndView modelAndView = new ModelAndView("logout");
-
+    public ModelAndView logout(HttpServletRequest request , HttpServletResponse response) {
+        HttpSession session = request.getSession(false);
+        if(session!=null)
+            session.invalidate();
+        ModelAndView modelAndView =  new ModelAndView("logout");
         return modelAndView;
     }
 

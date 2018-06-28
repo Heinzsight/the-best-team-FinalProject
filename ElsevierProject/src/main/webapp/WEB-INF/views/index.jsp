@@ -29,11 +29,11 @@
         <%
             Customer c = null;
             try{
-            c = (Customer) session.getAttribute("logged_in_customer");
-            request.setAttribute("logged_in_customer", c);
-            System.out.println(c);
+                c = (Customer) session.getAttribute("logged_in_customer");
+                request.setAttribute("logged_in_customer", c);
+                System.out.println(c);
             } catch (Exception e) {
-            System.out.println(e);
+                System.out.println(e);
             }
         %>
 
@@ -77,7 +77,7 @@
                         <ul class="dropdown-menu">
                             <li><a href="/landing">Account Details</a></li>
                             <li role="separator" class="divider"></li>
-                            <li><a href="#">logout</a></li>
+                            <li><a href="/logout">logout</a></li>
                         </ul>
                     </li>
                     <%
@@ -188,8 +188,8 @@
             %>
             <!-- End Main Content -->
         </div>
-        <div id="push"></div>
     </div>
+    <div id="push"></div>
 </div>
 
     <div id="footer">
@@ -208,8 +208,8 @@
                 </div>
                 <div class="col-md-3">
                     <ul class="list-unstyled">
-                        <li><a href="/about">About</a></li>
-                        <li><a href="/about">Contact</a></li>
+                        <li><a href="/aboutus">About</a></li>
+                        <li><a href="/aboutus">Contact</a></li>
                         <li><a href="#">FAQs</a></li>
                         <li><a href="#">Order</a></li>
                     </ul>

@@ -28,16 +28,16 @@
 <%@page import="com.qa.models.Address" %>
 <%@page import="com.qa.models.CustomerOrder"%>
 <%
+            Customer c = null;
             try{
-            Customer c = (Customer) session.getAttribute("logged_in_customer");
-            System.out.println("First name is: "+c.getFirstName());
-            request.setAttribute("logged_in_customer", c);
-            System.out.println(c);
+                c = (Customer) session.getAttribute("logged_in_customer");
+                System.out.println("First name is: "+c.getFirstName());
+                request.setAttribute("logged_in_customer", c);
+                System.out.println(c);
             } catch (Exception e) {
-            System.out.println(e);
+                System.out.println(e);
             }
 
-            Customer c = (Customer) session.getAttribute("logged_in_customer");
             Address address = (Address) request.getAttribute("Address");
             System.out.println("Address: "+address);
 %>
