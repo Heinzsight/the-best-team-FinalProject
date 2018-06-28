@@ -102,7 +102,7 @@
 
 
     <div class="container banner-container">
-        <img src="images/banners/Homepage_Banner_NEW.jpg" class="img-thumbnail" style="height: 100%; width:100%;"/>
+        <img src="images/banners/Homepage_Banner_NEW.jpg" class="img" style="height: 100%; width:100%;"/>
         <div class="top-right main-banner-label">Making reading as <br> smooth as butter.</div>
         <center><a href="/genres" class="btn btn-primary buttonSubmit top-right main-banner-button">BROWSE</a></center>
     </div>
@@ -223,7 +223,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
+            <div class="row" style="margin-bottom: 0px">
                 <ul class="list-inline footer-copyright">
                     <li><a>&copy; 2018 Butter Books, Inc.</a></li>
                     <li><a>|</a></li>

@@ -48,9 +48,8 @@ h4 {
 }
 
 /* Set the fixed height of the footer here */
-#push,
-#footer {
-    height: 60px;
+#push {
+    height: 100px;
 }
 #footer {
     height: 225px;
