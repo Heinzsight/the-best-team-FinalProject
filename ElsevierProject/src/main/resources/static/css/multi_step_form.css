@@ -30,10 +30,11 @@ h4, h5 {
 	font-weight: bold;
 	font-family: "Garamond";
 	letter-spacing: -1px;
+	font-size: 28px;
 }
 input:focus {
 	outline: none !important;
-    border:1.2px solid #507298 !important;
+    border:1.2px solid #777777 !important;
     box-shadow: none !important;
 }
 label {
@@ -55,8 +56,8 @@ label {
 	padding-top: 15px;
 	font-size: 12px;
 	margin-left: 15px;
-	border:1px solid #507298;
-	max-width: 420px;
+	border:1px solid rgba(119, 119, 119, .5);
+	max-width: 570px;
 	padding-bottom: 15px;
 }
 #sumUp {
@@ -66,7 +67,7 @@ label {
 	font-size: 12px;
 	margin-left: 15px;
 	border: none;
-	background-color: rgba(174, 203, 197, .15);;
+	background-color: rgba(174, 203, 197, .15);
     color: 444444;
 	padding-bottom: 15px;
 }
@@ -98,9 +99,15 @@ label {
     white-space: nowrap;
 }
 #checkoutButtons {
-    padding-top: 5px;
+    padding-top: 15px;
 }
 #brand {
 margin-top: 15px;
 height: 65px;
+}
+#confirm_header {
+font-size: 36px;
+}
+#confirm {
+padding-top: 70px;
 }

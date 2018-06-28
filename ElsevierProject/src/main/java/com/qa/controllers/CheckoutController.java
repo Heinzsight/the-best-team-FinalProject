@@ -63,18 +63,21 @@ public class CheckoutController {
         CustomerOrder customerOrder = new CustomerOrder();
         System.out.println("Customer id: " + loggedInCustomer.getCustomerId());
         System.out.println("Customer order id: " + customerOrder.getOrderId());
-        customerOrder.setAddressId(address.getAddressId());
+
+        Address isPresent = addressService.findAddressByCustomerId(loggedInCustomer.getCustomerId());
+        if(isPresent == null) {
+            address = addressService.saveAddress(address);
+            customerOrder.setAddressId(address.getAddressId());
+
+        }
+        else {
+           addressService.updateBillingAddress(address1, address2, city, postcode, state, country, phone, loggedInCustomer.getCustomerId(), "Home");
+            customerOrder.setAddressId(isPresent.getAddressId());
+        }
         customerOrder.setBooks(books);
         customerOrder.setCustomerId(loggedInCustomer.getCustomerId());
         customerOrder.setOrderTotal(orderTotal);
         customerOrderService.saveCustomerOrder(customerOrder);
-        Address isPresent = addressService.findAddressByCustomerId(loggedInCustomer.getCustomerId());
-        if(isPresent == null) {
-            addressService.saveAddress(address);
-        }
-        else {
-            addressService.updateBillingAddress(address1, address2, city, postcode, state, country, phone, loggedInCustomer.getCustomerId(), "Home");
-        }
         ModelAndView modelAndView = new ModelAndView("checkoutSuccess");
         modelAndView.addObject("firstName", firstName);
         modelAndView.addObject("address1", address1);
@@ -82,6 +85,7 @@ public class CheckoutController {
         modelAndView.addObject("city", city);
         modelAndView.addObject("postcode", postcode);
         modelAndView.addObject("orderTotal", orderTotal);
+        modelAndView.addObject("cart_items", new ArrayList<Book>());
 
 
         return modelAndView;

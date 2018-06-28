@@ -6,7 +6,7 @@
     <title>Shopping Cart | Week 3</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/nav-footer-style.css">
+
     <link rel="stylesheet" href="css/multi_step_form.css">
     <%@ taglib prefix="tags" tagdir="/WEB-INF/tags" %>
 
@@ -68,13 +68,14 @@
 
         <div class="row" >
             <div class="col-sm-12">
-                <div style="text-align:left;margin-top:40px;margin-left:120px;padding-bottom:20px;padding-right:20px;">
-                  <span class="step" style="padding-left:20px" style="margin-right:20px" >1 Account Info </span>
-                  <span class="step" style="padding-left:20px" style="margin-right:20px" >2 Shipping Info </span>
-                  <span class="step" style="padding-left:20px" style="padding-right:20px" >3 Payment Selection  </span>
-                </div>
+
 
             <div class="col-sm-7" style="padding-top:20px">
+                    <div style="text-align:left;margin-top:40px;margin-left:120px;padding-bottom:30px;padding-right:20px;">
+                      <span class="step" style="padding-left:20px" style="margin-right:20px" >1 Account Info </span>
+                      <span class="step" style="padding-left:20px" style="margin-right:20px" >2 Shipping Info </span>
+                      <span class="step" style="padding-left:20px" style="padding-right:20px" >3 Payment Selection  </span>
+                    </div>
                     <div class="tab" >
                        <h5 id="cust_info_header"> Customer Information </h5>
                             <div class="row">
@@ -241,14 +242,14 @@
                 				<div class="col-sm-4" id="ship_info">
                 					<div class="form-check form-check-inline">
                 					  <input class="form-check-input" type="radio" name="shippingRadio" id="inlineRadioShipping1" onclick="radio1();" value="0" required>
-                					  <label class="form-check-label" for="inlineRadioShipping1">Standard Delivery: Free</label>
+                					  <label class="form-check-label" for="inlineRadioShipping1" style="font-weight: bold;" >Standard Delivery: Free</label>
                 					  <p id="ship_method">Estimated 14-20 Day Shipping (Duties and taxes may be due upon delivery)</p>
                 					</div>
                 				</div>
                 				<div class="col-sm-4" id="ship_info">
                 					<div class="form-check form-check-inline">
                 					  <input class="form-check-input" type="radio" name="shippingRadio" id="inlineRadioShipping2" onclick="radio2();" value="1" required>
-                					  <label class="form-check-label" for="inlineRadioShipping2">Fast Delivery: $ 8.00</label>
+                					  <label class="form-check-label" for="inlineRadioShipping2" style="font-weight: bold;" >Fast Delivery: $ 8.00</label>
                 					  <p id="ship_method">Estimated 2-5 Days Shipping (Duties and taxes may be due upon delivery)</p>
                 					</div>
                 				</div>
@@ -264,13 +265,13 @@
 
 
                     <h5 id="payment_header"> Payment Selection </h5>
-                    <div class="container" id="ship_info">
+                    <div class="container" id="ship_info" style="margin-left: 0px; padding-left: 30px;">
                         <div id="required_later">
                             <div class="row">
                                 <div class="col-sm-8">
                                     <div class="form-check form-check-inline">
-                                      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" onclick="radio3();" value="option1" required>
-                                      <label class="form-check-label" for="inlineRadio1">Credit Card</label>
+
+                                      <label class="form-check-label" for="inlineRadio1" style="font-weight: bold;">Credit Card</label>
                                         <div class="col">
                                             <label> Card number </label>
                                             <input type="text" name="cardNum" id="cardNum" size="30" required/>
@@ -296,18 +297,6 @@
                         </div>
                     </div>
 
-
-                        <br>
-                        <div class="row">
-                            <div class="col-lg-6" id="ship_info">
-                                <div class="form-check form-check-inline">
-                                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" onclick="radio4();" value="option2" required>
-                                  <label class="form-check-label" for="inlineRadio2">PayPal</label>
-                                  <p id="ship_method">You will be redirected to PayPal website to complete your purchase securely.</p>
-                                </div>
-                            </div>
-                        </div>
-
                 </div>
                                                                     <div class="row" id="checkoutButtons">
                                                                         <div style="overflow:auto;">
@@ -322,7 +311,7 @@
                                                                         </div>
                                                                     </div>
                 </div>
-
+                <div class="container">
                 <div class="col-sm-4" id="sumUp">
                             <div class="col-sm-12">
                 						<h4>Order Summary</h4>
@@ -376,9 +365,7 @@
                                                 <div class="small-3 columns">
                                                     <label for="middle-label" class="middle"><%=orderTotal %></label>
                                                 </div>
-
                                             </div>
-
                 							<div class="row">
                                                 <div class="small-3 columns">
                                                     <label for="middle-label" class="middle">Shipping</label>
@@ -386,9 +373,7 @@
                                                 <div class="small-3 columns">
                                                     <label for="middle-label" class="middle" id="shippingDiv">Calculating..</label>
                                                 </div>
-
                                             </div>
-
                                             <div class="row">
                                                 <div class="small-3 columns">
                                                     <label for="middle-label" class="middle">Tax</label>
@@ -396,7 +381,6 @@
                                                 <div class="small-3 columns">
                                                     <label for="middle-label" class="middle"><%=tax %></label>
                                                 </div>
-
                                             </div>
                 							<hr>
                                             <div class="row">
@@ -415,7 +399,7 @@
 
 
                         </div>
-
+                </div>
 
             </div>
 
@@ -463,10 +447,14 @@
             document.getElementById("prevBtn").style.display = "inline";
           }
           if (n == (x.length - 1)) {
-            document.getElementById("nextBtn").innerHTML = "Submit";
+            document.getElementById("nextBtn").innerHTML = "Complete Order";
             //document.getElementById("nextBtn").type = "submit";
-          } else {
-            document.getElementById("nextBtn").innerHTML = "Next";
+          }
+          else if (n == (x.length - 2)) {
+            document.getElementById("nextBtn").innerHTML = "Continue to Payment";
+          }
+          else if (n == (x.length - 3)){
+            document.getElementById("nextBtn").innerHTML = "Continue to Shipping";
           }
           // ... and run a function that displays the correct step indicator:
           fixStepIndicator(n)
@@ -602,6 +590,7 @@
     </script>
     <script src="js/validations.js"></script>
     <script src="js/paging.js"></script>
+    <script src="js/bootstrap.js"></script>
     <script>
         $(document).foundation();
     </script>
