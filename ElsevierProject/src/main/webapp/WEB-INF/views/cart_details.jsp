@@ -37,6 +37,7 @@
             Customer c = (Customer) session.getAttribute("logged_in_customer");
             System.out.println("First name is: "+c.getFirstName());
             request.setAttribute("logged_in_customer", c);
+            System.out.println(c);
             } catch (Exception e) {
             System.out.println(e);
             }
@@ -181,6 +182,7 @@
                                       <div class="column">
                                           <form name="f1">
                                               <input type="hidden" name="price" value="<%=price%>"/>
+                                              <input type="hidden" name="totalPrice" value="<%=totalPrice%>"/>
                                               <input type="hidden" name="cart_total" value="<%=cartTotal%>"/>
                                               Price <label id="price_label<%=i%>">$<%=totalPrice%>
                                           </label>
@@ -275,9 +277,7 @@
                                                  if(c != null)
                                                  {
                                                     customer_id = c.getCustomerId();
-                                                 }
-                                                 if(1 == 1)
-                                                 {
+
 
                                                  %>
 

@@ -14,7 +14,6 @@
         <link rel="stylesheet" href="css/flexslider.css"/>
     <!-- Custom styles for this template -->
         <link rel="stylesheet" href="css/nav-footer-style.css"/>
-        <link href="css/cart_empty-style.css" rel="stylesheet">
         <link href="css/button.css" rel="stylesheet">
 
 
@@ -82,7 +81,13 @@
     <div class="row column text-center">
         <h1>Your cart is now empty </h1>
 
-        <a href="/" class="button large"> Continue shopping </a>
+        <a href="/" class="btn-lg buttonOption"> Continue shopping </a>
+        <br />
+        <br />
+        <a href="/profile" class="btn-lg buttonOption"> To the profile page </a>
+        <br />
+        <br />
+        <a href="/landing" class="btn-lg buttonOption"> To the Landing </a>
 
     </div>
 </div>

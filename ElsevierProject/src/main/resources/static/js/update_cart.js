@@ -1,20 +1,21 @@
 function calculateTotalPrice(price, quantity, price_label) {
 
-
-    var cartTotal = document.getElementById("cart_total").value;
-    var orderTotal = document.getElementById("order_total").value;
+    var cartTotal = document.getElementById("cart_total").value; //the book price
+    window.alert(cartTotal);
+    var orderTotal = document.getElementById("order_total").value; //the entire price with tax included
+    window.alert(orderTotal);
 
     var totalPrice = parseFloat(price) * parseFloat(quantity);
 
-    price_label.innerHTML = "$" + totalPrice;
+    price_label.innerHTML = "$" + totalPrice;  //the price of the book with the quantity
 
     cTotal = parseFloat(cartTotal) + parseFloat(price);
 
     oTotal = parseFloat(orderTotal) + parseFloat(price);
 
-    document.getElementById("cart_total_label").innerHTML = "$" + cTotal;
+    document.getElementById("cart_total_label").innerHTML = "$" + cTotal; //the price BEFORE tax is added in
 
-    document.getElementById("order_total_label").innerHTML = "$" + oTotal;
+    document.getElementById("order_total_label").innerHTML = "$" + oTotal;  //the final price
 
     //document.getElementById("price").value = totalPrice;
 

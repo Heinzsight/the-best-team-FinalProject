@@ -1,3 +1,4 @@
+
 package com.qa.models;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -5,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import javax.persistence.*;
 import java.util.List;
 
-@Entity(name="customer_order")
+@Entity(name = "customer_order")
 public class CustomerOrder {
 
     @Id
@@ -23,7 +24,7 @@ public class CustomerOrder {
     @Column(name="address_id")
     private int addressId;
 
-    @Column(name="total")
+    @Column(name = "total")
     private String orderTotal;
 
     public int getOrderId() {

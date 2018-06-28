@@ -6,7 +6,10 @@ import com.qa.services.AuthorService;
 import com.qa.services.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
@@ -100,7 +103,7 @@ public class BookController {
 
     }
 
-    @RequestMapping(value="/search")
+    @RequestMapping(value = "/search")
     public ModelAndView Search(@ModelAttribute("books") Iterable<Book> books,
                                @RequestParam(value = "searchTerm", required = false) String pSearchTerm, HttpServletRequest request, HttpServletResponse response) {
 
@@ -115,12 +118,13 @@ public class BookController {
         if (searchAuthor != null) {
             authors.add(searchAuthor);
             b = bookService.searchBooks(authors);
-        }else{
+        } else {
             b = bookService.searchBooks(pSearchTerm);
         }
 
-        mav = new ModelAndView("search", "books", b);
 
+        mav = new ModelAndView("search", "books", b);
+        mav.addObject("searchTerm", pSearchTerm);
         return mav;
     }
 
