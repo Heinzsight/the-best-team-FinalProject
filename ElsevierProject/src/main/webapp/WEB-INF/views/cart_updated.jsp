@@ -131,7 +131,7 @@
             </ul>
         </nav>
     </div>
-<br>
+    <br>
     <div class="container-fluid" id="main">
         <div class="row">
             <div class="col-lg-2 col-md-offset-2">
@@ -140,7 +140,9 @@
             </div>
             <div class="col-lg-6">
                 <br>
-                <p style="font-size: 22px; font-weight: 500; color:#444444"> <em><%=books.get(books.size() - 1).getTitle()%></em> added to cart.</p>
+                <p style="font-size: 22px; font-weight: 500; color:#444444">
+                    <em><%=books.get(books.size() - 1).getTitle()%>
+                    </em> added to cart.</p>
                 <br>
                 <br>
                 <a href="/viewCart" style="margin-right: 25px" class="btn-lg buttonOption">VIEW CART</a>

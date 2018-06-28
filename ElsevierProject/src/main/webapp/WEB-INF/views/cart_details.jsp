@@ -72,6 +72,7 @@
 %>
 <div id="wrap">
     <!-- Navigation -->
+    <!-- Navigation -->
     <nav class="navbar navbar-default">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -94,7 +95,7 @@
                     <li><a href="/just-in">Just In</a></li>
                     <li><a href="/all-time-faves">All Time Faves</a></li>
                     <li><a href="/bestselling">Bestselling</a></li>
-                    <li><a href="/genres">Genres</a></li>
+                    <li><a href="/genres">Browse</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
 
@@ -109,11 +110,9 @@
                         <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                            aria-expanded="false">Hello, <%=c.getFirstName()%> <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">Action</a></li>
-                            <li><a href="#">Another action</a></li>
-                            <li><a href="#">Something else here</a></li>
+                            <li><a href="/landing">Account Details</a></li>
                             <li role="separator" class="divider"></li>
-                            <li><a href="#">Separated link</a></li>
+                            <li><a href="/logout">logout</a></li>
                         </ul>
                     </li>
                     <%
@@ -126,8 +125,7 @@
                     <div class="form-group">
                         <div class="input-group">
                             <div class="input-group addon">
-                                <input type="text" class="form-control input-sm navbar-search" placeholder="Search"
-                                       name="searchTerm">
+                                <input type="text" class="form-control input-sm navbar-search" placeholder="Search" name="searchTerm">
                             </div>
                         </div>
                     </div>
@@ -136,7 +134,6 @@
         </div><!-- /.container-fluid -->
     </nav>
     <!-- End Header -->
-
     <!-- Main Content -->
 
     <div class="container-fluid">
@@ -315,69 +312,6 @@
     }
     %>
 
-    <div id="push"></div>
-</div> <!-- End of wrapper -->
 <!-- End of Main Content -->
 
-
-<div id="footer">
-    <div class="container">
-        <div class="row" style="padding-top: 15px;">
-            <div class="col-md-3">
-                <img style="padding-top: 10px;" src="images/footer/butterbooks_logo_footer.png">
-            </div>
-            <div class="col-md-3">
-                <ul class="list-unstyled">
-                    <li><a href="#">Just In</a></li>
-                    <li><a href="#">All-Time Faves</a></li>
-                    <li><a href="#">Bestselling</a></li>
-                    <li><a href="#">Genres</a></li>
-                </ul>
-            </div>
-            <div class="col-md-3">
-                <ul class="list-unstyled">
-                    <li><a href="/about">About</a></li>
-                    <li><a href="/about">Contact</a></li>
-                    <li><a href="#">FAQs</a></li>
-                    <li><a href="#">Order</a></li>
-                </ul>
-            </div>
-            <div class="col-md-3">
-                <div class="social-networks">
-                    <a href="https://twitter.com/" class="twitter"><i class="fab fa-twitter-square"></i></a>
-                    <a href="https://www.instagram.com/" class="instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="https://www.facebook.com/" class="facebook"><i class="fab fa-facebook-square"></i></a>
-                    <a href="#" class="snapchat"><i class="fab fa-snapchat-square"></i></a>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <ul class="list-inline footer-copyright">
-                <li><a>&copy; 2018 Butter Books, Inc.</a></li>
-                <li><a>|</a></li>
-                <li><a>Terms of Use</a></li>
-                <li><a>|</a></li>
-                <li><a>Copyright and Trademark</a></li>
-                <li><a>|</a></li>
-                <li><a>Privacy Policy</a></li>
-                <li><a>|</a></li>
-                <li><a>Sitemap</a></li>
-                <li><a>|</a></li>
-                <li><a>Accessibility</a></li>
-            </ul>
-        </div>
-    </div>
-</div>
-
-<!-- End of Footer -->
-<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-<script src="js/elsevier.js"></script>
-<script src="js/update_cart.js"></script>
-<script>
-    $(document).foundation();
-</script>
-</body>
-</html>
-
-
-    
+<%@include file="master-footer.jsp" %>

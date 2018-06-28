@@ -11,13 +11,13 @@
 
 <%@page import="com.qa.models.Customer" %>
 <%
-            try{
-            Customer c = (Customer) session.getAttribute("logged_in_customer");
-            request.setAttribute("logged_in_customer", c);
-            System.out.println(c);
-            } catch (Exception e) {
-            System.out.println(e);
-            }
+    try {
+        Customer c = (Customer) session.getAttribute("logged_in_customer");
+        request.setAttribute("logged_in_customer", c);
+        System.out.println(c);
+    } catch (Exception e) {
+        System.out.println(e);
+    }
 %>
 
 <%
