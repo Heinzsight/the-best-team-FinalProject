@@ -9,9 +9,12 @@
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom fonts for this template -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
-    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+          integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet'
+          type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
+          rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/flexslider.css"/>
     <!-- Custom styles for this template -->
     <link rel="stylesheet" href="css/nav-footer-style.css"/>
@@ -38,7 +41,8 @@
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
@@ -60,14 +64,15 @@
                 <ul class="nav navbar-nav navbar-right">
 
                     <%
-                        if (c == null){
+                        if (c == null) {
                     %>
                     <li><a href="/login"> Register | Login </a></li>
                     <%
                     } else {
                     %>
                     <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Hello, <%=c.getFirstName()%> <span class="caret"></span></a>
+                        <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                           aria-expanded="false">Hello, <%=c.getFirstName()%> <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="#">Action</a></li>
                             <li><a href="#">Another action</a></li>
@@ -82,7 +87,7 @@
 
                     <li><a href="/viewCart"><i class="fas fa-shopping-cart"></i></a></li>
                 </ul>
-                <form  class="navbar-form navbar-right" action="/search">
+                <form class="navbar-form navbar-right" action="/search">
                     <div class="form-group">
                         <div class="input-group">
                             <div class="input-group addon">
@@ -98,90 +103,105 @@
 
     <div class="container-fluid">
         <div class="row">
-
             <form action="/registerProcess" method="post">
                 <div class="col-md-4 col-md-offset-4">
                     <h1 align="center">Create Account</h1>
                     <p align="center">or <a href="/login">Sign In</a></p>
 
-
-                    <label>First Name *</label><br>
-                    <input type="text" placeholder="Enter First Name" name="firstName" id="firstName" class="form-control" required/><br>
-                    <label>Last Name *</label><br>
-                    <input type="text" placeholder="Enter Last Name" name="lastName" id="lastName" class="form-control" required/><br>
-                    <label>Email *</label><br>
-                    <input type="email" placeholder="Enter Email" name="email" id="email" class="form-control" required/><br>
-                    <label>Password *</label><br>
-                    <input type="password" placeholder="Enter Password" name="password" id="password" class="form-control" required/><br>
-
-                    <input type="checkbox" name="agreement" required/> I have read and understood the
-                    <a href="/registered_user_agreement">Registered User Agreement </a> and agree to be bound by all of its
-                    terms. *
-                    <br>
-                    <br>
-                    <input type="submit" class="btn-primary btn-lg btn-block buttonSubmit create account" value="Register">
-                    <br>
+                    <div class="form-group">
+                        <label for="firstName">First Name*</label><br>
+                        <input type="text" placeholder="Enter First Name" style="border-radius: 0px" name="firstName"
+                               id="firstName" class="form-control" required/><br>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Last Name*</label><br>
+                        <input type="text" placeholder="Enter Last Name" style="border-radius: 0px" name="lastName"
+                               id="lastName" class="form-control" required/><br>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email*</label><br>
+                        <input type="email" placeholder="Enter Email" style="border-radius: 0px" name="email" id="email"
+                               class="form-control" required/><br>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password*</label><br>
+                        <input type="password" placeholder="Enter Password" style="border-radius: 0px" name="password"
+                               id="password" class="form-control" required/><br>
+                    </div>
+                    <div class="form-group">
+                        <input type="checkbox" name="agreement" required/> I have read and understood the
+                        <a href="/registered_user_agreement">Registered User Agreement </a> and agree to be bound by all
+                        of
+                        its
+                        terms.*
+                        <br>
+                        <br>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" class="btn-primary btn-lg btn-block buttonSubmit create account"
+                               value="Register">
+                        <br>
+                    </div>
                 </div>
             </form>
-
         </div>
     </div>
 
 
-<div id="footer">
-    <div class="container">
-        <div class="row" style="padding-top: 15px;">
-            <div class="col-md-3">
-                <img style="padding-top: 10px;" src="images/footer/butterbooks_logo_footer.png">
-            </div>
-            <div class="col-md-3">
-                <ul class="list-unstyled">
-                    <li><a href="#">Just In</a></li>
-                    <li><a href="#">All-Time Faves</a></li>
-                    <li><a href="#">Bestselling</a></li>
-                    <li><a href="#">Genres</a></li>
-                </ul>
-            </div>
-            <div class="col-md-3">
-                <ul class="list-unstyled">
-                    <li><a href="/about">About</a></li>
-                    <li><a href="/about">Contact</a></li>
-                    <li><a href="#">FAQs</a></li>
-                    <li><a href="#">Order</a></li>
-                </ul>
-            </div>
-            <div class="col-md-3">
-                <div class="social-networks">
-                    <a href="https://twitter.com/" class="twitter"><i class="fab fa-twitter-square"></i></a>
-                    <a href="https://www.instagram.com/" class="instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="https://www.facebook.com/" class="facebook"><i class="fab fa-facebook-square"></i></a>
-                    <a href="#" class="snapchat"><i class="fab fa-snapchat-square"></i></a>
+    <div id="footer">
+        <div class="container">
+            <div class="row" style="padding-top: 15px;">
+                <div class="col-md-3">
+                    <img style="padding-top: 10px;" src="images/footer/butterbooks_logo_footer.png">
+                </div>
+                <div class="col-md-3">
+                    <ul class="list-unstyled">
+                        <li><a href="#">Just In</a></li>
+                        <li><a href="#">All-Time Faves</a></li>
+                        <li><a href="#">Bestselling</a></li>
+                        <li><a href="#">Genres</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <ul class="list-unstyled">
+                        <li><a href="/about">About</a></li>
+                        <li><a href="/about">Contact</a></li>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Order</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <div class="social-networks">
+                        <a href="https://twitter.com/" class="twitter"><i class="fab fa-twitter-square"></i></a>
+                        <a href="https://www.instagram.com/" class="instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/" class="facebook"><i class="fab fa-facebook-square"></i></a>
+                        <a href="#" class="snapchat"><i class="fab fa-snapchat-square"></i></a>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="row">
-            <ul class="list-inline footer-copyright">
-                <li><a>&copy; 2018 Butter Books, Inc.</a></li>
-                <li><a>|</a></li>
-                <li><a>Terms of Use</a></li>
-                <li><a>|</a></li>
-                <li><a>Copyright and Trademark</a></li>
-                <li><a>|</a></li>
-                <li><a>Privacy Policy</a></li>
-                <li><a>|</a></li>
-                <li><a>Sitemap</a></li>
-                <li><a>|</a></li>
-                <li><a>Accessibility</a></li>
-            </ul>
+            <div class="row">
+                <ul class="list-inline footer-copyright">
+                    <li><a>&copy; 2018 Butter Books, Inc.</a></li>
+                    <li><a>|</a></li>
+                    <li><a>Terms of Use</a></li>
+                    <li><a>|</a></li>
+                    <li><a>Copyright and Trademark</a></li>
+                    <li><a>|</a></li>
+                    <li><a>Privacy Policy</a></li>
+                    <li><a>|</a></li>
+                    <li><a>Sitemap</a></li>
+                    <li><a>|</a></li>
+                    <li><a>Accessibility</a></li>
+                </ul>
+            </div>
         </div>
     </div>
-</div>
 
 
-<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-<script src="js/elsevier.js"></script>
-<script>
-    $(document).foundation();
-</script>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="js/elsevier.js"></script>
+    <script>
+        $(document).foundation();
+    </script>
 </body>
 </html>

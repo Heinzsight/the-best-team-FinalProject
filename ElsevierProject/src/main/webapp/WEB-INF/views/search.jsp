@@ -157,24 +157,27 @@
                     <div class="col-sm-4">
                         <div class="form-group">
                             <label for="author">Author Name*</label>
-                            <input class='form-control' type="text" placeholder="Author Name*" name="author" id="author"
+                            <input class='form-control' style="border-radius: 0px" type="text"
+                                   placeholder="Author Name*" name="author" id="author"
                                    required/>
                         </div>
                     </div>
                     <div class="col-sm-4">
                         <div class="form-group">
                             <label for="title">Title*</label>
-                            <input class='form-control' type="text" placeholder="Enter Title*" name="title" id="title"
+                            <input class='form-control' style="border-radius: 0px" type="text"
+                                   placeholder="Enter Title*" name="title" id="title"
                                    required/>
                         </div>
                     </div>
                     <div class="col-sm-4">
                         <div class="form-group">
                             <label for="isbn">ISBN</label>
-                            <input class='form-control' type="text" placeholder="Enter ISBN" name="ISBN" id="ISBN"/>
+                            <input class='form-control' style="border-radius: 0px" type="text" placeholder="(Optional) ISBN"
+                                   name="ISBN" id="ISBN"/>
                         </div>
                     </div>
-                    <input type="submit" class="pull-right btn btn-primary buttonSubmit" style="margin-right: 17px"
+                    <input type="submit" class="pull-right btn btn-primary buttonSubmit" style="margin-right: 16px"
                            value="Submit">
                     <br>
                 </form>

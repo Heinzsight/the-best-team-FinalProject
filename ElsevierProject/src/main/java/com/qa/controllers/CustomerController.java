@@ -178,12 +178,16 @@ public class CustomerController {
 
         System.out.println("Customer Password is " + customer.getPassword());
 
-        Customer c = customerService.saveCustomer(customer);
-
-        if (c != null) {
-            modelAndView = new ModelAndView("registration_success");
-        } else {
+        try{
+            Customer c = customerService.saveCustomer(customer);
+            if (c != null) {
+                modelAndView = new ModelAndView("registration_success");
+            } else {
+                modelAndView = new ModelAndView("registration_failed");
+            }
+        }catch(Exception e){
             modelAndView = new ModelAndView("registration_failed");
+            System.out.println(e);
         }
 
         return modelAndView;
