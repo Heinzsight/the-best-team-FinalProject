@@ -132,14 +132,10 @@
                                                                                  src="<%=book.getBookImage()%>"></a>
                     </div>
                     <div class="row">
-                        <h5><%= book.getTitle()%>
-                        </h5>
-                        <p>$<%= book.getPrice()%>
-                        </p>
-                    </div>
-                    <div class="row">
-                        <a href="/bookDetails?bookId=<%=book.getBookId()%>" class="btn-sm buttonOption">View book
-                            details</a>
+                        <h4><%= book.getTitle()%>
+                        </h4>
+                        <h4 style="color: #444444;">$<%= book.getPrice()%>
+                        </h4>
                     </div>
                 </div>
                 <!--  a href="/addToCart?bookId=" class="button expanded">Add to Cart</a>-->
@@ -173,14 +169,10 @@
                                                                                  src="<%=book.getBookImage()%>"></a>
                     </div>
                     <div class="row">
-                        <h5><%= book.getTitle()%>
-                        </h5>
-                        <p>$<%= book.getPrice()%>
-                        </p>
-                    </div>
-                    <div class="row">
-                        <a href="/bookDetails?bookId=<%=book.getBookId()%>" class="btn-sm buttonOption">View book
-                            details</a>
+                        <h4><%= book.getTitle()%>
+                        </h4>
+                        <h4 style="color: #444444;">$<%= book.getPrice()%>
+                        </h4>
                     </div>
                 </div>
                 <!--  a href="/addToCart?bookId=" class="button expanded">Add to Cart</a>-->
