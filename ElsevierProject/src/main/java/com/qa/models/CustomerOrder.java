@@ -1,5 +1,7 @@
 package com.qa.models;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -8,32 +10,21 @@ public class CustomerOrder {
 
     @Id
     @GeneratedValue
-    @Column(name="oid")
+    @Column(name="order_id")
     private int orderId;
 
-    @OneToOne
-    @JoinColumn(name="cid")
-    private Customer customer;
+    @Column(name="customer_id")
+    private int customerId;
 
-    @OneToMany
-    @JoinColumn(name="bid")
+    @Autowired
+    @ElementCollection
     private List<Book> books;
 
-    @OneToOne
-    @JoinColumn(name="aid")
-    private Address address;
+    @Column(name="address_id")
+    private int addressId;
 
     @Column(name="total")
     private String orderTotal;
-
-
-    public Customer getCustomer() {
-        return customer;
-    }
-
-    public void setCustomer(Customer customer) {
-        this.customer = customer;
-    }
 
     public int getOrderId() {
         return orderId;
@@ -41,6 +32,14 @@ public class CustomerOrder {
 
     public void setOrderId(int orderId) {
         this.orderId = orderId;
+    }
+
+    public int getCustomerId() {
+        return customerId;
+    }
+
+    public void setCustomerId(int customerId) {
+        this.customerId = customerId;
     }
 
     public List<Book> getBooks() {
@@ -51,12 +50,12 @@ public class CustomerOrder {
         this.books = books;
     }
 
-    public Address getAddress() {
-        return address;
+    public int getAddressId() {
+        return addressId;
     }
 
-    public void setAddress(Address address) {
-        this.address = address;
+    public void setAddressId(int addressId) {
+        this.addressId = addressId;
     }
 
     public String getOrderTotal() {
@@ -66,6 +65,5 @@ public class CustomerOrder {
     public void setOrderTotal(String orderTotal) {
         this.orderTotal = orderTotal;
     }
-
 
 }

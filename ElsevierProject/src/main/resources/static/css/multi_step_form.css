@@ -7,23 +7,28 @@ input.invalid {
   display: none;
 }
 .step {
-  color: #DCDCDC;
-  border-bottom: 2px solid #DCDCDC;
-  padding-bottom: 3px;
-}
-/* Mark the active step: */
-.step.active {
-  opacity: 1;
+  color: #777777;
+  border-bottom: 2px solid #777777;
+  padding-bottom: 20px;
+  opacity: 0.5;
 }
 /* Mark the steps that are finished and valid: */
 .step.finish {
-  color: #808080;
-  border-bottom: 2px solid #808080;
+  color: #444444;
+  border-bottom: 2px solid #444444;
+  opacity: 1;
+}
+/* Mark the active step: */
+.step.active {
+  color: #507298;
+  font-weight: bold;
+  border-bottom: 2px solid #507298;
+  opacity: 1;
 }
 h4, h5 {
+    color: #a23452;
 	font-weight: bold;
 	font-family: "Garamond";
-	padding-left: 15px;
 	letter-spacing: -1px;
 }
 input:focus {
@@ -60,24 +65,23 @@ label {
 	padding-top: 15px;
 	font-size: 12px;
 	margin-left: 15px;
-	border:1px solid #507298;
-	background-color: #507298;
-    color: white;
+	border: none;
+	background-color: rgba(174, 203, 197, .15);;
+    color: 444444;
 	padding-bottom: 15px;
-}
-#sumUp label {
-    color: white;
 }
 .hr {
 	height: 4px;
 	color: grey;
 }
 #prevBtn {
+    margin-left: 15px;
 	font-size: 14px;
 	color: #507298;
 	text-decoration: underline;
 }
 #nextBtn {
+    margin-right: 15px;
 	font-size: 12px;
 	padding-top: 15px;
 	padding-bottom: 15px;

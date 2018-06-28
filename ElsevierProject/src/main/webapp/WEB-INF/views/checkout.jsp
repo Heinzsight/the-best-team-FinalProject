@@ -6,6 +6,7 @@
     <title>Shopping Cart | Week 3</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/nav-footer-style.css">
     <link rel="stylesheet" href="css/multi_step_form.css">
     <%@ taglib prefix="tags" tagdir="/WEB-INF/tags" %>
 
@@ -59,18 +60,7 @@
 <div id="orderTax" style="display: none;"><%=tax%></div>
 
     <br>
-    <!-- You can now combine a row and column if you just need a 12 column row -->
-    <div class="row columns">
-        <nav aria-label="You are here:" role="navigation">
-            <ul class="breadcrumbs">
 
-                <li><a href="/">Home</a></li>
-                <li>
-                    <span class="show-for-sr">Current: </span> Checkout
-                </li>
-            </ul>
-        </nav>
-    </div>
 
     <div class="container" >
 
@@ -78,13 +68,13 @@
 
         <div class="row" >
             <div class="col-sm-12">
-                <div style="text-align:left;margin-top:40px;padding-bottom:20px;">
-                  <span class="step">01 Account Info</span>
-                  <span class="step">02 Shipping Info</span>
-                  <span class="step">03 Payment Selection</span>
+                <div style="text-align:left;margin-top:40px;margin-left:120px;padding-bottom:20px;padding-right:20px;">
+                  <span class="step" style="padding-left:20px" style="margin-right:20px" >1 Account Info </span>
+                  <span class="step" style="padding-left:20px" style="margin-right:20px" >2 Shipping Info </span>
+                  <span class="step" style="padding-left:20px" style="padding-right:20px" >3 Payment Selection  </span>
                 </div>
 
-            <div class="col-sm-7" >
+            <div class="col-sm-7" style="padding-top:20px">
                     <div class="tab" >
                        <h5 id="cust_info_header"> Customer Information </h5>
                             <div class="row">
@@ -115,17 +105,16 @@
                                        </div>
 
                                        <%
-                                       String addressCountry = "selected";
+                                       String addressCountry = "Select your country";
                                        if(address != null)
                                        {
                                        addressCountry = address.getCountry();
-
                                        }
                                        %>
                                        <div class="col">
                                             <label> Country</label>
                                             <select required name="Country" value=<%=addressCountry %>>
-                                                <option selected="true" disabled hidden value= <%=addressCountry %> >Select your Country</option>
+                                            <option selected="true" hidden value=<%=addressCountry %>><%=addressCountry %></option>
                                             <option value="USA">USA</option>
                                             <option value="Mexico">Mexico</option>
                                             <option value="Canada">Canada</option>
@@ -145,7 +134,7 @@
                                            <input type="number" name="postcode" id="postcode" size="30" required value=<%=addressPostCode%> ></input>
                                        </div>
                                    <%
-                                   String mail = " ";
+                                   String mail = "";
                                    if(c != null)
                                    {
                                    mail = c.getEmail();
@@ -228,10 +217,10 @@
                 <div class="tab" >
 
 
-                <h5> Shipping Information </h5>
+                <h5 id="shipping_header"> Shipping Information </h5>
                 		<div class="row">
-                			<div class="col-lg-4" id="ship_info">
-                				<div class="col-lg-8" id="address">
+                			<div class="col-sm-3" id="ship_info">
+                				<div class="col-sm-12" id="address">
                 					<div id="fullName">Name</div>
                 					<div id="fullAddress">Address</div>
                 					<div id="city">City</div>
@@ -249,14 +238,14 @@
 
                 	<div class="row">
 
-                				<div class="col-md-3" id="ship_info">
+                				<div class="col-sm-4" id="ship_info">
                 					<div class="form-check form-check-inline">
                 					  <input class="form-check-input" type="radio" name="shippingRadio" id="inlineRadioShipping1" onclick="radio1();" value="0" required>
                 					  <label class="form-check-label" for="inlineRadioShipping1">Standard Delivery: Free</label>
                 					  <p id="ship_method">Estimated 14-20 Day Shipping (Duties and taxes may be due upon delivery)</p>
                 					</div>
                 				</div>
-                				<div class="col-md-3" id="ship_info">
+                				<div class="col-sm-4" id="ship_info">
                 					<div class="form-check form-check-inline">
                 					  <input class="form-check-input" type="radio" name="shippingRadio" id="inlineRadioShipping2" onclick="radio2();" value="1" required>
                 					  <label class="form-check-label" for="inlineRadioShipping2">Fast Delivery: $ 8.00</label>
@@ -274,11 +263,11 @@
                 <div class="tab" >
 
 
-                    <h5> Payment Selection </h5>
+                    <h5 id="payment_header"> Payment Selection </h5>
                     <div class="container" id="ship_info">
                         <div id="required_later">
                             <div class="row">
-                                <div class="col-lg-8">
+                                <div class="col-sm-8">
                                     <div class="form-check form-check-inline">
                                       <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" onclick="radio3();" value="option1" required>
                                       <label class="form-check-label" for="inlineRadio1">Credit Card</label>
@@ -322,8 +311,12 @@
                 </div>
                                                                     <div class="row" id="checkoutButtons">
                                                                         <div style="overflow:auto;">
-                                                                            <div style="float:center;">
+                                                                            <div style="float:left;">
                                                                                 <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+
+                                                                            </div>
+                                                                            <div style="float:right;">
+
                                                                                 <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
                                                                             </div>
                                                                         </div>
@@ -471,7 +464,7 @@
           }
           if (n == (x.length - 1)) {
             document.getElementById("nextBtn").innerHTML = "Submit";
-            document.getElementById("nextBtn").type = "submit";
+            //document.getElementById("nextBtn").type = "submit";
           } else {
             document.getElementById("nextBtn").innerHTML = "Next";
           }

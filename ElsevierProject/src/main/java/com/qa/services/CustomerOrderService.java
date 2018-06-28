@@ -15,7 +15,7 @@ public class CustomerOrderService {
         return customerOrderRepository.save(order);
     }
 
-    public CustomerOrder getCustomerOrderByCustomer(Customer customer) {
-        return customerOrderRepository.getCustomerOrderByCustomer(customer);
+    public CustomerOrder getCustomerOrderByCustomerId(int customerId) {
+        return customerOrderRepository.getCustomerOrderByCustomerId(customerId);
     }
 }

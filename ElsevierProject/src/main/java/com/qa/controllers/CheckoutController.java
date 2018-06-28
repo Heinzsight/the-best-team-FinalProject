@@ -1,10 +1,8 @@
 package com.qa.controllers;
 
-import com.qa.models.Address;
-import com.qa.models.Book;
-import com.qa.models.Customer;
-import com.qa.models.Shipping;
+import com.qa.models.*;
 import com.qa.services.AddressService;
+import com.qa.services.CustomerOrderService;
 import com.qa.services.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -17,7 +15,7 @@ import org.springframework.web.servlet.ModelAndView;
 import java.util.ArrayList;
 import java.util.Map;
 
-@SessionAttributes(names = {"book_counts", "books", "cart_items", "logged_in_customer","grand_total", "Address"})
+@SessionAttributes(names = {"book_counts", "books", "cart_items", "filtered_books", "logged_in_customer","grand_total", "Address"})
 @Controller
 public class CheckoutController {
 
@@ -26,6 +24,9 @@ public class CheckoutController {
 
     @Autowired
     AddressService addressService;
+
+    @Autowired
+    CustomerOrderService customerOrderService;
 
     @RequestMapping("/checkoutProcess")
     public ModelAndView checkoutProcess(@RequestParam("firstName") String firstName,
@@ -38,9 +39,10 @@ public class CheckoutController {
                                         @RequestParam("postcode") String postcode,
                                         @RequestParam("phone") String phone,
                                         @RequestParam("orderTotalVar") String orderTotal,
-                                        @ModelAttribute("books") ArrayList<Book> books,
+                                        @ModelAttribute("filtered_books") ArrayList<Book> books,
                                         @ModelAttribute("logged_in_customer") Customer loggedInCustomer) {
         System.out.println("First name: " + loggedInCustomer.getFirstName());
+        System.out.println("Books are: " + books);
         int recordsUpdated = customerService.updateCustomer(loggedInCustomer.getFirstName(),
                 loggedInCustomer.getLastName(),
                 loggedInCustomer.getEmail(),
@@ -58,6 +60,14 @@ public class CheckoutController {
         address.setCustomerId(loggedInCustomer.getCustomerId());
         address.setAddressType("Home");
         System.out.println("address id: " + address.getAddressId());
+        CustomerOrder customerOrder = new CustomerOrder();
+        System.out.println("Customer id: " + loggedInCustomer.getCustomerId());
+        System.out.println("Customer order id: " + customerOrder.getOrderId());
+        customerOrder.setAddressId(address.getAddressId());
+        customerOrder.setBooks(books);
+        customerOrder.setCustomerId(loggedInCustomer.getCustomerId());
+        customerOrder.setOrderTotal(orderTotal);
+        customerOrderService.saveCustomerOrder(customerOrder);
         Address isPresent = addressService.findAddressByCustomerId(loggedInCustomer.getCustomerId());
         if(isPresent == null) {
             addressService.saveAddress(address);

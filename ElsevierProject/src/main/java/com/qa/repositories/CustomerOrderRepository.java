@@ -6,6 +6,6 @@ import org.springframework.data.repository.CrudRepository;
 
 public interface CustomerOrderRepository extends CrudRepository<CustomerOrder, Integer> {
 
-    public CustomerOrder getCustomerOrderByCustomer(Customer customer);
+    public CustomerOrder getCustomerOrderByCustomerId(int customerId);
 
 }
