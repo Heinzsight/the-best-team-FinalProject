@@ -104,14 +104,14 @@
     <div class="container banner-container">
         <img src="images/banners/Homepage_Banner_NEW.jpg" class="img-thumbnail" style="height: 100%; width:100%;"/>
         <div class="top-right main-banner-label">Making reading as <br> smooth as butter.</div>
-        <a href="/genres" class="btn btn-primary top-right main-banner-button">BROWSE</a>
+        <center><a href="/genres" class="btn btn-primary buttonSubmit top-right main-banner-button">BROWSE</a></center>
     </div>
     <!-- Main Content -->
     <div class="container">
         <div class="row">
             <div class="container-fluid front-layout-title">
-                <h3 class="pull-left">Just In</h3>
-                <h3><a href="/just-in" class="pull-right">View All</a></h3>
+                <h3 class="pull-left" style="margin-top: 0px">Just In</h3>
+                <h4><a href="/just-in" class="pull-right">View All</a></h4>
             </div>
         </div>
         <div class="row">
@@ -149,8 +149,8 @@
         </div>
         <div class="row">
             <div class="container-fluid front-layout-title">
-                <h3 class="pull-left">All-time Faves</h3>
-                <h3><a href="/all-time-faves" class="pull-right">View All</a></h3>
+                <h3 class="pull-left" style="margin-top: 0px">All-time Faves</h3>
+                <h4><a href="/all-time-faves" class="pull-right">View All</a></h4>
             </div>
         </div>
         <div class="row">
