@@ -3,6 +3,7 @@ package com.qa.controllers;
 import com.qa.models.Address;
 import com.qa.models.Book;
 import com.qa.models.Customer;
+import com.qa.models.CustomerOrder;
 import com.qa.services.AddressService;
 import com.qa.services.BookService;
 import com.qa.services.CustomerOrderService;
@@ -317,7 +318,8 @@ public class CustomerController {
         Address address = addressService.findAddressByCustomerId(loggedInCustomer.getCustomerId());
         modelAndView.addObject("Address",address);
 
-        
+        ArrayList<CustomerOrder> orders = (ArrayList<CustomerOrder>) customerOrderService.getCustomerOrdersByCustomerId(loggedInCustomer.getCustomerId());
+        modelAndView.addObject("customer_orders",orders);
         return modelAndView;
     }
 

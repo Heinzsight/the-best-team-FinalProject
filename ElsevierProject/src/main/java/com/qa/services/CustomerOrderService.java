@@ -5,6 +5,8 @@ import com.qa.repositories.CustomerOrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class CustomerOrderService {
 
@@ -15,7 +17,8 @@ public class CustomerOrderService {
         return customerOrderRepository.save(order);
     }
 
-    public CustomerOrder getCustomerOrderByCustomerId(int customerId) {
-        return customerOrderRepository.getCustomerOrderByCustomerId(customerId);
+
+    public List<CustomerOrder> getCustomerOrdersByCustomerId(int customerId){
+        return customerOrderRepository.findCustomerOrderByCustomer_CustomerId(customerId);
     }
 }
