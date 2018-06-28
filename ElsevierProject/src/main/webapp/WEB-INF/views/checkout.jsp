@@ -132,7 +132,7 @@
                                        %>
                                        <div class="col">
                                            <label> Postal code </label>
-                                           <input type="number" name="postcode" id="postcode" size="30" required value=<%=addressPostCode%> ></input>
+                                           <input type="text" name="postcode" id="postcode" size="30" required value=<%=addressPostCode%> ></input>
                                        </div>
                                    <%
                                    String mail = "";
@@ -161,7 +161,7 @@
                                             <input type="text" name="lastName" id="lastName" size="30" required value=<%= lname %> ></input>
                                        </div>
                                    <%
-                                   String addressSecondLine = "";
+                                   String addressSecondLine = " ";
                                    if(address != null)
                                    {
                                    addressSecondLine = address.getAddressLine2();
@@ -206,7 +206,7 @@
                                    %>
                                        <div class="col">
                                            <label> Phone </label>
-                                           <input type="tel" name="phone" id="phone" size="30" required value=<%=addressPhone%> ></input>
+                                           <input type="tel" name="phone" id="phone" pattern="[0-9]{10}" maxlength="10" size="30" required value=<%=addressPhone%> ></input>
                                        </div>
 
 
@@ -274,7 +274,7 @@
                                       <label class="form-check-label" for="inlineRadio1" style="font-weight: bold;">Credit Card</label>
                                         <div class="col">
                                             <label> Card number </label>
-                                            <input type="text" name="cardNum" id="cardNum" size="30" required/>
+                                            <input type="text" name="cardNum" id="cardNum" pattern="[0-9]{12}" size="12" maxlength="12" required/>
                                         </div>
                                     </div>
 
@@ -287,11 +287,11 @@
                                 </div>
                                 <div class="col-md-3">
                                     <label> Exp. date </label>
-                                    <input type="text" name="expDate" id="expDate" size="30" required/>
+                                    <input type="date" name="expDate" id="expDate" required/>
                                 </div>
                                 <div class="col-md-3">
                                     <label> CVV Code </label>
-                                    <input type="text" name="cvvCode" id="cvvCode" size="30" required/>
+                                    <input type="text" pattern="[0-9]{3}" name="cvvCode" id="cvvCode" size="3" maxlength="3" required/>
                                 </div>
                             </div>
                         </div>
@@ -517,7 +517,7 @@
 
             }
             console.log("Credit Card: " + isCreditCard);
-            if ((y[i].value == "")&&(isCreditCard == true)) {
+            if ((y[i].value == "")||(y[i].validity.valid == false)){
               // add an "invalid" class to the field:
               y[i].className += " invalid";
               // and set the current valid status to false:
