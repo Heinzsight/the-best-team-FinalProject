@@ -1,9 +1,7 @@
 function calculateTotalPrice(price, quantity, price_label) {
 
     var cartTotal = document.getElementById("cart_total").value; //the book price
-    window.alert(cartTotal);
     var orderTotal = document.getElementById("order_total").value; //the entire price with tax included
-    window.alert(orderTotal);
 
     var totalPrice = parseFloat(price) * parseFloat(quantity);
 
