@@ -5,10 +5,9 @@
 <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Foundation | Welcome</title>
+    <title>Butter Books-Book Details</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-    <%--<link href="css/index-style.css" rel="stylesheet">--%>
     <link href="css/button.css" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
           integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
@@ -16,7 +15,6 @@
           type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
           rel='stylesheet' type='text/css'>
-    <%--<link rel="stylesheet" href="css/index-style.css"/>--%>
     <link rel="stylesheet" href="css/nav-footer-style.css"/>
 
 </head>
@@ -54,8 +52,7 @@
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                        data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
@@ -77,15 +74,14 @@
                 <ul class="nav navbar-nav navbar-right">
 
                     <%
-                        if (c == null) {
+                        if (c == null){
                     %>
                     <li><a href="/login"> Register | Login </a></li>
                     <%
                     } else {
                     %>
                     <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                           aria-expanded="false">Hello, <%=c.getFirstName()%> <span class="caret"></span></a>
+                        <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Hello, <%=c.getFirstName()%> <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="#">Action</a></li>
                             <li><a href="#">Another action</a></li>
@@ -100,7 +96,7 @@
 
                     <li><a href="/viewCart"><i class="fas fa-shopping-cart"></i></a></li>
                 </ul>
-                <form class="navbar-form navbar-right" action="/search">
+                <form  class="navbar-form navbar-right" action="/search">
                     <div class="form-group">
                         <div class="input-group">
                             <div class="input-group addon">
@@ -113,7 +109,9 @@
         </div><!-- /.container-fluid -->
     </nav>
     <!-- End Header -->
+
     <!-- You can now combine a row and column if you just need a 12 column row -->
+    <br>
     <div class="row col">
         <nav aria-label="You are here:" role="navigation">
             <ul class="breadcrumbs">

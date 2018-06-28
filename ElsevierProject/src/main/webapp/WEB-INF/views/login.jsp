@@ -5,27 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Online Shopping </title>
     <!-- Bootstrap core CSS -->
-        <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom fonts for this template -->
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
-        <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-        <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="css/flexslider.css"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+          integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet'
+          type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
+          rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/flexslider.css"/>
     <!-- Custom styles for this template -->
-        <link rel="stylesheet" href="css/nav-footer-style.css"/>
-    <link rel = "stylesheet" href="css/button.css">
+    <link rel="stylesheet" href="css/nav-footer-style.css"/>
+    <link rel="stylesheet" href="css/button.css">
 </head>
 <body>
 
 <%@page import="com.qa.models.Customer" %>
 <%
-            try{
-            Customer c = (Customer) session.getAttribute("logged_in_customer");
-            request.setAttribute("logged_in_customer", c);
-            System.out.println(c);
-            } catch (Exception e) {
-            System.out.println(e);
-            }
+    try {
+        Customer c = (Customer) session.getAttribute("logged_in_customer");
+        request.setAttribute("logged_in_customer", c);
+        System.out.println(c);
+    } catch (Exception e) {
+        System.out.println(e);
+    }
 %>
 
 <div id="wrap">
@@ -36,7 +39,8 @@
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
@@ -59,7 +63,7 @@
                     <li><a href="/login"> Register | Login </a></li>
                     <li><a href="/viewCart"><i class="fas fa-shopping-cart"></i></a></li>
                 </ul>
-                <form  class="navbar-form navbar-right" action="/search">
+                <form class="navbar-form navbar-right" action="/search">
                     <div class="form-group">
                         <div class="input-group">
                             <div class="input-group addon">
@@ -73,29 +77,32 @@
     </nav>
     <!-- End Header -->
 
-<div class="container-fluid" id="main">
-    <div class="row">
-        <div class="col-md-4 col-md-offset-4">
-            <h1 align="center">Sign In</h1>
-            <p align="center">or <a href="/register">Create Account</a></p>
+    <div class="container-fluid">
+        <div class="row">
             <form action="loginProcess" method="post" class="form-horizontal">
-                <div class="form-group">
+                <div class="col-md-4 col-md-offset-4">
+                    <h1 align="center">Sign In</h1>
+                    <p align="center">or <a href="/register">Create Account</a></p>
+
+                    <div class="form-group">
                         <label for="email">Email</label>
-                        <input class='form-control' type="email" placeholder="Enter email" name="email" id="email" required/>
-                </div>
-                <div class="form-group">
+                        <input class='form-control' style="border-radius: 0px" type="email" placeholder="Enter email"
+                               name="email" id="email" required/>
+                    </div>
+                    <div class="form-group">
                         <label for="password">Password</label>
-                        <input class='form-control' type="password" placeholder="Enter Password" name="password" id="password" required/>
+                        <input class='form-control' style="border-radius: 0px" type="password"
+                               placeholder="Enter Password" name="password" id="password" required/>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <input type="submit" class="btn btn-primary btn-lg btn-block buttonSubmit" value="Login">
+                    </div>
+                    <br>
                 </div>
-                <br>
-                <div class="form-group">
-                    <input type="submit" class="btn btn-primary btn-lg btn-block buttonSubmit" value="Login">
-                </div>
-                <br>
             </form>
         </div>
     </div>
-</div>
 </div>
 
 <div id="footer">
