@@ -136,9 +136,9 @@
 <br>
             <label><p style = "margin-bottom: 0px; font-size: 20px" style="">Select format:</p>
                 <select name="format">
-                    <option value="print">Paperback - <%=book.getPrice()%>
+                    <option value="print">Paperback - $ <%=book.getPrice()%>
                     </option>
-                    <option value="eBook">eBook - <%=book.getPrice()%>
+                    <option value="eBook">eBook - $ <%=book.getPrice()%>
                     </option>
                 </select>
             </label>
