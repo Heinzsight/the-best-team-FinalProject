@@ -316,7 +316,9 @@ public class CustomerController {
         ModelAndView modelAndView = new ModelAndView("landing", "logged_in_customer", loggedInCustomer);
 
         Address address = addressService.findAddressByCustomerId(loggedInCustomer.getCustomerId());
-        modelAndView.addObject("Address",address);
+        if (address != null) {
+            modelAndView.addObject("Address",address);
+        }
 
         ArrayList<CustomerOrder> orders = (ArrayList<CustomerOrder>) customerOrderService.getCustomerOrdersByCustomerId(loggedInCustomer.getCustomerId());
         modelAndView.addObject("customer_orders",orders);

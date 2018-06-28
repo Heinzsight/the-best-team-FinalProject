@@ -1,6 +1,5 @@
 <!doctype html>
 <%@page import="com.qa.models.Book" %>
-<%@page import="com.qa.models.Customer" %>
 <html class="no-js" lang="en">
 <head>
     <meta charset="utf-8"/>
@@ -108,7 +107,7 @@
     <!-- Main Content -->
     <div class="container_1a" style="background-color: rgba(174,203,197,0.09); margin-bottom: 25px">
         <div class="pageTitle">
-            <h1 style="color: #a23452; font-family: 'Abril Fatface'" align="center">Your Subscription This Month</h1>
+            <h1 style="color: #a23452; font-family: 'Abril Fatface'" align="center">Good morning, <%=c.getFirstName()%></h1>
 
             <% Iterable<Book> books1 = (Iterable<Book>) session.getAttribute("books");
 
@@ -124,41 +123,6 @@
             %>
 
 
-            <div class="row">
-
-
-                <!-- <div class="col-md-3" style="padding-right: 25px; padding-left: 25px">
-                    <p><a href="/bookDetails?bookId=<%=book.getBookId()%>"><img class="img-responsive"
-                                                                                src="<%=book.getBookImage()%>"></a></p>
-
-                </div>
-
-                <div class="col-md-3" style="padding-right: 25px; padding-left: 25px">
-                    <p><a href="/bookDetails?bookId=<%=book.getBookId()%>"><img class="img-responsive"
-                                                                                src="<%=book.getBookImage()%>"></a></p>
-
-                </div>
-                <div class="col-md-3" style="padding-right: 25px; padding-left: 25px">
-                    <p><a href="/bookDetails?bookId=<%=book.getBookId()%>"><img class="img-responsive"
-                                                                                src="<%=book.getBookImage()%>"></a></p>
-
-                </div> -->
-                <div class="col-md-12">
-
-                            <div class="col-xs-12">
-                                <p><b>Good morning, <%=c.getFirstName()%></b></p>
-                            </div>
-                            <div class="col-xs-12">
-                                <p><b>Reminder:</b> Your books are due on: 06/30/2018</p>
-                            </div>
-                            <div class="col-xs-12">
-                                <p>Select your books service for July:</p>
-                            </div>
-                            <div class="col-xs-12">
-                               <button type="button" class="btn-lg buttonOption">PICK-MY-3</button>
-                            </div>
-                </div>
-            </div>
 
         </div>
         <%--End of Subscription Box--%>
@@ -168,7 +132,7 @@
     <%--Recent Orders Container--%>
     <div class="container2a">
         <%--Recent Orders Title Container--%>
-        <div class="container_2b" style="padding-left: 10%">
+        <div class="container_2b" style="padding-left: 7%">
             <h6 style="color: #a23452">Recent Orders</h6>
         </div>
         <%--End of Recent Orders Title container--%>
@@ -177,9 +141,11 @@
 
             <% //Need to write code to fetch order history
                 Iterable<CustomerOrder> orders = (Iterable<CustomerOrder>) session.getAttribute("customer_orders");
+                System.out.println("Orders: " + orders);
+
                 int j = 0;
             if(orders != null)
-             {
+            {
                 for (CustomerOrder order: orders) {
                     if (j >= 4) {
                         break;
@@ -269,7 +235,7 @@
 
 
     <%--Account Details Container--%>
-    <div class="container_3a" style="margin-left: 25px; padding-top: 25px; margin-bottom: 25px">
+    <div class="container" style="margin-left: 25px; padding-top: 25px; margin-bottom: 25px">
 
         <style>
 
@@ -279,7 +245,7 @@
         </style>
 
         <%--Account Details Title Container--%>
-        <div class="container_3b">
+        <div class="container_3b"  style="padding-left: 4%">
             <h6 style="color: #a23452">Account Details</h6>
         </div>
         <%--End of Account Details Title container--%>
