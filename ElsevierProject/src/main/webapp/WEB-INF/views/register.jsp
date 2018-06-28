@@ -146,62 +146,65 @@
             </form>
         </div>
     </div>
+    <div id="push"></div>
+</div>
 
 
-    <div id="footer">
-        <div class="container">
-            <div class="row" style="padding-top: 15px;">
-                <div class="col-md-3">
-                    <img style="padding-top: 10px;" src="images/footer/butterbooks_logo_footer.png">
-                </div>
-                <div class="col-md-3">
-                    <ul class="list-unstyled">
-                        <li><a href="#">Just In</a></li>
-                        <li><a href="#">All-Time Faves</a></li>
-                        <li><a href="#">Bestselling</a></li>
-                        <li><a href="#">Genres</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-3">
-                    <ul class="list-unstyled">
-                        <li><a href="/about">About</a></li>
-                        <li><a href="/about">Contact</a></li>
-                        <li><a href="#">FAQs</a></li>
-                        <li><a href="#">Order</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-3">
-                    <div class="social-networks">
-                        <a href="https://twitter.com/" class="twitter"><i class="fab fa-twitter-square"></i></a>
-                        <a href="https://www.instagram.com/" class="instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.facebook.com/" class="facebook"><i class="fab fa-facebook-square"></i></a>
-                        <a href="#" class="snapchat"><i class="fab fa-snapchat-square"></i></a>
-                    </div>
-                </div>
+
+<div id="footer">
+    <div class="container">
+        <div class="row" style="padding-top: 15px;">
+            <div class="col-md-3">
+                <img style="padding-top: 10px;" src="images/footer/butterbooks_logo_footer.png">
             </div>
-            <div class="row">
-                <ul class="list-inline footer-copyright">
-                    <li><a>&copy; 2018 Butter Books, Inc.</a></li>
-                    <li><a>|</a></li>
-                    <li><a>Terms of Use</a></li>
-                    <li><a>|</a></li>
-                    <li><a>Copyright and Trademark</a></li>
-                    <li><a>|</a></li>
-                    <li><a>Privacy Policy</a></li>
-                    <li><a>|</a></li>
-                    <li><a>Sitemap</a></li>
-                    <li><a>|</a></li>
-                    <li><a>Accessibility</a></li>
+            <div class="col-md-3">
+                <ul class="list-unstyled">
+                    <li><a href="#">Just In</a></li>
+                    <li><a href="#">All-Time Faves</a></li>
+                    <li><a href="#">Bestselling</a></li>
+                    <li><a href="#">Genres</a></li>
                 </ul>
             </div>
+            <div class="col-md-3">
+                <ul class="list-unstyled">
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/about">Contact</a></li>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">Order</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3">
+                <div class="social-networks">
+                    <a href="https://twitter.com/" class="twitter"><i class="fab fa-twitter-square"></i></a>
+                    <a href="https://www.instagram.com/" class="instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/" class="facebook"><i class="fab fa-facebook-square"></i></a>
+                    <a href="#" class="snapchat"><i class="fab fa-snapchat-square"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <ul class="list-inline footer-copyright">
+                <li><a>&copy; 2018 Butter Books, Inc.</a></li>
+                <li><a>|</a></li>
+                <li><a>Terms of Use</a></li>
+                <li><a>|</a></li>
+                <li><a>Copyright and Trademark</a></li>
+                <li><a>|</a></li>
+                <li><a>Privacy Policy</a></li>
+                <li><a>|</a></li>
+                <li><a>Sitemap</a></li>
+                <li><a>|</a></li>
+                <li><a>Accessibility</a></li>
+            </ul>
         </div>
     </div>
+</div>
 
 
-    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-    <script src="js/elsevier.js"></script>
-    <script>
-        $(document).foundation();
-    </script>
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="js/elsevier.js"></script>
+<script>
+    $(document).foundation();
+</script>
 </body>
 </html>
