@@ -165,7 +165,7 @@ public class CustomerController {
 
     @RequestMapping("/logout")
     public ModelAndView logout() {
-        ModelAndView modelAndView = new ModelAndView("index");
+        ModelAndView modelAndView = new ModelAndView("logout");
 
         return modelAndView;
     }

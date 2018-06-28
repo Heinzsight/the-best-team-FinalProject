@@ -4,6 +4,13 @@
     border: 1px solid #507298;
     border-radius: 0;
     overflow:hidden;
+    font-size: 18px;
+    font-weight: 600;
+    font-family: "Open Sans";
+}
+.buttonOption:hover{
+    background-color: #507298;
+    color: white;
 }
 .buttonSubmit {
     background-color: #507298;
@@ -11,4 +18,12 @@
     border: 1px solid #507298;
     border-radius: 0;
     overflow: hidden;
+    font-size: 18px;
+    font-weight: 600;
+    font-family: "Open Sans";
+}
+.buttonSubmit:hover{
+    background-color: #507298;
+    color: white;
+
 }

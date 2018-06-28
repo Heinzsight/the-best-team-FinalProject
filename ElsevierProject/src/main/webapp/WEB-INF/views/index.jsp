@@ -75,11 +75,9 @@
                         <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                            aria-expanded="false">Hello, <%=c.getFirstName()%> <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">Action</a></li>
-                            <li><a href="#">Another action</a></li>
-                            <li><a href="#">Something else here</a></li>
+                            <li><a href="/landing">Account Details</a></li>
                             <li role="separator" class="divider"></li>
-                            <li><a href="#">Separated link</a></li>
+                            <li><a href="#">logout</a></li>
                         </ul>
                     </li>
                     <%
@@ -104,8 +102,9 @@
 
 
     <div class="container banner-container">
-        <img src="images/banners/homepage_banner_1920x350.jpg" class="img-thumbnail" style="height: 100%; width:100%;"/>
-        <div class="centered banner-label">Genres</div>
+        <img src="images/banners/Homepage_Banner_NEW.jpg" class="img-thumbnail" style="height: 100%; width:100%;"/>
+        <div class="top-right main-banner-label">Making reading as <br> smooth as butter.</div>
+        <a href="/genres" class="btn btn-primary top-right main-banner-button">BROWSE</a>
     </div>
     <!-- Main Content -->
     <div class="container">
@@ -133,14 +132,10 @@
                                                                                  src="<%=book.getBookImage()%>"></a>
                     </div>
                     <div class="row">
-                        <h5><%= book.getTitle()%>
-                        </h5>
-                        <p>$<%= book.getPrice()%>
-                        </p>
-                    </div>
-                    <div class="row">
-                        <a href="/bookDetails?bookId=<%=book.getBookId()%>" class="btn-sm buttonOption">View book
-                            details</a>
+                        <h4><%= book.getTitle()%>
+                        </h4>
+                        <h4 style="color: #444444;">$<%= book.getPrice()%>
+                        </h4>
                     </div>
                 </div>
                 <!--  a href="/addToCart?bookId=" class="button expanded">Add to Cart</a>-->
@@ -174,14 +169,10 @@
                                                                                  src="<%=book.getBookImage()%>"></a>
                     </div>
                     <div class="row">
-                        <h5><%= book.getTitle()%>
-                        </h5>
-                        <p>$<%= book.getPrice()%>
-                        </p>
-                    </div>
-                    <div class="row">
-                        <a href="/bookDetails?bookId=<%=book.getBookId()%>" class="btn-sm buttonOption">View book
-                            details</a>
+                        <h4><%= book.getTitle()%>
+                        </h4>
+                        <h4 style="color: #444444;">$<%= book.getPrice()%>
+                        </h4>
                     </div>
                 </div>
                 <!--  a href="/addToCart?bookId=" class="button expanded">Add to Cart</a>-->
@@ -199,6 +190,7 @@
         </div>
         <div id="push"></div>
     </div>
+</div>
 
     <div id="footer">
         <div class="container">
@@ -249,10 +241,11 @@
         </div>
     </div>
 
-    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-    <script src="js/elsevier.js"></script>
-    <script>
-        $(document).foundation();
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="js/elsevier.js"></script>
+<script src="js/bootstrap.js"></script>
+<script>
+    $(document).foundation();
     </script>
 </body>
 </html>

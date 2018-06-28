@@ -106,25 +106,25 @@
             <form action="/registerProcess" method="post">
                 <div class="col-md-4 col-md-offset-4">
                     <h1 align="center">Create Account</h1>
-                    <p align="center">or <a href="/login">Sign In</a></p>
+                    <h4 align="center">or <a href="/login">Sign In</a></h4>
 
                     <div class="form-group">
-                        <label for="firstName">First Name*</label><br>
+                        <label for="firstName" style="font-weight: normal">First Name*</label><br>
                         <input type="text" placeholder="Enter First Name" style="border-radius: 0px" name="firstName"
                                id="firstName" class="form-control" required/><br>
                     </div>
                     <div class="form-group">
-                        <label for="lastName">Last Name*</label><br>
+                        <label for="lastName" style="font-weight: normal">Last Name*</label><br>
                         <input type="text" placeholder="Enter Last Name" style="border-radius: 0px" name="lastName"
                                id="lastName" class="form-control" required/><br>
                     </div>
                     <div class="form-group">
-                        <label for="email">Email*</label><br>
+                        <label for="email" style="font-weight: normal">Email*</label><br>
                         <input type="email" placeholder="Enter Email" style="border-radius: 0px" name="email" id="email"
                                class="form-control" required/><br>
                     </div>
                     <div class="form-group">
-                        <label for="password">Password*</label><br>
+                        <label for="password" style="font-weight: normal">Password*</label><br>
                         <input type="password" placeholder="Enter Password" style="border-radius: 0px" name="password"
                                id="password" class="form-control" required/><br>
                     </div>
@@ -138,70 +138,73 @@
                         <br>
                     </div>
                     <div class="form-group">
-                        <input type="submit" class="btn-primary btn-lg btn-block buttonSubmit create account"
-                               value="Register">
+                        <center><input type="submit" class="btn-primary btn-lg buttonSubmit create account"
+                               value="REGISTER"></center>
                         <br>
                     </div>
                 </div>
             </form>
         </div>
     </div>
+    <div id="push"></div>
+</div>
 
 
-    <div id="footer">
-        <div class="container">
-            <div class="row" style="padding-top: 15px;">
-                <div class="col-md-3">
-                    <img style="padding-top: 10px;" src="images/footer/butterbooks_logo_footer.png">
-                </div>
-                <div class="col-md-3">
-                    <ul class="list-unstyled">
-                        <li><a href="#">Just In</a></li>
-                        <li><a href="#">All-Time Faves</a></li>
-                        <li><a href="#">Bestselling</a></li>
-                        <li><a href="#">Genres</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-3">
-                    <ul class="list-unstyled">
-                        <li><a href="/about">About</a></li>
-                        <li><a href="/about">Contact</a></li>
-                        <li><a href="#">FAQs</a></li>
-                        <li><a href="#">Order</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-3">
-                    <div class="social-networks">
-                        <a href="https://twitter.com/" class="twitter"><i class="fab fa-twitter-square"></i></a>
-                        <a href="https://www.instagram.com/" class="instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.facebook.com/" class="facebook"><i class="fab fa-facebook-square"></i></a>
-                        <a href="#" class="snapchat"><i class="fab fa-snapchat-square"></i></a>
-                    </div>
-                </div>
+
+<div id="footer">
+    <div class="container">
+        <div class="row" style="padding-top: 15px;">
+            <div class="col-md-3">
+                <img style="padding-top: 10px;" src="images/footer/butterbooks_logo_footer.png">
             </div>
-            <div class="row">
-                <ul class="list-inline footer-copyright">
-                    <li><a>&copy; 2018 Butter Books, Inc.</a></li>
-                    <li><a>|</a></li>
-                    <li><a>Terms of Use</a></li>
-                    <li><a>|</a></li>
-                    <li><a>Copyright and Trademark</a></li>
-                    <li><a>|</a></li>
-                    <li><a>Privacy Policy</a></li>
-                    <li><a>|</a></li>
-                    <li><a>Sitemap</a></li>
-                    <li><a>|</a></li>
-                    <li><a>Accessibility</a></li>
+            <div class="col-md-3">
+                <ul class="list-unstyled">
+                    <li><a href="#">Just In</a></li>
+                    <li><a href="#">All-Time Faves</a></li>
+                    <li><a href="#">Bestselling</a></li>
+                    <li><a href="#">Genres</a></li>
                 </ul>
             </div>
+            <div class="col-md-3">
+                <ul class="list-unstyled">
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/about">Contact</a></li>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">Order</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3">
+                <div class="social-networks">
+                    <a href="https://twitter.com/" class="twitter"><i class="fab fa-twitter-square"></i></a>
+                    <a href="https://www.instagram.com/" class="instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/" class="facebook"><i class="fab fa-facebook-square"></i></a>
+                    <a href="#" class="snapchat"><i class="fab fa-snapchat-square"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <ul class="list-inline footer-copyright">
+                <li><a>&copy; 2018 Butter Books, Inc.</a></li>
+                <li><a>|</a></li>
+                <li><a>Terms of Use</a></li>
+                <li><a>|</a></li>
+                <li><a>Copyright and Trademark</a></li>
+                <li><a>|</a></li>
+                <li><a>Privacy Policy</a></li>
+                <li><a>|</a></li>
+                <li><a>Sitemap</a></li>
+                <li><a>|</a></li>
+                <li><a>Accessibility</a></li>
+            </ul>
         </div>
     </div>
+</div>
 
 
-    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-    <script src="js/elsevier.js"></script>
-    <script>
-        $(document).foundation();
-    </script>
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="js/elsevier.js"></script>
+<script>
+    $(document).foundation();
+</script>
 </body>
 </html>
