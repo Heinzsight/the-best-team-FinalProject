@@ -230,7 +230,7 @@ public class CustomerController {
             System.out.println("Success");
             //the viewName here used to be "customer_home"
             modelAndView = new ModelAndView("index", "logged_in_customer", c);
-            modelAndView.addObject("cart_items", new ArrayList<Book>());
+//            modelAndView.addObject("cart_items", new ArrayList<Book>());
         } else {
             System.out.println("Failure");
             modelAndView = new ModelAndView("login");
