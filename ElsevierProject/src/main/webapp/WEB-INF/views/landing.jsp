@@ -39,7 +39,6 @@
 
             Customer c = (Customer) session.getAttribute("logged_in_customer");
             Address address = (Address) request.getAttribute("Address");
-            ArrayList<CustomerOrder> orders = (ArrayList<CustomerOrder>) request.getAttribute("customer_orders");
             System.out.println("Address: "+address);
 %>
 <div id="wrap">
@@ -175,11 +174,11 @@
         <div class="bookHistoryBox" style="margin-left: 10%; margin-top: 25px; margin-right: 10%">
 
             <% //Need to write code to fetch order history
-                Iterable<Book> books2 = (Iterable<Book>) session.getAttribute("books");
+                Iterable<CustomerOrder> orders = (Iterable<CustomerOrder>) session.getAttribute("customer_orders");
                 int j = 0;
              if(orders != null)
              {
-                for (Book book2 : books2) {
+                for (CustomerOrder order: orders) {
                     if (j >= 4) {
                         break;
                     } else {

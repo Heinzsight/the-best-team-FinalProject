@@ -1,5 +1,4 @@
 package com.qa.services;
-import com.qa.models.Customer;
 import com.qa.models.CustomerOrder;
 import com.qa.repositories.CustomerOrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +18,6 @@ public class CustomerOrderService {
 
 
     public List<CustomerOrder> getCustomerOrdersByCustomerId(int customerId){
-        return customerOrderRepository.findCustomerOrderByCustomer_CustomerId(customerId);
+        return customerOrderRepository.findCustomerOrdersByCustomerId(customerId);
     }
 }
