@@ -28,6 +28,7 @@
             } catch (Exception e) {
             System.out.println(e);
             }
+            Customer c = (Customer) session.getAttribute("logged_in_customer");
 %>
     <div id="wrap">
 
