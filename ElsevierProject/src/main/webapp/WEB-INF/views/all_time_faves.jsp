@@ -99,10 +99,11 @@
     <!-- End Header -->
 
     <!-- Main Content -->
+    <div class="container banner-container">
+        <img src="images/banners/All_Time_Faves.jpg" class="img-thumbnail" style="height: 100%; width:100%;"/>
+        <div class="centered banner-label">All Time Faves</div>
+    </div>
     <div class="container">
-        <div class="jumbotron">
-            <h1 class="centered">All Time Faves</h1>
-        </div>
         <div class="row">
             <%
                 Iterable<Book> books = (Iterable<Book>) session.getAttribute("books");
@@ -186,7 +187,7 @@
                 </ul>
             </div>
         </div>
-
+    </div>
 
         <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
         <script src="js/elsevier.js"></script>

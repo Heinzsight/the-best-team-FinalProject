@@ -5,10 +5,9 @@
 <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Foundation | Welcome</title>
+    <title>Butter Books-Book Details</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-    <%--<link href="css/index-style.css" rel="stylesheet">--%>
     <link href="css/button.css" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
           integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
@@ -16,7 +15,6 @@
           type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
           rel='stylesheet' type='text/css'>
-    <%--<link rel="stylesheet" href="css/index-style.css"/>--%>
     <link rel="stylesheet" href="css/nav-footer-style.css"/>
 
 </head>
@@ -40,7 +38,7 @@
 
     <%
         Customer c = null;
-        try{
+        try {
             c = (Customer) session.getAttribute("logged_in_customer");
             request.setAttribute("logged_in_customer", c);
             System.out.println(c);
@@ -111,7 +109,9 @@
         </div><!-- /.container-fluid -->
     </nav>
     <!-- End Header -->
+
     <!-- You can now combine a row and column if you just need a 12 column row -->
+    <br>
     <div class="row col">
         <nav aria-label="You are here:" role="navigation">
             <ul class="breadcrumbs">
@@ -210,11 +210,11 @@
 </div>
 
 
-    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-    <script src="js/elsevier.js"></script>
-    <script>
-        $(document).foundation();
-    </script>
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="js/elsevier.js"></script>
+<script>
+    $(document).foundation();
+</script>
 </body>
 </html>
 
