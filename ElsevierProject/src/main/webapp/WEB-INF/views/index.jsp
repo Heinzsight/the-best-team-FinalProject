@@ -104,8 +104,7 @@
 
 
     <div>
-        <img src="images/banners/homepage_banner_1920x350.jpg" alt="Butter Books logo" class="img-thumbnail pull-left"
-             style="height: 100%; width:100%;"/>
+        <img src="images/banners/homepage_banner_1920x350.jpg" alt="Butter Books logo" class="img-thumbnail" style="height: 100%; width:100%;"/>
     </div>
     <!-- Main Content -->
     <div class="container">
