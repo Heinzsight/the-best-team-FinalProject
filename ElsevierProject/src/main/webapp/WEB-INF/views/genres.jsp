@@ -100,7 +100,7 @@
 
     <!-- Main Content -->
     <div class="container banner-container">
-        <img src="images/banners/Genres.jpg" class="img-thumbnail pull-left" style="height: 100%; width:100%;"/>
+        <img src="images/banners/Genres.jpg" class="img-thumbnail" style="height: 100%; width:100%;"/>
         <div class="centered banner-label">Genres</div>
     </div>
     <div class="container">

@@ -101,7 +101,7 @@
 
     <!-- Main Content -->
     <div class="container banner-container">
-        <img src="images/banners/Just_In.jpg" class="img-thumbnail""/>
+        <img src="images/banners/Just_In.jpg" class="img-thumbnail"/>
         <div class="centered banner-label">Just In</div>
     </div>
     <div class="container">

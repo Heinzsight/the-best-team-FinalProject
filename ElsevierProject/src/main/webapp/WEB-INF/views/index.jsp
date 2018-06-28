@@ -92,7 +92,7 @@
                     <div class="form-group">
                         <div class="input-group">
                             <div class="input-group addon">
-                                <input type="text" class="form-control input-sm" placeholder="Search" name="searchTerm">
+                                <input type="text" class="form-control input-sm navbar-search" placeholder="Search" name="searchTerm">
                             </div>
                         </div>
                     </div>
@@ -103,8 +103,9 @@
     <!-- End Header -->
 
 
-    <div>
-        <img src="images/banners/homepage_banner_1920x350.jpg" alt="Butter Books logo" class="img-thumbnail" style="height: 100%; width:100%;"/>
+    <div class="container banner-container">
+        <img src="images/banners/homepage_banner_1920x350.jpg" class="img-thumbnail" style="height: 100%; width:100%;"/>
+        <div class="centered banner-label">Genres</div>
     </div>
     <!-- Main Content -->
     <div class="container">

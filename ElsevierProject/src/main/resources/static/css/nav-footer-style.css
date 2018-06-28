@@ -74,7 +74,6 @@ h3 {
     padding-top: 0px;
     padding-bottom: 0px;
     line-height: 80px;
-    font-size: 16px;
 }
 
 .navbar-form {
@@ -85,6 +84,11 @@ h3 {
 
 .navbar {
     background-color: transparent;
+    font-size: 16px;
+}
+
+.navbar-search {
+    font-size: 16px !important;
 }
 
 /*@media (max-width: 767px) {*/
