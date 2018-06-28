@@ -17,7 +17,9 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.io.IOException;
 import java.util.ArrayList;
 
 @Controller
@@ -164,9 +166,11 @@ public class CustomerController {
     }
 
     @RequestMapping("/logout")
-    public ModelAndView logout() {
-        ModelAndView modelAndView = new ModelAndView("logout");
-
+    public ModelAndView logout(HttpServletRequest request , HttpServletResponse response) {
+        HttpSession session = request.getSession(false);
+        if(session!=null)
+            session.invalidate();
+        ModelAndView modelAndView =  new ModelAndView("logout");
         return modelAndView;
     }
 
@@ -226,7 +230,7 @@ public class CustomerController {
             System.out.println("Success");
             //the viewName here used to be "customer_home"
             modelAndView = new ModelAndView("index", "logged_in_customer", c);
-            modelAndView.addObject("cart_items", new ArrayList<Book>());
+//            modelAndView.addObject("cart_items", new ArrayList<Book>());
         } else {
             System.out.println("Failure");
             modelAndView = new ModelAndView("login");
@@ -316,7 +320,9 @@ public class CustomerController {
         ModelAndView modelAndView = new ModelAndView("landing", "logged_in_customer", loggedInCustomer);
 
         Address address = addressService.findAddressByCustomerId(loggedInCustomer.getCustomerId());
-        modelAndView.addObject("Address",address);
+        if (address != null) {
+            modelAndView.addObject("Address",address);
+        }
 
         ArrayList<CustomerOrder> orders = (ArrayList<CustomerOrder>) customerOrderService.getCustomerOrdersByCustomerId(loggedInCustomer.getCustomerId());
         modelAndView.addObject("customer_orders",orders);
