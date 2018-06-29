@@ -34,7 +34,7 @@
             </div>
         </div>
         <div class="row" style="margin-bottom: 0px">
-            <ul class="list-inline footer-copyright">
+            <ul class="list-inline footer-copyright" style="margin-bottom: 0px; padding-bottom: 0px; background-color: #a23452">
                 <li><a>&copy; 2018 Butter Books, Inc.</a></li>
                 <li><a>|</a></li>
                 <li><a>Terms of Use</a></li>
