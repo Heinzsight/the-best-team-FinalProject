@@ -1,5 +1,8 @@
 <%@include file="master.jsp" %>
 <%@ page import="java.util.ArrayList" %>
+<head>
+<link rel="stylesheet" href="css/multi_step_form.css">
+</head>
 <!-- Main Content -->
 <div class="container" id="confirm">
     <h5 id="confirm_header">Order Confirmation</h5>

@@ -92,6 +92,15 @@ label {
 	color: white;
 	background-color: #507298;
 }
+#confirmBtn {
+	font-size: 14px;
+	padding-top:5px;
+	padding-bottom: 15px;
+	padding-left: 5px;
+	padding-right: 5px;
+	color: white;
+	background-color: #507298;
+}
 #ship_method {
 	padding-left: 23px;
 }
