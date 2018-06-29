@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Abril+Fatface|Open+Sans');
 /* Mark input boxes that gets an error on validation: */
 input.invalid {
   background-color: #ffdddd;
@@ -28,7 +29,7 @@ input.invalid {
 h4, h5 {
     color: #a23452;
 	font-weight: bold;
-	font-family: "Garamond";
+	font-family: 'Abril Fatface';
 	letter-spacing: -1px;
 	font-size: 28px;
 }
